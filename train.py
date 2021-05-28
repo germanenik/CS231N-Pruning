@@ -2,6 +2,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 
 import argparse
 import os
@@ -9,9 +10,21 @@ import time
 from cp_dataset import CPDataset, CPDataLoader
 from networks import GicLoss, GMM, UnetGenerator, VGGLoss, load_checkpoint, save_checkpoint
 
+from torchpruner.pruner import Pruner 
+from torchpruner.attributions import (ShapleyAttributionMetric, WeightNormAttributionMetric)
+
 from tensorboardX import SummaryWriter
 from visualization import board_add_image, board_add_images
 
+def str2bool(v):
+    if isinstance(v, bool):
+       return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
 
 def get_opt():
     parser = argparse.ArgumentParser()
@@ -49,15 +62,16 @@ def get_opt():
     parser.add_argument("--decay_step", type=int, default=100000)
     parser.add_argument("--shuffle", action='store_true',
                         help='shuffle input data')
+    parser.add_argument("--debug", type=str2bool, nargs='?', const=True, default=False, help="Debug mode (no trainig done).")
 
     opt = parser.parse_args()
     return opt
 
 
 def train_gmm(opt, train_loader, model, board):
-    model.cuda()
+    model.cpu()
     model.train()
-
+        
     # criterion
     criterionL1 = nn.L1Loss()
     gicloss = GicLoss(opt)
@@ -66,59 +80,115 @@ def train_gmm(opt, train_loader, model, board):
         model.parameters(), lr=opt.lr, betas=(0.5, 0.999))
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda step: 1.0 -
                                                   max(0, step - opt.keep_step) / float(opt.decay_step + 1))
+    if not opt.debug:
+        _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
+    if opt.debug:
+        criteria = (criterionL1, gicloss)
+        attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=torch.device('cpu'))
+        pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=torch.device('cpu'), optimizer=optimizer)
+        layers_of_interest = [layer for layer in model.regression.conv.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
+        for idx, module in enumerate(layers_of_interest):
+            if not isinstance(module, nn.Conv2d):
+                continue
+            print("interest layer num:", idx)
+            # Compute Weight Value attributions
+            attr = attribution.run(module)
+            k = int(len(attr) / 10) #10%
+            pruning_indices = np.argpartition(attr, k)[:k]
 
-    for step in range(opt.keep_step + opt.decay_step):
-        iter_start_time = time.time()
-        inputs = train_loader.next_batch()
+            cascading = layers_of_interest[idx+1:]
+            print("cascading layers", cascading)
+            pruner.prune_model(module, indices=pruning_indices, cascading_modules=cascading)
+            # train for a few epochs
+            
+            pretty_print_dims(get_pruned_dimensios(model.regression.conv))
+            _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board, 5)
 
-        im = inputs['image'].cuda()
-        im_pose = inputs['pose_image'].cuda()
-        im_h = inputs['head'].cuda()
-        shape = inputs['shape'].cuda()
-        agnostic = inputs['agnostic'].cuda()
-        c = inputs['cloth'].cuda()
-        cm = inputs['cloth_mask'].cuda()
-        im_c = inputs['parse_cloth'].cuda()
-        im_g = inputs['grid_image'].cuda()
+        #carefully finetune prunced model
+        breakpoint()
+        pretty_print_dims(get_pruned_dimensios(model.regression.conv))
 
-        grid, theta = model(agnostic, cm)    # can be added c too for new training
-        warped_cloth = F.grid_sample(c, grid, padding_mode='border')
-        warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
-        warped_grid = F.grid_sample(im_g, grid, padding_mode='zeros')
+def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board, num_iter=None):
+    if not num_iter: #for finetuning 
+        opt.keep_step + opt.decay_step
+    for step in range(num_iter):
+            print("step:", step)
+            iter_start_time = time.time()
+            inputs = train_loader.next_batch()
 
-        visuals = [[im_h, shape, im_pose],
-                   [c, warped_cloth, im_c],
-                   [warped_grid, (warped_cloth+im)*0.5, im]]
+            im = inputs['image'].cpu()
+            im_pose = inputs['pose_image'].cpu()
+            im_h = inputs['head'].cpu()
+            shape = inputs['shape'].cpu()
+            agnostic = inputs['agnostic'].cpu()
+            c = inputs['cloth'].cpu()
+            cm = inputs['cloth_mask'].cpu()
+            im_c = inputs['parse_cloth'].cpu()
+            im_g = inputs['grid_image'].cpu()
+            grid, theta = model(agnostic, cm)    # can be added c too for new training
+            warped_cloth = F.grid_sample(c, grid, padding_mode='border')
+            warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
+            warped_grid = F.grid_sample(im_g, grid, padding_mode='zeros')
 
-        # Lwarp = criterionL1(warped_cloth, im_c)    # loss for warped cloth
-        Lwarp = criterionL1(warped_mask, cm)    # loss for warped mask thank xuxiaochun025 for fixing the git code.
-        # grid regularization loss
-        Lgic = gicloss(grid)
-        # 200x200 = 40.000 * 0.001
-        Lgic = Lgic / (grid.shape[0] * grid.shape[1] * grid.shape[2])
+            # visuals = [[im_h, shape, im_pose],
+            #         [c, warped_cloth, im_c],
+            #         [warped_grid, (warped_cloth+im)*0.5, im]]
 
-        loss = Lwarp + 40 * Lgic    # total GMM loss
+            # Lwarp = criterionL1(warped_cloth, im_c)    # loss for warped cloth
+            Lwarp = criterionL1(warped_mask, cm)    # loss for warped mask thank xuxiaochun025 for fixing the git code.
+            # grid regularization loss
+            Lgic = gicloss(grid)
+            # 200x200 = 40.000 * 0.001
+            Lgic = Lgic / (grid.shape[0] * grid.shape[1] * grid.shape[2])
 
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+            loss = Lwarp + 40 * Lgic    # total GMM loss
 
-        if (step+1) % opt.display_count == 0:
-            board_add_images(board, 'combine', visuals, step+1)
-            board.add_scalar('loss', loss.item(), step+1)
-            board.add_scalar('40*Lgic', (40*Lgic).item(), step+1)
-            board.add_scalar('Lwarp', Lwarp.item(), step+1)
-            t = time.time() - iter_start_time
-            print('step: %8d, time: %.3f, loss: %4f, (40*Lgic): %.8f, Lwarp: %.6f' %
-                  (step+1, t, loss.item(), (40*Lgic).item(), Lwarp.item()), flush=True)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 
-        if (step+1) % opt.save_count == 0:
-            save_checkpoint(model, os.path.join(
-                opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
+            # if (step+1) % opt.display_count == 0:
+            #     board_add_images(board, 'combine', visuals, step+1)
+            #     board.add_scalar('loss', loss.item(), step+1)
+            #     board.add_scalar('40*Lgic', (40*Lgic).item(), step+1)
+            #     board.add_scalar('Lwarp', Lwarp.item(), step+1)
+            #     t = time.time() - iter_start_time
+            #     print('step: %8d, time: %.3f, loss: %4f, (40*Lgic): %.8f, Lwarp: %.6f' %
+            #         (step+1, t, loss.item(), (40*Lgic).item(), Lwarp.item()), flush=True)
 
+            # if (step+1) % opt.save_count == 0:
+            #     save_checkpoint(model, os.path.join(
+            #         opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
+
+
+def get_GMM_input_size(train_loader):
+    data_sample = train_loader.next_batch()
+    agnostic = data_sample['agnostic'].cpu()
+    cm = data_sample['cloth_mask'].cpu()
+    size = (agnostic.size(), cm.size())
+    print(size)
+    return size
+
+def get_pruned_dimensios(submodel):
+    """
+    submodel is the object whose children are layers
+    """
+    info = dict()
+    count = 0
+    for module in submodel.children():
+        try:
+            info[count] = (module.__class__.__name__, module.weight.shape)
+        except AttributeError:
+            info[count] = (module.__class__.__name__, None)
+        count += 1
+    return info
+
+def pretty_print_dims(info):
+    for key, value in info.items():
+        print(f"({key}): {value[0]} {value[1]}")
 
 def train_tom(opt, train_loader, model, board):
-    model.cuda()
+    model.cpu()
     model.train()
 
     # criterion
@@ -136,15 +206,15 @@ def train_tom(opt, train_loader, model, board):
         iter_start_time = time.time()
         inputs = train_loader.next_batch()
 
-        im = inputs['image'].cuda()
+        im = inputs['image'].cpu()
         im_pose = inputs['pose_image']
         im_h = inputs['head']
         shape = inputs['shape']
 
-        agnostic = inputs['agnostic'].cuda()
-        c = inputs['cloth'].cuda()
-        cm = inputs['cloth_mask'].cuda()
-        pcm = inputs['parse_cloth_mask'].cuda()
+        agnostic = inputs['agnostic'].cpu()
+        c = inputs['cloth'].cpu()
+        cm = inputs['cloth_mask'].cpu()
+        pcm = inputs['parse_cloth_mask'].cpu()
 
         # outputs = model(torch.cat([agnostic, c], 1))  # CP-VTON
         outputs = model(torch.cat([agnostic, c, cm], 1))  # CP-VTON+
@@ -186,6 +256,7 @@ def train_tom(opt, train_loader, model, board):
                 opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
 
 
+
 def main():
     opt = get_opt()
     print(opt)
@@ -209,7 +280,7 @@ def main():
             load_checkpoint(model, opt.checkpoint)
         train_gmm(opt, train_loader, model, board)
         save_checkpoint(model, os.path.join(
-            opt.checkpoint_dir, opt.name, 'gmm_final.pth'))
+            opt.checkpoint_dir, opt.name, f'gmm_final{"_debug" if opt.debug else ""}.pth'))
     elif opt.stage == 'TOM':
         # model = UnetGenerator(25, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)  # CP-VTON
         model = UnetGenerator(
