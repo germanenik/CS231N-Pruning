@@ -11,3 +11,5 @@ result/*
 .idea/*
 *.pyc
 *.zip
+*.DS_Store*
+venv/lib/python3.8/site-packages/*
