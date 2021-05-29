@@ -78,18 +78,27 @@ def train_gmm(opt, train_loader, model, board):
     # optimizer
     optimizer = torch.optim.Adam(
         model.parameters(), lr=opt.lr, betas=(0.5, 0.999))
+    finetuning_optimizer = torch.optim.SGD(
+        model.parameters(), lr=opt.lr)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda step: 1.0 -
                                                   max(0, step - opt.keep_step) / float(opt.decay_step + 1))
     if not opt.debug:
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
-    if opt.debug:
+    if not opt.debug:
+        submodel = model.regression.conv
         criteria = (criterionL1, gicloss)
         attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=torch.device('cpu'))
-        pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=torch.device('cpu'), optimizer=optimizer)
-        layers_of_interest = [layer for layer in model.regression.conv.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
+        pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=torch.device('cpu'), optimizer=finetuning_optimizer)
+        layers_of_interest = [layer for layer in submodel.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
+        num_conv = len([1 for layer in  layers_of_interest if isinstance(layer, torch.nn.modules.conv._ConvNd)])
         for idx, module in enumerate(layers_of_interest):
             if not isinstance(module, nn.Conv2d):
                 continue
+            num_conv -= 1
+            
+            if num_conv == 0:
+                break #do not prune the last one bc messes up dims
+
             print("interest layer num:", idx)
             # Compute Weight Value attributions
             attr = attribution.run(module)
@@ -101,12 +110,17 @@ def train_gmm(opt, train_loader, model, board):
             pruner.prune_model(module, indices=pruning_indices, cascading_modules=cascading)
             # train for a few epochs
             
-            pretty_print_dims(get_pruned_dimensios(model.regression.conv))
-            _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board, 5)
+            pretty_print_dims(get_pruned_dimensions(submodel))
+            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1)
 
         #carefully finetune prunced model
+        pretty_print_dims(get_pruned_dimensions(submodel))
         breakpoint()
-        pretty_print_dims(get_pruned_dimensios(model.regression.conv))
+        torch.save(model, "architectures/pruned_GMM")
+    # if opt.debug:
+    #     model = torch.load("architectures/pruned_GMM")
+    #     pretty_print_dims(get_pruned_dimensions(model.regression.conv))
+    #     breakpoint()
 
 def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board, num_iter=None):
     if not num_iter: #for finetuning 
@@ -169,7 +183,7 @@ def get_GMM_input_size(train_loader):
     print(size)
     return size
 
-def get_pruned_dimensios(submodel):
+def get_pruned_dimensions(submodel):
     """
     submodel is the object whose children are layers
     """
