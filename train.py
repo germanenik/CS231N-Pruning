@@ -111,11 +111,11 @@ def train_gmm(opt, train_loader, model, board):
             # train for a few epochs
             
             pretty_print_dims(get_pruned_dimensions(submodel))
-            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1)
+            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1) #14600 / 4 * 2 = 7000
 
         #carefully finetune prunced model
         pretty_print_dims(get_pruned_dimensions(submodel))
-        breakpoint()
+        _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1) #35000
         torch.save(model, "architectures/pruned_GMM")
     # if opt.debug:
     #     model = torch.load("architectures/pruned_GMM")
@@ -123,14 +123,14 @@ def train_gmm(opt, train_loader, model, board):
     #     breakpoint()
 
 def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board, num_iter=None):
-    if not num_iter: #for finetuning 
+    if not num_iter: #not finetuning 
         opt.keep_step + opt.decay_step
     for step in range(num_iter):
             print("step:", step)
             iter_start_time = time.time()
             inputs = train_loader.next_batch()
 
-            im = inputs['image'].cpu()
+            im = inputs['image'].cuda()
             im_pose = inputs['pose_image'].cpu()
             im_h = inputs['head'].cpu()
             shape = inputs['shape'].cpu()
@@ -144,9 +144,9 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
             warped_grid = F.grid_sample(im_g, grid, padding_mode='zeros')
 
-            # visuals = [[im_h, shape, im_pose],
-            #         [c, warped_cloth, im_c],
-            #         [warped_grid, (warped_cloth+im)*0.5, im]]
+            visuals = [[im_h, shape, im_pose],
+                    [c, warped_cloth, im_c],
+                    [warped_grid, (warped_cloth+im)*0.5, im]]
 
             # Lwarp = criterionL1(warped_cloth, im_c)    # loss for warped cloth
             Lwarp = criterionL1(warped_mask, cm)    # loss for warped mask thank xuxiaochun025 for fixing the git code.
@@ -161,18 +161,18 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             loss.backward()
             optimizer.step()
 
-            # if (step+1) % opt.display_count == 0:
-            #     board_add_images(board, 'combine', visuals, step+1)
-            #     board.add_scalar('loss', loss.item(), step+1)
-            #     board.add_scalar('40*Lgic', (40*Lgic).item(), step+1)
-            #     board.add_scalar('Lwarp', Lwarp.item(), step+1)
-            #     t = time.time() - iter_start_time
-            #     print('step: %8d, time: %.3f, loss: %4f, (40*Lgic): %.8f, Lwarp: %.6f' %
-            #         (step+1, t, loss.item(), (40*Lgic).item(), Lwarp.item()), flush=True)
+            if (step+1) % opt.display_count == 0:
+                board_add_images(board, 'combine', visuals, step+1)
+                board.add_scalar('loss', loss.item(), step+1)
+                board.add_scalar('40*Lgic', (40*Lgic).item(), step+1)
+                board.add_scalar('Lwarp', Lwarp.item(), step+1)
+                t = time.time() - iter_start_time
+                print('step: %8d, time: %.3f, loss: %4f, (40*Lgic): %.8f, Lwarp: %.6f' %
+                    (step+1, t, loss.item(), (40*Lgic).item(), Lwarp.item()), flush=True)
 
-            # if (step+1) % opt.save_count == 0:
-            #     save_checkpoint(model, os.path.join(
-            #         opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
+            if (step+1) % opt.save_count == 0:
+                save_checkpoint(model, os.path.join(
+                    opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
 
 
 def get_GMM_input_size(train_loader):
@@ -278,7 +278,6 @@ def main():
 
     # create dataset
     train_dataset = CPDataset(opt)
-
     # create dataloader
     train_loader = CPDataLoader(opt, train_dataset)
 
