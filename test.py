@@ -52,6 +52,7 @@ def get_opt():
     parser.add_argument("--display_count", type=int, default=1)
     parser.add_argument("--shuffle", action='store_true',
                         help='shuffle input data')
+    parser.add_argument('--saved_model', type=str)
 
     opt = parser.parse_args()
     return opt
@@ -206,8 +207,9 @@ def main():
 
     # create model & test
     if opt.stage == 'GMM':
-        model = GMM(opt)
-        load_checkpoint(model, opt.checkpoint)
+        # model = GMM(opt)
+        # load_checkpoint(model, opt.checkpoint)
+        model = torch.load(opt.saved_model)
         with torch.no_grad():
             test_gmm(opt, test_loader, model, board)
     elif opt.stage == 'TOM':
