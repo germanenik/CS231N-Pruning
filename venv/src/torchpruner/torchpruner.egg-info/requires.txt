@@ -1,7 +1,0 @@
-numpy
-scipy
-matplotlib
-thop
-
-[torch]
-torch>=1.2.0

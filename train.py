@@ -10,8 +10,8 @@ import time
 from cp_dataset import CPDataset, CPDataLoader
 from networks import GicLoss, GMM, UnetGenerator, VGGLoss, load_checkpoint, save_checkpoint
 
-from torchpruner.pruner import Pruner 
-from torchpruner.attributions import (ShapleyAttributionMetric, WeightNormAttributionMetric)
+from torchpruner.torchpruner.pruner import Pruner 
+from torchpruner.torchpruner.attributions import (ShapleyAttributionMetric, WeightNormAttributionMetric)
 
 from tensorboardX import SummaryWriter
 from visualization import board_add_image, board_add_images
