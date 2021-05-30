@@ -126,9 +126,9 @@ class FeatureRegression(nn.Module):
         self.linear = nn.Linear(64 * 4 * 3, output_dim)
         self.tanh = nn.Tanh()
         if use_cuda:
-            self.conv.cpu()
-            self.linear.cpu()
-            self.tanh.cpu()
+            self.conv.cuda()
+            self.linear.cuda()
+            self.tanh.cuda()
 
     def forward(self, x):
         x = self.conv(x)
@@ -170,8 +170,8 @@ class TpsGridGen(nn.Module):
         self.grid_X = torch.FloatTensor(self.grid_X).unsqueeze(0).unsqueeze(3)
         self.grid_Y = torch.FloatTensor(self.grid_Y).unsqueeze(0).unsqueeze(3)
         if use_cuda:
-            self.grid_X = self.grid_X.cpu()
-            self.grid_Y = self.grid_Y.cpu()
+            self.grid_X = self.grid_X.cuda()
+            self.grid_Y = self.grid_Y.cuda()
 
         # initialize regular grid for control points P_i
         if use_regular_grid:
@@ -190,10 +190,10 @@ class TpsGridGen(nn.Module):
             self.P_Y = P_Y.unsqueeze(2).unsqueeze(
                 3).unsqueeze(4).transpose(0, 4)
             if use_cuda:
-                self.P_X = self.P_X.cpu()
-                self.P_Y = self.P_Y.cpu()
-                self.P_X_base = self.P_X_base.cpu()
-                self.P_Y_base = self.P_Y_base.cpu()
+                self.P_X = self.P_X.cuda()
+                self.P_Y = self.P_Y.cuda()
+                self.P_X_base = self.P_X_base.cuda()
+                self.P_Y_base = self.P_Y_base.cuda()
 
     def forward(self, theta):
         warped_grid = self.apply_transformation(
@@ -219,7 +219,7 @@ class TpsGridGen(nn.Module):
             (P.transpose(0, 1), Z), 1)), 0)
         Li = torch.inverse(L)
         if self.use_cuda:
-            Li = Li.cpu()
+            Li = Li.cuda()
         return Li
 
     def apply_transformation(self, theta, points):
@@ -434,7 +434,7 @@ class VGGLoss(nn.Module):
     def __init__(self, layids=None):
         super(VGGLoss, self).__init__()
         self.vgg = Vgg19()
-        self.vgg.cpu()
+        self.vgg.cuda()
         self.criterion = nn.L1Loss()
         self.weights = [1.0/32, 1.0/16, 1.0/8, 1.0/4, 1.0]
         self.layids = layids
@@ -531,12 +531,12 @@ def save_checkpoint(model, save_path):
     if not os.path.exists(os.path.dirname(save_path)):
         os.makedirs(os.path.dirname(save_path))
 
-    torch.save(model.cpu().state_dict(), save_path)
-    model.cpu()
+    torch.save(model.cuda().state_dict(), save_path)
+    model.cuda()
 
 
 def load_checkpoint(model, checkpoint_path):
     if not os.path.exists(checkpoint_path):
         return
     model.load_state_dict(torch.load(checkpoint_path))
-    model.cpu()
+    model.cuda()

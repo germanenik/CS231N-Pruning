@@ -69,7 +69,7 @@ def get_opt():
 
 
 def train_gmm(opt, train_loader, model, board):
-    model.cpu()
+    model.cuda()
     model.train()
         
     # criterion
@@ -84,7 +84,7 @@ def train_gmm(opt, train_loader, model, board):
                                                   max(0, step - opt.keep_step) / float(opt.decay_step + 1))
     if not opt.debug:
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
-    if not opt.debug:
+    if opt.debug:
         submodel = model.regression.conv
         criteria = (criterionL1, gicloss)
         attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=torch.device('cpu'))
@@ -111,11 +111,11 @@ def train_gmm(opt, train_loader, model, board):
             # train for a few epochs
             
             pretty_print_dims(get_pruned_dimensions(submodel))
-            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1) #14600 / 4 * 2 = 7000
+            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 7000) #14600 / 4 * 2 = 7000
 
         #carefully finetune prunced model
         pretty_print_dims(get_pruned_dimensions(submodel))
-        _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 1) #35000
+        _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 35000) #35000
         torch.save(model, "architectures/pruned_GMM")
     # if opt.debug:
     #     model = torch.load("architectures/pruned_GMM")
@@ -131,14 +131,14 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             inputs = train_loader.next_batch()
 
             im = inputs['image'].cuda()
-            im_pose = inputs['pose_image'].cpu()
-            im_h = inputs['head'].cpu()
-            shape = inputs['shape'].cpu()
-            agnostic = inputs['agnostic'].cpu()
-            c = inputs['cloth'].cpu()
-            cm = inputs['cloth_mask'].cpu()
-            im_c = inputs['parse_cloth'].cpu()
-            im_g = inputs['grid_image'].cpu()
+            im_pose = inputs['pose_image'].cuda()
+            im_h = inputs['head'].cuda()
+            shape = inputs['shape'].cuda()
+            agnostic = inputs['agnostic'].cuda()
+            c = inputs['cloth'].cuda()
+            cm = inputs['cloth_mask'].cuda()
+            im_c = inputs['parse_cloth'].cuda()
+            im_g = inputs['grid_image'].cuda()
             grid, theta = model(agnostic, cm)    # can be added c too for new training
             warped_cloth = F.grid_sample(c, grid, padding_mode='border')
             warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
@@ -177,8 +177,8 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
 
 def get_GMM_input_size(train_loader):
     data_sample = train_loader.next_batch()
-    agnostic = data_sample['agnostic'].cpu()
-    cm = data_sample['cloth_mask'].cpu()
+    agnostic = data_sample['agnostic'].cuda()
+    cm = data_sample['cloth_mask'].cuda()
     size = (agnostic.size(), cm.size())
     print(size)
     return size
@@ -202,7 +202,7 @@ def pretty_print_dims(info):
         print(f"({key}): {value[0]} {value[1]}")
 
 def train_tom(opt, train_loader, model, board):
-    model.cpu()
+    model.cuda()
     model.train()
 
     # criterion
@@ -220,15 +220,15 @@ def train_tom(opt, train_loader, model, board):
         iter_start_time = time.time()
         inputs = train_loader.next_batch()
 
-        im = inputs['image'].cpu()
+        im = inputs['image'].cuda()
         im_pose = inputs['pose_image']
         im_h = inputs['head']
         shape = inputs['shape']
 
-        agnostic = inputs['agnostic'].cpu()
-        c = inputs['cloth'].cpu()
-        cm = inputs['cloth_mask'].cpu()
-        pcm = inputs['parse_cloth_mask'].cpu()
+        agnostic = inputs['agnostic'].cuda()
+        c = inputs['cloth'].cuda()
+        cm = inputs['cloth_mask'].cuda()
+        pcm = inputs['parse_cloth_mask'].cuda()
 
         # outputs = model(torch.cat([agnostic, c], 1))  # CP-VTON
         outputs = model(torch.cat([agnostic, c, cm], 1))  # CP-VTON+
