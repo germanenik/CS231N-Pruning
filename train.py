@@ -126,7 +126,6 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
     if not num_iter: #not finetuning 
         opt.keep_step + opt.decay_step
     for step in range(num_iter):
-            print("step:", step)
             iter_start_time = time.time()
             inputs = train_loader.next_batch()
 
@@ -180,7 +179,6 @@ def get_GMM_input_size(train_loader):
     agnostic = data_sample['agnostic'].cuda()
     cm = data_sample['cloth_mask'].cuda()
     size = (agnostic.size(), cm.size())
-    print(size)
     return size
 
 def get_pruned_dimensions(submodel):
