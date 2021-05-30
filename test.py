@@ -207,9 +207,13 @@ def main():
 
     # create model & test
     if opt.stage == 'GMM':
-        # model = GMM(opt)
-        # load_checkpoint(model, opt.checkpoint)
-        model = torch.load(opt.saved_model)
+        if opt.saved_model:
+            model = torch.load(opt.saved_model)
+            print("loaded saved model")
+        else:
+            model = GMM(opt)
+            load_checkpoint(model, opt.checkpoint)
+            print("loaded checkpoint")
         with torch.no_grad():
             test_gmm(opt, test_loader, model, board)
     elif opt.stage == 'TOM':
