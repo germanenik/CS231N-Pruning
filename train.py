@@ -64,6 +64,9 @@ def get_opt():
                         help='shuffle input data')
     parser.add_argument("--debug", type=str2bool, nargs='?', const=True, default=False, help="Debug mode (no trainig done).")
 
+    parser.add_argument("--finetune_steps_brief", type=int, default=2000)
+    parser.add_argument("--finetune_steps_careful", type=int, default=10000)
+
     opt = parser.parse_args()
     return opt
 
@@ -111,11 +114,11 @@ def train_gmm(opt, train_loader, model, board):
             # train for a few epochs
             
             pretty_print_dims(get_pruned_dimensions(submodel))
-            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 7000) #14600 / 4 * 2 = 7000
+            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_brief) #14600 / 4 * 2 = 7000
 
         #carefully finetune prunced model
         pretty_print_dims(get_pruned_dimensions(submodel))
-        _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, 35000) #35000
+        _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_careful) #35000
         torch.save(model, "architectures/pruned_GMM")
     # if opt.debug:
     #     model = torch.load("architectures/pruned_GMM")
