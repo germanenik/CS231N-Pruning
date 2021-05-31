@@ -83,6 +83,7 @@ def test_gmm(opt, test_loader, model, board):
     warped_grid_dir = os.path.join(save_dir, 'warped_grid')
     if not os.path.exists(warped_grid_dir):
         os.makedirs(warped_grid_dir)
+    times = []
     for step, inputs in enumerate(test_loader.data_loader):
         iter_start_time = time.time()
 
@@ -98,8 +99,12 @@ def test_gmm(opt, test_loader, model, board):
         im_c = inputs['parse_cloth'].to(device)
         im_g = inputs['grid_image'].to(device)
         shape_ori = inputs['shape_ori']  # original body shape without blurring
-
+        
+        time_start = time.time()
         grid, theta = model(agnostic, cm)
+        time_end = time.time()
+        times.append(time_end - time_start)
+
         warped_cloth = F.grid_sample(c, grid, padding_mode='border')
         warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
         warped_grid = F.grid_sample(im_g, grid, padding_mode='zeros')
@@ -122,6 +127,7 @@ def test_gmm(opt, test_loader, model, board):
             board_add_images(board, 'combine', visuals, step+1)
             t = time.time() - iter_start_time
             print('step: %8d, time: %.3f' % (step+1, t), flush=True)
+    print("TIME PER IMAGE:", sum(times) / len(times))
 
 
 def test_tom(opt, test_loader, model, board):
