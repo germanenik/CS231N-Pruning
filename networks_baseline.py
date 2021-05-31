@@ -7,6 +7,7 @@ import os
 
 import numpy as np
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def weights_init_normal(m):
     classname = m.__class__.__name__
@@ -58,17 +59,17 @@ class FeatureExtraction(nn.Module):
     def __init__(self, input_nc, ngf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_dropout=False):
         super(FeatureExtraction, self).__init__()
         downconv = nn.Conv2d(input_nc, ngf, kernel_size=4, stride=2, padding=1)
-        model = [downconv, nn.ReLU(True), norm_layer(ngf)]
+        model = [downconv, nn.ReLU(True), norm_layer(ngf, track_running_stats=False)]
         for i in range(n_layers):
             in_ngf = 2**i * ngf if 2**i * ngf < 512 else 512
             out_ngf = 2**(i+1) * ngf if 2**i * ngf < 512 else 512
             downconv = nn.Conv2d(
                 in_ngf, out_ngf, kernel_size=4, stride=2, padding=1)
             model += [downconv, nn.ReLU(True)]
-            model += [norm_layer(out_ngf)]
+            model += [norm_layer(out_ngf, track_running_stats=False)]
         model += [nn.Conv2d(512, 512, kernel_size=3,
                             stride=1, padding=1), nn.ReLU(True)]
-        model += [norm_layer(512)]
+        model += [norm_layer(512, track_running_stats=False)]
         model += [nn.Conv2d(512, 512, kernel_size=3,
                             stride=1, padding=1), nn.ReLU(True)]
 
@@ -111,28 +112,29 @@ class FeatureRegression(nn.Module):
         super(FeatureRegression, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv2d(input_nc, 512, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(512),
+            nn.BatchNorm2d(512, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(512, 256, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(256),
+            nn.BatchNorm2d(256, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(256, 128, kernel_size=3, padding=1),
-            nn.BatchNorm2d(128),
+            nn.BatchNorm2d(128, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(128, 64, kernel_size=3, padding=1),
-            nn.BatchNorm2d(64),
+            nn.BatchNorm2d(64, track_running_stats=False),
             nn.ReLU(inplace=True),
         )
         self.linear = nn.Linear(64 * 4 * 3, output_dim)
         self.tanh = nn.Tanh()
         if use_cuda:
-            self.conv.cuda()
-            self.linear.cuda()
-            self.tanh.cuda()
+            self.conv.to(device)
+            self.linear.to(device)
+            self.tanh.to(device)
 
     def forward(self, x):
         x = self.conv(x)
-        x = x.view(x.size(0), -1)
+        # 
+        x = x.reshape(x.size(0), -1)
         x = self.linear(x)
         x = self.tanh(x)
         return x
@@ -169,8 +171,8 @@ class TpsGridGen(nn.Module):
         self.grid_X = torch.FloatTensor(self.grid_X).unsqueeze(0).unsqueeze(3)
         self.grid_Y = torch.FloatTensor(self.grid_Y).unsqueeze(0).unsqueeze(3)
         if use_cuda:
-            self.grid_X = self.grid_X.cuda()
-            self.grid_Y = self.grid_Y.cuda()
+            self.grid_X = self.grid_X.to(device)
+            self.grid_Y = self.grid_Y.to(device)
 
         # initialize regular grid for control points P_i
         if use_regular_grid:
@@ -189,10 +191,10 @@ class TpsGridGen(nn.Module):
             self.P_Y = P_Y.unsqueeze(2).unsqueeze(
                 3).unsqueeze(4).transpose(0, 4)
             if use_cuda:
-                self.P_X = self.P_X.cuda()
-                self.P_Y = self.P_Y.cuda()
-                self.P_X_base = self.P_X_base.cuda()
-                self.P_Y_base = self.P_Y_base.cuda()
+                self.P_X = self.P_X.to(device)
+                self.P_Y = self.P_Y.to(device)
+                self.P_X_base = self.P_X_base.to(device)
+                self.P_Y_base = self.P_Y_base.to(device)
 
     def forward(self, theta):
         warped_grid = self.apply_transformation(
@@ -218,7 +220,7 @@ class TpsGridGen(nn.Module):
             (P.transpose(0, 1), Z), 1)), 0)
         Li = torch.inverse(L)
         if self.use_cuda:
-            Li = Li.cuda()
+            Li = Li.to(device)
         return Li
 
     def apply_transformation(self, theta, points):
@@ -357,9 +359,9 @@ class UnetSkipConnectionBlock(nn.Module):
         downconv = nn.Conv2d(input_nc, inner_nc, kernel_size=4,
                              stride=2, padding=1, bias=use_bias)
         downrelu = nn.LeakyReLU(0.2, True)
-        downnorm = norm_layer(inner_nc)
+        downnorm = norm_layer(inner_nc, track_running_stats=False)
         uprelu = nn.ReLU(True)
-        upnorm = norm_layer(outer_nc)
+        upnorm = norm_layer(outer_nc, track_running_stats=False)
 
         if outermost:
             upsample = nn.Upsample(scale_factor=2, mode='bilinear')
@@ -433,7 +435,7 @@ class VGGLoss(nn.Module):
     def __init__(self, layids=None):
         super(VGGLoss, self).__init__()
         self.vgg = Vgg19()
-        self.vgg.cuda()
+        self.vgg.to(device)
         self.criterion = nn.L1Loss()
         self.weights = [1.0/32, 1.0/16, 1.0/8, 1.0/4, 1.0]
         self.layids = layids
@@ -530,12 +532,12 @@ def save_checkpoint(model, save_path):
     if not os.path.exists(os.path.dirname(save_path)):
         os.makedirs(os.path.dirname(save_path))
 
-    torch.save(model.cpu().state_dict(), save_path)
-    model.cuda()
+    torch.save(model.to(device).state_dict(), save_path)
+    model.to(device)
 
 
 def load_checkpoint(model, checkpoint_path):
     if not os.path.exists(checkpoint_path):
         return
     model.load_state_dict(torch.load(checkpoint_path))
-    model.cuda()
+    model.to(device)
