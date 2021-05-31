@@ -16,6 +16,8 @@ from torchpruner.torchpruner.attributions import (ShapleyAttributionMetric, Weig
 from tensorboardX import SummaryWriter
 from visualization import board_add_image, board_add_images
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 def str2bool(v):
     if isinstance(v, bool):
        return v
@@ -72,7 +74,7 @@ def get_opt():
 
 
 def train_gmm(opt, train_loader, model, board):
-    model.cuda()
+    model.to(device)
     model.train()
         
     # criterion
@@ -90,8 +92,8 @@ def train_gmm(opt, train_loader, model, board):
     if opt.debug:
         submodel = model.regression.conv
         criteria = (criterionL1, gicloss)
-        attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=torch.device('cuda'))
-        pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=torch.device('cuda'), optimizer=finetuning_optimizer)
+        attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=device)
+        pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=device, optimizer=finetuning_optimizer)
         layers_of_interest = [layer for layer in submodel.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
         num_conv = len([1 for layer in  layers_of_interest if isinstance(layer, torch.nn.modules.conv._ConvNd)])
         for idx, module in enumerate(layers_of_interest):
@@ -132,15 +134,15 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             iter_start_time = time.time()
             inputs = train_loader.next_batch()
 
-            im = inputs['image'].cuda()
-            im_pose = inputs['pose_image'].cuda()
-            im_h = inputs['head'].cuda()
-            shape = inputs['shape'].cuda()
-            agnostic = inputs['agnostic'].cuda()
-            c = inputs['cloth'].cuda()
-            cm = inputs['cloth_mask'].cuda()
-            im_c = inputs['parse_cloth'].cuda()
-            im_g = inputs['grid_image'].cuda()
+            im = inputs['image'].to(device)
+            im_pose = inputs['pose_image'].to(device)
+            im_h = inputs['head'].to(device)
+            shape = inputs['shape'].to(device)
+            agnostic = inputs['agnostic'].to(device)
+            c = inputs['cloth'].to(device)
+            cm = inputs['cloth_mask'].to(device)
+            im_c = inputs['parse_cloth'].to(device)
+            im_g = inputs['grid_image'].to(device)
             grid, theta = model(agnostic, cm)    # can be added c too for new training
             warped_cloth = F.grid_sample(c, grid, padding_mode='border')
             warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
@@ -179,8 +181,8 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
 
 def get_GMM_input_size(train_loader):
     data_sample = train_loader.next_batch()
-    agnostic = data_sample['agnostic'].cuda()
-    cm = data_sample['cloth_mask'].cuda()
+    agnostic = data_sample['agnostic'].to(device)
+    cm = data_sample['cloth_mask'].to(device)
     size = (agnostic.size(), cm.size())
     return size
 
@@ -203,7 +205,7 @@ def pretty_print_dims(info):
         print(f"({key}): {value[0]} {value[1]}")
 
 def train_tom(opt, train_loader, model, board):
-    model.cuda()
+    model.to(device)
     model.train()
 
     # criterion
@@ -221,15 +223,15 @@ def train_tom(opt, train_loader, model, board):
         iter_start_time = time.time()
         inputs = train_loader.next_batch()
 
-        im = inputs['image'].cuda()
+        im = inputs['image'].to(device)
         im_pose = inputs['pose_image']
         im_h = inputs['head']
         shape = inputs['shape']
 
-        agnostic = inputs['agnostic'].cuda()
-        c = inputs['cloth'].cuda()
-        cm = inputs['cloth_mask'].cuda()
-        pcm = inputs['parse_cloth_mask'].cuda()
+        agnostic = inputs['agnostic'].to(device)
+        c = inputs['cloth'].to(device)
+        cm = inputs['cloth_mask'].to(device)
+        pcm = inputs['parse_cloth_mask'].to(device)
 
         # outputs = model(torch.cat([agnostic, c], 1))  # CP-VTON
         outputs = model(torch.cat([agnostic, c, cm], 1))  # CP-VTON+
