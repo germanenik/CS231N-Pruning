@@ -90,33 +90,35 @@ def train_gmm(opt, train_loader, model, board):
     if not opt.debug:
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
     if opt.debug:
-        submodel = model.regression.conv
         criteria = (criterionL1, gicloss)
         attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=device)
         pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=device, optimizer=finetuning_optimizer)
-        layers_of_interest = [layer for layer in submodel.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
-        num_conv = len([1 for layer in  layers_of_interest if isinstance(layer, torch.nn.modules.conv._ConvNd)])
-        for idx, module in enumerate(layers_of_interest):
-            if not isinstance(module, nn.Conv2d):
-                continue
-            num_conv -= 1
-            
-            if num_conv == 0:
-                break #do not prune the last one bc messes up dims
+        
+        submodels = [model.extractionA.model, model.extractionB.model, model.regression.conv]
+        for submodel in submodels:
+            layers_of_interest = [layer for layer in submodel.children() if isinstance(layer, torch.nn.modules.conv._ConvNd) or isinstance(layer, nn.BatchNorm2d)]
+            num_conv = len([1 for layer in  layers_of_interest if isinstance(layer, torch.nn.modules.conv._ConvNd)])
+            for idx, module in enumerate(layers_of_interest):
+                if not isinstance(module, nn.Conv2d):
+                    continue
+                num_conv -= 1
+                
+                if num_conv == 0:
+                    break #do not prune the last one bc messes up dims
 
-            print("interest layer num:", idx)
-            # Compute Weight Value attributions
-            attr = attribution.run(module)
-            k = int(len(attr) / 10) #10%
-            pruning_indices = np.argpartition(attr, k)[:k]
+                print("interest layer num:", idx)
+                # Compute Weight Value attributions
+                attr = attribution.run(module)
+                k = int(len(attr) / 20) #5%
+                pruning_indices = np.argpartition(attr, k)[:k]
 
-            cascading = layers_of_interest[idx+1:]
-            print("cascading layers", cascading)
-            pruner.prune_model(module, indices=pruning_indices, cascading_modules=cascading)
-            # train for a few epochs
-            
-            pretty_print_dims(get_pruned_dimensions(submodel))
-            _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_brief) #14600 / 4 * 2 = 7000
+                cascading = layers_of_interest[idx+1:]
+                print("cascading layers", cascading)
+                pruner.prune_model(module, indices=pruning_indices, cascading_modules=cascading)
+                # train for a few epochs
+                
+                pretty_print_dims(get_pruned_dimensions(submodel))
+                _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_brief) #14600 / 4 * 2 = 7000
 
         #carefully finetune prunced model
         pretty_print_dims(get_pruned_dimensions(submodel))
