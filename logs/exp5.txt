@@ -1,0 +1,1992 @@
+True, track_running_stats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 42 units from BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 42 units from Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 42 units from Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 22, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([256, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([256])
+(9): Conv2d torch.Size([512, 256, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([512])
+(12): Conv2d torch.Size([512, 512, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.329, loss: 0.072765, (40*Lgic): 0.00750155, Lwarp: 0.065263
+step:       40, time: 0.317, loss: 0.128359, (40*Lgic): 0.00656681, Lwarp: 0.121792
+step:       60, time: 0.502, loss: 0.092508, (40*Lgic): 0.00732491, Lwarp: 0.085183
+step:       80, time: 0.354, loss: 0.119972, (40*Lgic): 0.00689988, Lwarp: 0.113072
+step:      100, time: 0.302, loss: 0.081926, (40*Lgic): 0.00731104, Lwarp: 0.074615
+step:      120, time: 0.357, loss: 0.093167, (40*Lgic): 0.00661643, Lwarp: 0.086551
+step:      140, time: 0.331, loss: 0.134513, (40*Lgic): 0.00707546, Lwarp: 0.127437
+step:      160, time: 0.373, loss: 0.084750, (40*Lgic): 0.00583040, Lwarp: 0.078920
+step:      180, time: 0.415, loss: 0.089244, (40*Lgic): 0.00710150, Lwarp: 0.082143
+step:      200, time: 0.343, loss: 0.101701, (40*Lgic): 0.00738709, Lwarp: 0.094314
+step:      220, time: 0.322, loss: 0.096566, (40*Lgic): 0.00685365, Lwarp: 0.089712
+step:      240, time: 0.399, loss: 0.089976, (40*Lgic): 0.00714957, Lwarp: 0.082827
+step:      260, time: 0.299, loss: 0.096625, (40*Lgic): 0.00675333, Lwarp: 0.089871
+step:      280, time: 0.353, loss: 0.078151, (40*Lgic): 0.00639012, Lwarp: 0.071761
+step:      300, time: 0.418, loss: 0.092683, (40*Lgic): 0.00600286, Lwarp: 0.086680
+step:      320, time: 0.383, loss: 0.102674, (40*Lgic): 0.00644976, Lwarp: 0.096224
+step:      340, time: 0.481, loss: 0.121277, (40*Lgic): 0.00586908, Lwarp: 0.115408
+step:      360, time: 0.371, loss: 0.095231, (40*Lgic): 0.00571692, Lwarp: 0.089514
+step:      380, time: 0.308, loss: 0.068150, (40*Lgic): 0.00579568, Lwarp: 0.062354
+step:      400, time: 0.351, loss: 0.069344, (40*Lgic): 0.00638749, Lwarp: 0.062957
+step:      420, time: 0.337, loss: 0.081207, (40*Lgic): 0.00654155, Lwarp: 0.074665
+step:      440, time: 0.361, loss: 0.081505, (40*Lgic): 0.00607841, Lwarp: 0.075427
+step:      460, time: 0.394, loss: 0.108701, (40*Lgic): 0.00567632, Lwarp: 0.103025
+step:      480, time: 0.435, loss: 0.098634, (40*Lgic): 0.00570011, Lwarp: 0.092933
+step:      500, time: 0.420, loss: 0.096590, (40*Lgic): 0.00527370, Lwarp: 0.091317
+step:      520, time: 0.338, loss: 0.082722, (40*Lgic): 0.00501848, Lwarp: 0.077704
+step:      540, time: 0.285, loss: 0.064219, (40*Lgic): 0.00530260, Lwarp: 0.058916
+step:      560, time: 0.339, loss: 0.089112, (40*Lgic): 0.00569574, Lwarp: 0.083416
+step:      580, time: 0.403, loss: 0.100668, (40*Lgic): 0.00570196, Lwarp: 0.094966
+step:      600, time: 0.459, loss: 0.066750, (40*Lgic): 0.00520892, Lwarp: 0.061542
+step:      620, time: 0.314, loss: 0.085983, (40*Lgic): 0.00537623, Lwarp: 0.080606
+step:      640, time: 0.485, loss: 0.092812, (40*Lgic): 0.00498526, Lwarp: 0.087826
+step:      660, time: 0.428, loss: 0.069641, (40*Lgic): 0.00505726, Lwarp: 0.064584
+step:      680, time: 0.435, loss: 0.076681, (40*Lgic): 0.00513899, Lwarp: 0.071542
+step:      700, time: 0.308, loss: 0.083483, (40*Lgic): 0.00524587, Lwarp: 0.078237
+step:      720, time: 0.365, loss: 0.070295, (40*Lgic): 0.00509647, Lwarp: 0.065199
+step:      740, time: 0.384, loss: 0.052487, (40*Lgic): 0.00450896, Lwarp: 0.047978
+step:      760, time: 0.423, loss: 0.079500, (40*Lgic): 0.00455042, Lwarp: 0.074950
+step:      780, time: 0.377, loss: 0.066843, (40*Lgic): 0.00503520, Lwarp: 0.061807
+step:      800, time: 0.299, loss: 0.067602, (40*Lgic): 0.00453544, Lwarp: 0.063067
+step:      820, time: 0.353, loss: 0.071127, (40*Lgic): 0.00450724, Lwarp: 0.066620
+step:      840, time: 0.402, loss: 0.056293, (40*Lgic): 0.00466913, Lwarp: 0.051624
+step:      860, time: 0.428, loss: 0.076338, (40*Lgic): 0.00552842, Lwarp: 0.070810
+step:      880, time: 0.418, loss: 0.063151, (40*Lgic): 0.00505173, Lwarp: 0.058099
+step:      900, time: 0.360, loss: 0.072172, (40*Lgic): 0.00516124, Lwarp: 0.067011
+step:      920, time: 0.280, loss: 0.104635, (40*Lgic): 0.00478217, Lwarp: 0.099853
+step:      940, time: 0.264, loss: 0.070937, (40*Lgic): 0.00439984, Lwarp: 0.066537
+step:      960, time: 0.375, loss: 0.065431, (40*Lgic): 0.00409301, Lwarp: 0.061338
+step:      980, time: 0.326, loss: 0.088018, (40*Lgic): 0.00518119, Lwarp: 0.082837
+step:     1000, time: 0.383, loss: 0.063934, (40*Lgic): 0.00457321, Lwarp: 0.059361
+step:     1020, time: 0.397, loss: 0.077681, (40*Lgic): 0.00420838, Lwarp: 0.073473
+step:     1040, time: 0.297, loss: 0.066787, (40*Lgic): 0.00510397, Lwarp: 0.061683
+step:     1060, time: 0.467, loss: 0.055431, (40*Lgic): 0.00435772, Lwarp: 0.051073
+step:     1080, time: 0.299, loss: 0.077871, (40*Lgic): 0.00395554, Lwarp: 0.073916
+step:     1100, time: 0.351, loss: 0.110747, (40*Lgic): 0.00397907, Lwarp: 0.106767
+step:     1120, time: 0.373, loss: 0.076153, (40*Lgic): 0.00425040, Lwarp: 0.071902
+step:     1140, time: 0.392, loss: 0.104451, (40*Lgic): 0.00408133, Lwarp: 0.100369
+step:     1160, time: 0.290, loss: 0.065328, (40*Lgic): 0.00398552, Lwarp: 0.061343
+step:     1180, time: 0.383, loss: 0.062004, (40*Lgic): 0.00444657, Lwarp: 0.057557
+step:     1200, time: 0.337, loss: 0.050024, (40*Lgic): 0.00442954, Lwarp: 0.045594
+step:     1220, time: 0.374, loss: 0.079380, (40*Lgic): 0.00404215, Lwarp: 0.075337
+step:     1240, time: 0.381, loss: 0.050798, (40*Lgic): 0.00412596, Lwarp: 0.046672
+step:     1260, time: 0.392, loss: 0.060926, (40*Lgic): 0.00440026, Lwarp: 0.056525
+step:     1280, time: 0.334, loss: 0.056397, (40*Lgic): 0.00402258, Lwarp: 0.052374
+step:     1300, time: 0.292, loss: 0.063115, (40*Lgic): 0.00402295, Lwarp: 0.059092
+step:     1320, time: 0.390, loss: 0.064991, (40*Lgic): 0.00414952, Lwarp: 0.060841
+step:     1340, time: 0.393, loss: 0.060480, (40*Lgic): 0.00370802, Lwarp: 0.056772
+step:     1360, time: 0.402, loss: 0.050092, (40*Lgic): 0.00387590, Lwarp: 0.046216
+step:     1380, time: 0.294, loss: 0.058212, (40*Lgic): 0.00353487, Lwarp: 0.054677
+step:     1400, time: 0.495, loss: 0.066684, (40*Lgic): 0.00413579, Lwarp: 0.062548
+step:     1420, time: 0.344, loss: 0.054250, (40*Lgic): 0.00386898, Lwarp: 0.050381
+step:     1440, time: 0.302, loss: 0.061114, (40*Lgic): 0.00376127, Lwarp: 0.057353
+step:     1460, time: 0.410, loss: 0.051098, (40*Lgic): 0.00378253, Lwarp: 0.047315
+step:     1480, time: 0.390, loss: 0.067283, (40*Lgic): 0.00368800, Lwarp: 0.063595
+^[[A^[[A^[[A^[[A^[[B^[[B^[[B^[[B^[[B^[[Bstep:     1500, time: 0.369, loss: 0.055656, (40*Lgic): 0.00372941, Lwarp: 0.051927
+step:     1520, time: 0.384, loss: 0.067218, (40*Lgic): 0.00337612, Lwarp: 0.063842
+step:     1540, time: 0.320, loss: 0.052926, (40*Lgic): 0.00345425, Lwarp: 0.049472
+step:     1560, time: 0.130, loss: 0.061438, (40*Lgic): 0.00407099, Lwarp: 0.057367
+step:     1580, time: 0.128, loss: 0.057514, (40*Lgic): 0.00328254, Lwarp: 0.054231
+step:     1600, time: 0.132, loss: 0.048693, (40*Lgic): 0.00343450, Lwarp: 0.045259
+step:     1620, time: 0.128, loss: 0.056702, (40*Lgic): 0.00350825, Lwarp: 0.053194
+step:     1640, time: 0.128, loss: 0.049749, (40*Lgic): 0.00360918, Lwarp: 0.046140
+^V^Vstep:     1660, time: 0.131, loss: 0.051917, (40*Lgic): 0.00333169, Lwarp: 0.048585
+^V^V^Vstep:     1680, time: 0.127, loss: 0.060787, (40*Lgic): 0.00311580, Lwarp: 0.057672
+^V^[^[^[[[step:     1700, time: 0.125, loss: 0.050928, (40*Lgic): 0.00325780, Lwarp: 0.047670
+step:     1720, time: 0.130, loss: 0.059932, (40*Lgic): 0.00359926, Lwarp: 0.056333
+step:     1740, time: 0.109, loss: 0.059230, (40*Lgic): 0.00314123, Lwarp: 0.056089
+step:     1760, time: 0.125, loss: 0.054612, (40*Lgic): 0.00378944, Lwarp: 0.050823
+step:     1780, time: 0.133, loss: 0.047637, (40*Lgic): 0.00314688, Lwarp: 0.044490
+step:     1800, time: 0.129, loss: 0.040813, (40*Lgic): 0.00319912, Lwarp: 0.037614
+step:     1820, time: 0.125, loss: 0.058459, (40*Lgic): 0.00359877, Lwarp: 0.054860
+^[^[[Astep:     1840, time: 0.132, loss: 0.072088, (40*Lgic): 0.00361094, Lwarp: 0.068477
+^[[A^[[Astep:     1860, time: 0.127, loss: 0.058174, (40*Lgic): 0.00329356, Lwarp: 0.054881
+step:     1880, time: 0.125, loss: 0.050632, (40*Lgic): 0.00321309, Lwarp: 0.047419
+^[[Astep:     1900, time: 0.128, loss: 0.051304, (40*Lgic): 0.00316540, Lwarp: 0.048138
+^[[A^[[Astep:     1920, time: 0.127, loss: 0.045805, (40*Lgic): 0.00281745, Lwarp: 0.042988
+step:     1940, time: 0.119, loss: 0.043414, (40*Lgic): 0.00333619, Lwarp: 0.040078
+step:     1960, time: 0.125, loss: 0.088373, (40*Lgic): 0.00288306, Lwarp: 0.085489
+step:     1980, time: 0.130, loss: 0.043464, (40*Lgic): 0.00280944, Lwarp: 0.040655
+step:     2000, time: 0.127, loss: 0.044581, (40*Lgic): 0.00283593, Lwarp: 0.041746
+interest layer num: 4
+cascading layers [BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(256, 512, kernel_size=(
+4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(51
+2, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_s
+tats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 85 units from BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 85 units from Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 85 units from Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 22, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([512, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([512])
+(12): Conv2d torch.Size([512, 512, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.157, loss: 0.047337, (40*Lgic): 0.00334422, Lwarp: 0.043993
+step:       40, time: 0.147, loss: 0.048153, (40*Lgic): 0.00295537, Lwarp: 0.045198
+step:       60, time: 0.149, loss: 0.058802, (40*Lgic): 0.00265909, Lwarp: 0.056143
+step:       80, time: 0.151, loss: 0.094643, (40*Lgic): 0.00265299, Lwarp: 0.091990
+step:      100, time: 0.147, loss: 0.045003, (40*Lgic): 0.00261969, Lwarp: 0.042383
+step:      120, time: 0.149, loss: 0.050813, (40*Lgic): 0.00324367, Lwarp: 0.047570
+step:      140, time: 0.157, loss: 0.059490, (40*Lgic): 0.00333610, Lwarp: 0.056154
+step:      160, time: 0.156, loss: 0.064632, (40*Lgic): 0.00306665, Lwarp: 0.061566
+step:      180, time: 0.153, loss: 0.046974, (40*Lgic): 0.00248594, Lwarp: 0.044488
+step:      200, time: 0.156, loss: 0.043986, (40*Lgic): 0.00275691, Lwarp: 0.041229
+step:      220, time: 0.146, loss: 0.036745, (40*Lgic): 0.00224174, Lwarp: 0.034503
+step:      240, time: 0.146, loss: 0.050734, (40*Lgic): 0.00269481, Lwarp: 0.048039
+step:      260, time: 0.150, loss: 0.056238, (40*Lgic): 0.00276080, Lwarp: 0.053477
+step:      280, time: 0.152, loss: 0.050294, (40*Lgic): 0.00263261, Lwarp: 0.047661
+step:      300, time: 0.153, loss: 0.060427, (40*Lgic): 0.00262737, Lwarp: 0.057800
+step:      320, time: 0.146, loss: 0.043077, (40*Lgic): 0.00267308, Lwarp: 0.040404
+step:      340, time: 0.152, loss: 0.056667, (40*Lgic): 0.00265089, Lwarp: 0.054016
+step:      360, time: 0.150, loss: 0.049728, (40*Lgic): 0.00279244, Lwarp: 0.046936
+step:      380, time: 0.149, loss: 0.051383, (40*Lgic): 0.00261501, Lwarp: 0.048768
+step:      400, time: 0.158, loss: 0.049607, (40*Lgic): 0.00281083, Lwarp: 0.046796
+step:      420, time: 0.147, loss: 0.047118, (40*Lgic): 0.00266590, Lwarp: 0.044452
+step:      440, time: 0.145, loss: 0.051844, (40*Lgic): 0.00267892, Lwarp: 0.049165
+step:      460, time: 0.147, loss: 0.040712, (40*Lgic): 0.00270936, Lwarp: 0.038003
+step:      480, time: 0.148, loss: 0.097112, (40*Lgic): 0.00270533, Lwarp: 0.094407
+step:      500, time: 0.139, loss: 0.061114, (40*Lgic): 0.00268182, Lwarp: 0.058433
+step:      520, time: 0.157, loss: 0.049505, (40*Lgic): 0.00245121, Lwarp: 0.047054
+step:      540, time: 0.156, loss: 0.038919, (40*Lgic): 0.00262367, Lwarp: 0.036296
+step:      560, time: 0.148, loss: 0.039348, (40*Lgic): 0.00249761, Lwarp: 0.036850
+step:      580, time: 0.146, loss: 0.049488, (40*Lgic): 0.00257371, Lwarp: 0.046915
+step:      600, time: 0.149, loss: 0.063462, (40*Lgic): 0.00246525, Lwarp: 0.060997
+step:      620, time: 0.159, loss: 0.047151, (40*Lgic): 0.00246086, Lwarp: 0.044690
+step:      640, time: 0.150, loss: 0.064130, (40*Lgic): 0.00208476, Lwarp: 0.062045
+step:      660, time: 0.154, loss: 0.041237, (40*Lgic): 0.00282303, Lwarp: 0.038414
+step:      680, time: 0.151, loss: 0.042696, (40*Lgic): 0.00255494, Lwarp: 0.040141
+step:      700, time: 0.158, loss: 0.079451, (40*Lgic): 0.00238501, Lwarp: 0.077066
+step:      720, time: 0.154, loss: 0.038211, (40*Lgic): 0.00257287, Lwarp: 0.035638
+step:      740, time: 0.154, loss: 0.041614, (40*Lgic): 0.00259716, Lwarp: 0.039017
+step:      760, time: 0.151, loss: 0.055909, (40*Lgic): 0.00245402, Lwarp: 0.053455
+step:      780, time: 0.151, loss: 0.048494, (40*Lgic): 0.00224769, Lwarp: 0.046246
+step:      800, time: 0.154, loss: 0.049766, (40*Lgic): 0.00244106, Lwarp: 0.047325
+step:      820, time: 0.150, loss: 0.040842, (40*Lgic): 0.00229700, Lwarp: 0.038545
+step:      840, time: 0.152, loss: 0.046974, (40*Lgic): 0.00249617, Lwarp: 0.044478
+step:      860, time: 0.144, loss: 0.050007, (40*Lgic): 0.00255942, Lwarp: 0.047448
+step:      880, time: 0.151, loss: 0.037462, (40*Lgic): 0.00238935, Lwarp: 0.035072
+step:      900, time: 0.153, loss: 0.036666, (40*Lgic): 0.00243421, Lwarp: 0.034232
+step:      920, time: 0.150, loss: 0.056364, (40*Lgic): 0.00244551, Lwarp: 0.053918
+step:      940, time: 0.152, loss: 0.041763, (40*Lgic): 0.00243017, Lwarp: 0.039332
+step:      960, time: 0.151, loss: 0.058888, (40*Lgic): 0.00231025, Lwarp: 0.056578
+step:      980, time: 0.150, loss: 0.072132, (40*Lgic): 0.00231288, Lwarp: 0.069820
+step:     1000, time: 0.163, loss: 0.050374, (40*Lgic): 0.00222885, Lwarp: 0.048145
+step:     1020, time: 0.148, loss: 0.045585, (40*Lgic): 0.00217264, Lwarp: 0.043412
+step:     1040, time: 0.153, loss: 0.045113, (40*Lgic): 0.00236389, Lwarp: 0.042749
+step:     1060, time: 0.152, loss: 0.047313, (40*Lgic): 0.00244008, Lwarp: 0.044872
+step:     1080, time: 0.150, loss: 0.039897, (40*Lgic): 0.00241054, Lwarp: 0.037487
+step:     1100, time: 0.155, loss: 0.037804, (40*Lgic): 0.00244168, Lwarp: 0.035362
+step:     1120, time: 0.149, loss: 0.053290, (40*Lgic): 0.00239817, Lwarp: 0.050892
+step:     1140, time: 0.151, loss: 0.052411, (40*Lgic): 0.00190760, Lwarp: 0.050504
+step:     1160, time: 0.152, loss: 0.034620, (40*Lgic): 0.00201598, Lwarp: 0.032604
+step:     1180, time: 0.147, loss: 0.038826, (40*Lgic): 0.00229164, Lwarp: 0.036535
+step:     1200, time: 0.150, loss: 0.053199, (40*Lgic): 0.00233061, Lwarp: 0.050868
+step:     1220, time: 0.153, loss: 0.038496, (40*Lgic): 0.00245406, Lwarp: 0.036042
+step:     1240, time: 0.151, loss: 0.059823, (40*Lgic): 0.00231250, Lwarp: 0.057510
+step:     1260, time: 0.153, loss: 0.041440, (40*Lgic): 0.00213090, Lwarp: 0.039309
+step:     1280, time: 0.152, loss: 0.041149, (40*Lgic): 0.00217542, Lwarp: 0.038974
+step:     1300, time: 0.155, loss: 0.037271, (40*Lgic): 0.00186974, Lwarp: 0.035401
+step:     1320, time: 0.152, loss: 0.061660, (40*Lgic): 0.00209486, Lwarp: 0.059565
+step:     1340, time: 0.150, loss: 0.057765, (40*Lgic): 0.00201870, Lwarp: 0.055747
+step:     1360, time: 0.148, loss: 0.035856, (40*Lgic): 0.00232975, Lwarp: 0.033526
+step:     1380, time: 0.150, loss: 0.039975, (40*Lgic): 0.00176341, Lwarp: 0.038211
+step:     1400, time: 0.154, loss: 0.040342, (40*Lgic): 0.00193957, Lwarp: 0.038402
+step:     1420, time: 0.148, loss: 0.042769, (40*Lgic): 0.00205265, Lwarp: 0.040717
+step:     1440, time: 0.159, loss: 0.056112, (40*Lgic): 0.00210437, Lwarp: 0.054007
+step:     1460, time: 0.153, loss: 0.039284, (40*Lgic): 0.00230255, Lwarp: 0.036982
+step:     1480, time: 0.147, loss: 0.037007, (40*Lgic): 0.00214061, Lwarp: 0.034866
+step:     1500, time: 0.163, loss: 0.034722, (40*Lgic): 0.00186403, Lwarp: 0.032858
+step:     1520, time: 0.151, loss: 0.040290, (40*Lgic): 0.00204330, Lwarp: 0.038247
+step:     1540, time: 0.151, loss: 0.036267, (40*Lgic): 0.00199275, Lwarp: 0.034275
+step:     1560, time: 0.146, loss: 0.039905, (40*Lgic): 0.00181738, Lwarp: 0.038087
+step:     1580, time: 0.153, loss: 0.045703, (40*Lgic): 0.00193777, Lwarp: 0.043765
+step:     1600, time: 0.150, loss: 0.045942, (40*Lgic): 0.00216225, Lwarp: 0.043780
+step:     1620, time: 0.148, loss: 0.040966, (40*Lgic): 0.00177763, Lwarp: 0.039188
+step:     1640, time: 0.145, loss: 0.067619, (40*Lgic): 0.00202726, Lwarp: 0.065592
+step:     1660, time: 0.147, loss: 0.029506, (40*Lgic): 0.00209273, Lwarp: 0.027413
+step:     1680, time: 0.151, loss: 0.047451, (40*Lgic): 0.00202789, Lwarp: 0.045423
+step:     1700, time: 0.150, loss: 0.056695, (40*Lgic): 0.00196553, Lwarp: 0.054729
+step:     1720, time: 0.154, loss: 0.046167, (40*Lgic): 0.00204116, Lwarp: 0.044126
+step:     1740, time: 0.159, loss: 0.032155, (40*Lgic): 0.00194443, Lwarp: 0.030211
+step:     1760, time: 0.154, loss: 0.063010, (40*Lgic): 0.00178151, Lwarp: 0.061229
+step:     1780, time: 0.153, loss: 0.036791, (40*Lgic): 0.00202235, Lwarp: 0.034768
+step:     1800, time: 0.147, loss: 0.033771, (40*Lgic): 0.00198467, Lwarp: 0.031786
+step:     1820, time: 0.151, loss: 0.056243, (40*Lgic): 0.00190455, Lwarp: 0.054339
+step:     1840, time: 0.161, loss: 0.043251, (40*Lgic): 0.00225631, Lwarp: 0.040995
+step:     1860, time: 0.152, loss: 0.044586, (40*Lgic): 0.00180921, Lwarp: 0.042777
+step:     1880, time: 0.144, loss: 0.032070, (40*Lgic): 0.00186873, Lwarp: 0.030202
+step:     1900, time: 0.150, loss: 0.046532, (40*Lgic): 0.00206397, Lwarp: 0.044468
+step:     1920, time: 0.150, loss: 0.030410, (40*Lgic): 0.00191175, Lwarp: 0.028498
+step:     1940, time: 0.154, loss: 0.040456, (40*Lgic): 0.00192753, Lwarp: 0.038528
+step:     1960, time: 0.153, loss: 0.047601, (40*Lgic): 0.00219265, Lwarp: 0.045409
+step:     1980, time: 0.148, loss: 0.036473, (40*Lgic): 0.00158162, Lwarp: 0.034892
+step:     2000, time: 0.149, loss: 0.036584, (40*Lgic): 0.00171766, Lwarp: 0.034867
+interest layer num: 6
+cascading layers [BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 512, kernel_size=(
+3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(51
+2, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 170 units from BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 170 units from Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 22, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([342, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([342])
+(12): Conv2d torch.Size([512, 342, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.142, loss: 0.029871, (40*Lgic): 0.00179318, Lwarp: 0.028078
+step:       40, time: 0.123, loss: 0.076314, (40*Lgic): 0.00181532, Lwarp: 0.074499
+step:       60, time: 0.145, loss: 0.033637, (40*Lgic): 0.00174593, Lwarp: 0.031891
+step:       80, time: 0.152, loss: 0.040587, (40*Lgic): 0.00190535, Lwarp: 0.038681
+step:      100, time: 0.146, loss: 0.037034, (40*Lgic): 0.00183040, Lwarp: 0.035203
+step:      120, time: 0.144, loss: 0.031109, (40*Lgic): 0.00187224, Lwarp: 0.029236
+step:      140, time: 0.143, loss: 0.053666, (40*Lgic): 0.00166166, Lwarp: 0.052004
+step:      160, time: 0.152, loss: 0.038132, (40*Lgic): 0.00165726, Lwarp: 0.036475
+step:      180, time: 0.145, loss: 0.036708, (40*Lgic): 0.00202279, Lwarp: 0.034685
+step:      200, time: 0.150, loss: 0.042799, (40*Lgic): 0.00186010, Lwarp: 0.040939
+step:      220, time: 0.135, loss: 0.045658, (40*Lgic): 0.00187631, Lwarp: 0.043782
+step:      240, time: 0.139, loss: 0.030883, (40*Lgic): 0.00194602, Lwarp: 0.028937
+step:      260, time: 0.142, loss: 0.039447, (40*Lgic): 0.00185140, Lwarp: 0.037596
+step:      280, time: 0.136, loss: 0.042404, (40*Lgic): 0.00183111, Lwarp: 0.040572
+step:      300, time: 0.141, loss: 0.034807, (40*Lgic): 0.00166414, Lwarp: 0.033142
+step:      320, time: 0.149, loss: 0.029014, (40*Lgic): 0.00183754, Lwarp: 0.027177
+step:      340, time: 0.147, loss: 0.085493, (40*Lgic): 0.00180444, Lwarp: 0.083688
+step:      360, time: 0.142, loss: 0.036075, (40*Lgic): 0.00176041, Lwarp: 0.034314
+step:      380, time: 0.141, loss: 0.029547, (40*Lgic): 0.00162937, Lwarp: 0.027918
+step:      400, time: 0.143, loss: 0.040642, (40*Lgic): 0.00200910, Lwarp: 0.038633
+step:      420, time: 0.151, loss: 0.047921, (40*Lgic): 0.00177882, Lwarp: 0.046142
+step:      440, time: 0.142, loss: 0.031395, (40*Lgic): 0.00182245, Lwarp: 0.029572
+step:      460, time: 0.147, loss: 0.042054, (40*Lgic): 0.00186630, Lwarp: 0.040188
+step:      480, time: 0.144, loss: 0.029964, (40*Lgic): 0.00195993, Lwarp: 0.028004
+step:      500, time: 0.145, loss: 0.035722, (40*Lgic): 0.00186771, Lwarp: 0.033854
+step:      520, time: 0.150, loss: 0.030049, (40*Lgic): 0.00171437, Lwarp: 0.028334
+step:      540, time: 0.148, loss: 0.054920, (40*Lgic): 0.00172559, Lwarp: 0.053195
+step:      560, time: 0.145, loss: 0.037305, (40*Lgic): 0.00163904, Lwarp: 0.035666
+step:      580, time: 0.143, loss: 0.060440, (40*Lgic): 0.00183033, Lwarp: 0.058610
+step:      600, time: 0.142, loss: 0.036535, (40*Lgic): 0.00179774, Lwarp: 0.034738
+step:      620, time: 0.141, loss: 0.031728, (40*Lgic): 0.00183999, Lwarp: 0.029888
+step:      640, time: 0.151, loss: 0.038521, (40*Lgic): 0.00177367, Lwarp: 0.036747
+step:      660, time: 0.141, loss: 0.028261, (40*Lgic): 0.00170561, Lwarp: 0.026555
+step:      680, time: 0.136, loss: 0.035843, (40*Lgic): 0.00169059, Lwarp: 0.034153
+step:      700, time: 0.141, loss: 0.035176, (40*Lgic): 0.00175518, Lwarp: 0.033420
+step:      720, time: 0.145, loss: 0.028285, (40*Lgic): 0.00174632, Lwarp: 0.026539
+step:      740, time: 0.145, loss: 0.026996, (40*Lgic): 0.00164036, Lwarp: 0.025356
+step:      760, time: 0.145, loss: 0.032213, (40*Lgic): 0.00177281, Lwarp: 0.030440
+step:      780, time: 0.143, loss: 0.034585, (40*Lgic): 0.00160455, Lwarp: 0.032981
+step:      800, time: 0.142, loss: 0.035779, (40*Lgic): 0.00174975, Lwarp: 0.034030
+step:      820, time: 0.148, loss: 0.034829, (40*Lgic): 0.00149574, Lwarp: 0.033333
+step:      840, time: 0.172, loss: 0.027748, (40*Lgic): 0.00151598, Lwarp: 0.026232
+step:      860, time: 0.145, loss: 0.032258, (40*Lgic): 0.00164712, Lwarp: 0.030611
+step:      880, time: 0.142, loss: 0.037769, (40*Lgic): 0.00147039, Lwarp: 0.036299
+step:      900, time: 0.145, loss: 0.039129, (40*Lgic): 0.00159573, Lwarp: 0.037533
+step:      920, time: 0.137, loss: 0.026456, (40*Lgic): 0.00167628, Lwarp: 0.024780
+step:      940, time: 0.135, loss: 0.030075, (40*Lgic): 0.00177633, Lwarp: 0.028299
+step:      960, time: 0.140, loss: 0.028832, (40*Lgic): 0.00154308, Lwarp: 0.027289
+step:      980, time: 0.142, loss: 0.030390, (40*Lgic): 0.00145444, Lwarp: 0.028936
+step:     1000, time: 0.137, loss: 0.028638, (40*Lgic): 0.00180918, Lwarp: 0.026829
+step:     1020, time: 0.150, loss: 0.043365, (40*Lgic): 0.00170714, Lwarp: 0.041658
+step:     1040, time: 0.151, loss: 0.027162, (40*Lgic): 0.00164138, Lwarp: 0.025521
+step:     1060, time: 0.143, loss: 0.035072, (40*Lgic): 0.00156907, Lwarp: 0.033503
+step:     1080, time: 0.144, loss: 0.032454, (40*Lgic): 0.00158731, Lwarp: 0.030867
+step:     1100, time: 0.143, loss: 0.035765, (40*Lgic): 0.00178842, Lwarp: 0.033977
+step:     1120, time: 0.138, loss: 0.041080, (40*Lgic): 0.00173892, Lwarp: 0.039341
+step:     1140, time: 0.150, loss: 0.026647, (40*Lgic): 0.00168408, Lwarp: 0.024963
+step:     1160, time: 0.137, loss: 0.033114, (40*Lgic): 0.00156015, Lwarp: 0.031553
+step:     1180, time: 0.146, loss: 0.025722, (40*Lgic): 0.00156707, Lwarp: 0.024155
+step:     1200, time: 0.143, loss: 0.033648, (40*Lgic): 0.00174270, Lwarp: 0.031905
+step:     1220, time: 0.153, loss: 0.026864, (40*Lgic): 0.00157533, Lwarp: 0.025289
+step:     1240, time: 0.145, loss: 0.038038, (40*Lgic): 0.00156151, Lwarp: 0.036476
+step:     1260, time: 0.151, loss: 0.031814, (40*Lgic): 0.00173572, Lwarp: 0.030078
+step:     1280, time: 0.137, loss: 0.032710, (40*Lgic): 0.00163191, Lwarp: 0.031078
+step:     1300, time: 0.141, loss: 0.027361, (40*Lgic): 0.00154519, Lwarp: 0.025816
+step:     1320, time: 0.115, loss: 0.055467, (40*Lgic): 0.00161693, Lwarp: 0.053850
+step:     1340, time: 0.137, loss: 0.023922, (40*Lgic): 0.00153498, Lwarp: 0.022387
+step:     1360, time: 0.152, loss: 0.037167, (40*Lgic): 0.00145806, Lwarp: 0.035709
+step:     1380, time: 0.141, loss: 0.029509, (40*Lgic): 0.00141916, Lwarp: 0.028090
+step:     1400, time: 0.145, loss: 0.034259, (40*Lgic): 0.00152293, Lwarp: 0.032736
+step:     1420, time: 0.135, loss: 0.031192, (40*Lgic): 0.00158631, Lwarp: 0.029606
+step:     1440, time: 0.143, loss: 0.028471, (40*Lgic): 0.00146192, Lwarp: 0.027009
+step:     1460, time: 0.149, loss: 0.035706, (40*Lgic): 0.00159481, Lwarp: 0.034111
+step:     1480, time: 0.155, loss: 0.037644, (40*Lgic): 0.00171801, Lwarp: 0.035926
+step:     1500, time: 0.152, loss: 0.049088, (40*Lgic): 0.00147214, Lwarp: 0.047616
+step:     1520, time: 0.135, loss: 0.030013, (40*Lgic): 0.00147224, Lwarp: 0.028541
+step:     1540, time: 0.145, loss: 0.033269, (40*Lgic): 0.00125459, Lwarp: 0.032014
+step:     1560, time: 0.136, loss: 0.025193, (40*Lgic): 0.00158202, Lwarp: 0.023611
+step:     1580, time: 0.139, loss: 0.041601, (40*Lgic): 0.00154397, Lwarp: 0.040057
+step:     1600, time: 0.140, loss: 0.045121, (40*Lgic): 0.00154257, Lwarp: 0.043578
+step:     1620, time: 0.142, loss: 0.036841, (40*Lgic): 0.00141499, Lwarp: 0.035426
+step:     1640, time: 0.133, loss: 0.027792, (40*Lgic): 0.00143220, Lwarp: 0.026360
+step:     1660, time: 0.146, loss: 0.033108, (40*Lgic): 0.00165158, Lwarp: 0.031456
+step:     1680, time: 0.143, loss: 0.039084, (40*Lgic): 0.00152938, Lwarp: 0.037555
+step:     1700, time: 0.143, loss: 0.025381, (40*Lgic): 0.00164622, Lwarp: 0.023735
+step:     1720, time: 0.135, loss: 0.027735, (40*Lgic): 0.00174517, Lwarp: 0.025990
+step:     1740, time: 0.149, loss: 0.023656, (40*Lgic): 0.00161663, Lwarp: 0.022040
+step:     1760, time: 0.151, loss: 0.035430, (40*Lgic): 0.00136774, Lwarp: 0.034062
+step:     1780, time: 0.142, loss: 0.029883, (40*Lgic): 0.00149993, Lwarp: 0.028383
+step:     1800, time: 0.141, loss: 0.032785, (40*Lgic): 0.00136163, Lwarp: 0.031424
+step:     1820, time: 0.145, loss: 0.027307, (40*Lgic): 0.00131221, Lwarp: 0.025995
+step:     1840, time: 0.135, loss: 0.033054, (40*Lgic): 0.00141919, Lwarp: 0.031635
+step:     1860, time: 0.138, loss: 0.026344, (40*Lgic): 0.00166396, Lwarp: 0.024680
+step:     1880, time: 0.127, loss: 0.030672, (40*Lgic): 0.00153437, Lwarp: 0.029137
+step:     1900, time: 0.155, loss: 0.026788, (40*Lgic): 0.00149539, Lwarp: 0.025293
+step:     1920, time: 0.149, loss: 0.040974, (40*Lgic): 0.00130846, Lwarp: 0.039665
+step:     1940, time: 0.140, loss: 0.028033, (40*Lgic): 0.00123322, Lwarp: 0.026799
+step:     1960, time: 0.142, loss: 0.030003, (40*Lgic): 0.00142623, Lwarp: 0.028577
+step:     1980, time: 0.160, loss: 0.027489, (40*Lgic): 0.00146154, Lwarp: 0.026028
+step:     2000, time: 0.139, loss: 0.032079, (40*Lgic): 0.00144505, Lwarp: 0.030634
+interest layer num: 8
+cascading layers [BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 512, kernel_size=(
+3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 170 units from BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 22, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([342, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([342])
+(12): Conv2d torch.Size([342, 342, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([342])
+(15): Conv2d torch.Size([512, 342, 3, 3])
+(16): ReLU None
+step:       20, time: 0.138, loss: 0.071449, (40*Lgic): 0.00150760, Lwarp: 0.069942
+step:       40, time: 0.137, loss: 0.032187, (40*Lgic): 0.00129719, Lwarp: 0.030890
+step:       60, time: 0.118, loss: 0.039090, (40*Lgic): 0.00141143, Lwarp: 0.037679
+step:       80, time: 0.133, loss: 0.033673, (40*Lgic): 0.00168794, Lwarp: 0.031985
+step:      100, time: 0.157, loss: 0.038721, (40*Lgic): 0.00132748, Lwarp: 0.037394
+step:      120, time: 0.132, loss: 0.034826, (40*Lgic): 0.00156068, Lwarp: 0.033265
+step:      140, time: 0.135, loss: 0.026677, (40*Lgic): 0.00145476, Lwarp: 0.025223
+step:      160, time: 0.137, loss: 0.029609, (40*Lgic): 0.00150814, Lwarp: 0.028101
+step:      180, time: 0.131, loss: 0.037158, (40*Lgic): 0.00153145, Lwarp: 0.035626
+step:      200, time: 0.148, loss: 0.027574, (40*Lgic): 0.00144426, Lwarp: 0.026130
+step:      220, time: 0.158, loss: 0.035237, (40*Lgic): 0.00122680, Lwarp: 0.034010
+step:      240, time: 0.152, loss: 0.029122, (40*Lgic): 0.00148919, Lwarp: 0.027633
+step:      260, time: 0.139, loss: 0.041268, (40*Lgic): 0.00139383, Lwarp: 0.039874
+step:      280, time: 0.134, loss: 0.027618, (40*Lgic): 0.00147278, Lwarp: 0.026145
+step:      300, time: 0.133, loss: 0.035616, (40*Lgic): 0.00149139, Lwarp: 0.034125
+step:      320, time: 0.133, loss: 0.043268, (40*Lgic): 0.00136587, Lwarp: 0.041902
+step:      340, time: 0.135, loss: 0.032926, (40*Lgic): 0.00155425, Lwarp: 0.031372
+step:      360, time: 0.145, loss: 0.028037, (40*Lgic): 0.00120707, Lwarp: 0.026830
+step:      380, time: 0.135, loss: 0.030325, (40*Lgic): 0.00139148, Lwarp: 0.028933
+step:      400, time: 0.140, loss: 0.055088, (40*Lgic): 0.00140150, Lwarp: 0.053687
+step:      420, time: 0.162, loss: 0.023967, (40*Lgic): 0.00140811, Lwarp: 0.022559
+step:      440, time: 0.138, loss: 0.026432, (40*Lgic): 0.00141581, Lwarp: 0.025017
+step:      460, time: 0.135, loss: 0.023515, (40*Lgic): 0.00118768, Lwarp: 0.022327
+step:      480, time: 0.134, loss: 0.031114, (40*Lgic): 0.00148295, Lwarp: 0.029631
+step:      500, time: 0.144, loss: 0.022275, (40*Lgic): 0.00115888, Lwarp: 0.021116
+step:      520, time: 0.156, loss: 0.030300, (40*Lgic): 0.00145863, Lwarp: 0.028841
+step:      540, time: 0.133, loss: 0.030542, (40*Lgic): 0.00151146, Lwarp: 0.029030
+step:      560, time: 0.135, loss: 0.029519, (40*Lgic): 0.00145646, Lwarp: 0.028063
+step:      580, time: 0.138, loss: 0.023575, (40*Lgic): 0.00128135, Lwarp: 0.022294
+step:      600, time: 0.134, loss: 0.028624, (40*Lgic): 0.00156834, Lwarp: 0.027056
+step:      620, time: 0.135, loss: 0.033323, (40*Lgic): 0.00117073, Lwarp: 0.032152
+step:      640, time: 0.135, loss: 0.028401, (40*Lgic): 0.00136875, Lwarp: 0.027032
+step:      660, time: 0.134, loss: 0.028660, (40*Lgic): 0.00140857, Lwarp: 0.027251
+step:      680, time: 0.134, loss: 0.033460, (40*Lgic): 0.00129089, Lwarp: 0.032169
+step:      700, time: 0.135, loss: 0.033296, (40*Lgic): 0.00131268, Lwarp: 0.031984
+step:      720, time: 0.130, loss: 0.025478, (40*Lgic): 0.00140711, Lwarp: 0.024071
+step:      740, time: 0.130, loss: 0.025070, (40*Lgic): 0.00144246, Lwarp: 0.023627
+step:      760, time: 0.133, loss: 0.028530, (40*Lgic): 0.00132326, Lwarp: 0.027207
+step:      780, time: 0.142, loss: 0.030487, (40*Lgic): 0.00146711, Lwarp: 0.029020
+step:      800, time: 0.137, loss: 0.031606, (40*Lgic): 0.00136037, Lwarp: 0.030245
+step:      820, time: 0.135, loss: 0.030332, (40*Lgic): 0.00139542, Lwarp: 0.028937
+step:      840, time: 0.157, loss: 0.028458, (40*Lgic): 0.00136854, Lwarp: 0.027089
+step:      860, time: 0.135, loss: 0.033609, (40*Lgic): 0.00148606, Lwarp: 0.032123
+step:      880, time: 0.133, loss: 0.020659, (40*Lgic): 0.00138982, Lwarp: 0.019269
+step:      900, time: 0.132, loss: 0.026935, (40*Lgic): 0.00121571, Lwarp: 0.025719
+step:      920, time: 0.131, loss: 0.023627, (40*Lgic): 0.00138774, Lwarp: 0.022239
+step:      940, time: 0.132, loss: 0.029296, (40*Lgic): 0.00122824, Lwarp: 0.028068
+step:      960, time: 0.143, loss: 0.032751, (40*Lgic): 0.00149210, Lwarp: 0.031259
+step:      980, time: 0.139, loss: 0.032720, (40*Lgic): 0.00138869, Lwarp: 0.031332
+step:     1000, time: 0.138, loss: 0.026246, (40*Lgic): 0.00128346, Lwarp: 0.024962
+step:     1020, time: 0.137, loss: 0.027485, (40*Lgic): 0.00122732, Lwarp: 0.026258
+step:     1040, time: 0.136, loss: 0.021743, (40*Lgic): 0.00127250, Lwarp: 0.020471
+step:     1060, time: 0.129, loss: 0.025699, (40*Lgic): 0.00114960, Lwarp: 0.024549
+step:     1080, time: 0.137, loss: 0.038962, (40*Lgic): 0.00106765, Lwarp: 0.037894
+step:     1100, time: 0.156, loss: 0.030220, (40*Lgic): 0.00141100, Lwarp: 0.028809
+step:     1120, time: 0.141, loss: 0.033729, (40*Lgic): 0.00127712, Lwarp: 0.032452
+step:     1140, time: 0.134, loss: 0.029705, (40*Lgic): 0.00134381, Lwarp: 0.028361
+step:     1160, time: 0.133, loss: 0.023342, (40*Lgic): 0.00109573, Lwarp: 0.022247
+step:     1180, time: 0.130, loss: 0.030102, (40*Lgic): 0.00124004, Lwarp: 0.028862
+step:     1200, time: 0.135, loss: 0.038135, (40*Lgic): 0.00138626, Lwarp: 0.036749
+step:     1220, time: 0.134, loss: 0.021867, (40*Lgic): 0.00134587, Lwarp: 0.020521
+step:     1240, time: 0.130, loss: 0.024681, (40*Lgic): 0.00133398, Lwarp: 0.023347
+step:     1260, time: 0.132, loss: 0.033373, (40*Lgic): 0.00125343, Lwarp: 0.032120
+step:     1280, time: 0.134, loss: 0.021989, (40*Lgic): 0.00109087, Lwarp: 0.020898
+step:     1300, time: 0.133, loss: 0.026110, (40*Lgic): 0.00137857, Lwarp: 0.024731
+step:     1320, time: 0.132, loss: 0.028136, (40*Lgic): 0.00122274, Lwarp: 0.026913
+step:     1340, time: 0.136, loss: 0.043356, (40*Lgic): 0.00114654, Lwarp: 0.042209
+step:     1360, time: 0.132, loss: 0.023918, (40*Lgic): 0.00118122, Lwarp: 0.022737
+step:     1380, time: 0.136, loss: 0.024228, (40*Lgic): 0.00124950, Lwarp: 0.022978
+step:     1400, time: 0.154, loss: 0.019499, (40*Lgic): 0.00099268, Lwarp: 0.018506
+step:     1420, time: 0.133, loss: 0.042116, (40*Lgic): 0.00126472, Lwarp: 0.040851
+step:     1440, time: 0.128, loss: 0.026131, (40*Lgic): 0.00130654, Lwarp: 0.024824
+step:     1460, time: 0.136, loss: 0.021720, (40*Lgic): 0.00132973, Lwarp: 0.020390
+step:     1480, time: 0.133, loss: 0.023121, (40*Lgic): 0.00141134, Lwarp: 0.021710
+step:     1500, time: 0.136, loss: 0.025319, (40*Lgic): 0.00128519, Lwarp: 0.024034
+step:     1520, time: 0.129, loss: 0.018984, (40*Lgic): 0.00111179, Lwarp: 0.017872
+step:     1540, time: 0.135, loss: 0.025901, (40*Lgic): 0.00110092, Lwarp: 0.024800
+step:     1560, time: 0.135, loss: 0.031893, (40*Lgic): 0.00126868, Lwarp: 0.030625
+step:     1580, time: 0.145, loss: 0.027026, (40*Lgic): 0.00120136, Lwarp: 0.025825
+step:     1600, time: 0.134, loss: 0.027479, (40*Lgic): 0.00129968, Lwarp: 0.026179
+step:     1620, time: 0.136, loss: 0.023786, (40*Lgic): 0.00126245, Lwarp: 0.022524
+step:     1640, time: 0.137, loss: 0.023063, (40*Lgic): 0.00122415, Lwarp: 0.021839
+step:     1660, time: 0.134, loss: 0.024781, (40*Lgic): 0.00121517, Lwarp: 0.023566
+step:     1680, time: 0.136, loss: 0.020558, (40*Lgic): 0.00119287, Lwarp: 0.019365
+step:     1700, time: 0.123, loss: 0.025482, (40*Lgic): 0.00129250, Lwarp: 0.024189
+step:     1720, time: 0.133, loss: 0.022724, (40*Lgic): 0.00126698, Lwarp: 0.021457
+step:     1740, time: 0.133, loss: 0.020346, (40*Lgic): 0.00127342, Lwarp: 0.019073
+step:     1760, time: 0.135, loss: 0.027360, (40*Lgic): 0.00120886, Lwarp: 0.026151
+step:     1780, time: 0.132, loss: 0.035806, (40*Lgic): 0.00129748, Lwarp: 0.034508
+step:     1800, time: 0.132, loss: 0.033825, (40*Lgic): 0.00128316, Lwarp: 0.032542
+step:     1820, time: 0.133, loss: 0.022576, (40*Lgic): 0.00121023, Lwarp: 0.021365
+step:     1840, time: 0.137, loss: 0.027677, (40*Lgic): 0.00120506, Lwarp: 0.026472
+step:     1860, time: 0.135, loss: 0.040120, (40*Lgic): 0.00119160, Lwarp: 0.038928
+step:     1880, time: 0.148, loss: 0.019283, (40*Lgic): 0.00115168, Lwarp: 0.018131
+step:     1900, time: 0.135, loss: 0.050762, (40*Lgic): 0.00112109, Lwarp: 0.049641
+step:     1920, time: 0.136, loss: 0.026090, (40*Lgic): 0.00129654, Lwarp: 0.024793
+step:     1940, time: 0.134, loss: 0.022483, (40*Lgic): 0.00110089, Lwarp: 0.021382
+step:     1960, time: 0.136, loss: 0.026290, (40*Lgic): 0.00139684, Lwarp: 0.024893
+step:     1980, time: 0.136, loss: 0.026678, (40*Lgic): 0.00131929, Lwarp: 0.025359
+step:     2000, time: 0.134, loss: 0.038537, (40*Lgic): 0.00121787, Lwarp: 0.037319
+interest layer num: 0
+cascading layers [BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(64, 128, kernel_size=(4,
+ 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(128,
+ 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_sta
+ts=True), Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=Tr
+ue, track_running_stats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, mo
+mentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 21 units from BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 21 units from Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 21 units from Conv2d(1, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 1, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([128, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([128])
+(6): Conv2d torch.Size([256, 128, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([256])
+(9): Conv2d torch.Size([512, 256, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([512])
+(12): Conv2d torch.Size([512, 512, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.149, loss: 0.030990, (40*Lgic): 0.00143886, Lwarp: 0.029551
+step:       40, time: 0.152, loss: 0.027159, (40*Lgic): 0.00093300, Lwarp: 0.026226
+step:       60, time: 0.152, loss: 0.061106, (40*Lgic): 0.00124100, Lwarp: 0.059865
+step:       80, time: 0.153, loss: 0.017947, (40*Lgic): 0.00114233, Lwarp: 0.016804
+step:      100, time: 0.147, loss: 0.026180, (40*Lgic): 0.00125350, Lwarp: 0.024927
+step:      120, time: 0.151, loss: 0.023887, (40*Lgic): 0.00121792, Lwarp: 0.022669
+step:      140, time: 0.156, loss: 0.055640, (40*Lgic): 0.00108384, Lwarp: 0.054556
+step:      160, time: 0.157, loss: 0.025348, (40*Lgic): 0.00120105, Lwarp: 0.024147
+step:      180, time: 0.144, loss: 0.025101, (40*Lgic): 0.00118572, Lwarp: 0.023915
+step:      200, time: 0.148, loss: 0.022231, (40*Lgic): 0.00113074, Lwarp: 0.021101
+step:      220, time: 0.151, loss: 0.056244, (40*Lgic): 0.00134424, Lwarp: 0.054899
+step:      240, time: 0.155, loss: 0.023291, (40*Lgic): 0.00119769, Lwarp: 0.022093
+step:      260, time: 0.149, loss: 0.019233, (40*Lgic): 0.00123419, Lwarp: 0.017999
+step:      280, time: 0.151, loss: 0.026454, (40*Lgic): 0.00118721, Lwarp: 0.025267
+step:      300, time: 0.148, loss: 0.035164, (40*Lgic): 0.00142009, Lwarp: 0.033743
+step:      320, time: 0.155, loss: 0.025873, (40*Lgic): 0.00119686, Lwarp: 0.024676
+step:      340, time: 0.159, loss: 0.023089, (40*Lgic): 0.00129296, Lwarp: 0.021796
+step:      360, time: 0.142, loss: 0.026636, (40*Lgic): 0.00111495, Lwarp: 0.025521
+step:      380, time: 0.148, loss: 0.027907, (40*Lgic): 0.00114668, Lwarp: 0.026761
+step:      400, time: 0.147, loss: 0.025630, (40*Lgic): 0.00100363, Lwarp: 0.024626
+step:      420, time: 0.144, loss: 0.035219, (40*Lgic): 0.00104293, Lwarp: 0.034176
+step:      440, time: 0.148, loss: 0.032703, (40*Lgic): 0.00113435, Lwarp: 0.031569
+step:      460, time: 0.150, loss: 0.025571, (40*Lgic): 0.00109799, Lwarp: 0.024473
+step:      480, time: 0.151, loss: 0.018731, (40*Lgic): 0.00103331, Lwarp: 0.017698
+step:      500, time: 0.153, loss: 0.030211, (40*Lgic): 0.00109853, Lwarp: 0.029113
+step:      520, time: 0.149, loss: 0.033859, (40*Lgic): 0.00118203, Lwarp: 0.032677
+step:      540, time: 0.155, loss: 0.032377, (40*Lgic): 0.00109099, Lwarp: 0.031286
+step:      560, time: 0.149, loss: 0.022021, (40*Lgic): 0.00105126, Lwarp: 0.020969
+step:      580, time: 0.150, loss: 0.022866, (40*Lgic): 0.00112996, Lwarp: 0.021736
+step:      600, time: 0.147, loss: 0.027774, (40*Lgic): 0.00100729, Lwarp: 0.026766
+step:      620, time: 0.149, loss: 0.035726, (40*Lgic): 0.00116641, Lwarp: 0.034560
+step:      640, time: 0.156, loss: 0.022848, (40*Lgic): 0.00124517, Lwarp: 0.021603
+step:      660, time: 0.152, loss: 0.018879, (40*Lgic): 0.00124673, Lwarp: 0.017632
+step:      680, time: 0.151, loss: 0.029277, (40*Lgic): 0.00107734, Lwarp: 0.028199
+step:      700, time: 0.148, loss: 0.021119, (40*Lgic): 0.00099878, Lwarp: 0.020121
+step:      720, time: 0.142, loss: 0.018701, (40*Lgic): 0.00105235, Lwarp: 0.017648
+step:      740, time: 0.149, loss: 0.023207, (40*Lgic): 0.00117579, Lwarp: 0.022032
+step:      760, time: 0.146, loss: 0.021810, (40*Lgic): 0.00112371, Lwarp: 0.020687
+step:      780, time: 0.145, loss: 0.029914, (40*Lgic): 0.00122799, Lwarp: 0.028686
+step:      800, time: 0.147, loss: 0.018319, (40*Lgic): 0.00094555, Lwarp: 0.017374
+step:      820, time: 0.151, loss: 0.025741, (40*Lgic): 0.00110986, Lwarp: 0.024631
+step:      840, time: 0.158, loss: 0.047234, (40*Lgic): 0.00109666, Lwarp: 0.046137
+step:      860, time: 0.147, loss: 0.023030, (40*Lgic): 0.00126752, Lwarp: 0.021762
+step:      880, time: 0.150, loss: 0.022876, (40*Lgic): 0.00123984, Lwarp: 0.021636
+step:      900, time: 0.148, loss: 0.034562, (40*Lgic): 0.00109340, Lwarp: 0.033469
+step:      920, time: 0.151, loss: 0.026730, (40*Lgic): 0.00105831, Lwarp: 0.025671
+step:      940, time: 0.155, loss: 0.035697, (40*Lgic): 0.00114241, Lwarp: 0.034554
+step:      960, time: 0.164, loss: 0.025712, (40*Lgic): 0.00118000, Lwarp: 0.024532
+step:      980, time: 0.155, loss: 0.018290, (40*Lgic): 0.00101894, Lwarp: 0.017271
+step:     1000, time: 0.150, loss: 0.048869, (40*Lgic): 0.00115875, Lwarp: 0.047710
+step:     1020, time: 0.148, loss: 0.018373, (40*Lgic): 0.00107948, Lwarp: 0.017294
+step:     1040, time: 0.147, loss: 0.021488, (40*Lgic): 0.00110195, Lwarp: 0.020386
+step:     1060, time: 0.150, loss: 0.022854, (40*Lgic): 0.00111101, Lwarp: 0.021743
+step:     1080, time: 0.153, loss: 0.022839, (40*Lgic): 0.00106316, Lwarp: 0.021776
+step:     1100, time: 0.143, loss: 0.043261, (40*Lgic): 0.00110782, Lwarp: 0.042153
+step:     1120, time: 0.153, loss: 0.022638, (40*Lgic): 0.00121686, Lwarp: 0.021421
+step:     1140, time: 0.151, loss: 0.033925, (40*Lgic): 0.00116722, Lwarp: 0.032758
+step:     1160, time: 0.158, loss: 0.028795, (40*Lgic): 0.00102533, Lwarp: 0.027769
+step:     1180, time: 0.151, loss: 0.025810, (40*Lgic): 0.00110147, Lwarp: 0.024708
+step:     1200, time: 0.152, loss: 0.023685, (40*Lgic): 0.00105225, Lwarp: 0.022633
+step:     1220, time: 0.155, loss: 0.023094, (40*Lgic): 0.00098537, Lwarp: 0.022109
+step:     1240, time: 0.150, loss: 0.018870, (40*Lgic): 0.00120552, Lwarp: 0.017665
+step:     1260, time: 0.150, loss: 0.024334, (40*Lgic): 0.00117770, Lwarp: 0.023156
+step:     1280, time: 0.154, loss: 0.021788, (40*Lgic): 0.00113513, Lwarp: 0.020653
+step:     1300, time: 0.144, loss: 0.022068, (40*Lgic): 0.00099751, Lwarp: 0.021071
+step:     1320, time: 0.147, loss: 0.026895, (40*Lgic): 0.00109854, Lwarp: 0.025797
+step:     1340, time: 0.152, loss: 0.037863, (40*Lgic): 0.00122938, Lwarp: 0.036633
+step:     1360, time: 0.153, loss: 0.027127, (40*Lgic): 0.00110370, Lwarp: 0.026024
+step:     1380, time: 0.143, loss: 0.026806, (40*Lgic): 0.00090483, Lwarp: 0.025901
+step:     1400, time: 0.149, loss: 0.026394, (40*Lgic): 0.00126854, Lwarp: 0.025126
+step:     1420, time: 0.176, loss: 0.026072, (40*Lgic): 0.00105129, Lwarp: 0.025021
+step:     1440, time: 0.153, loss: 0.022712, (40*Lgic): 0.00116529, Lwarp: 0.021547
+step:     1460, time: 0.163, loss: 0.019235, (40*Lgic): 0.00106362, Lwarp: 0.018171
+step:     1480, time: 0.141, loss: 0.017218, (40*Lgic): 0.00092185, Lwarp: 0.016296
+step:     1500, time: 0.149, loss: 0.023443, (40*Lgic): 0.00091942, Lwarp: 0.022524
+step:     1520, time: 0.160, loss: 0.021790, (40*Lgic): 0.00090894, Lwarp: 0.020882
+step:     1540, time: 0.165, loss: 0.022262, (40*Lgic): 0.00119014, Lwarp: 0.021071
+step:     1560, time: 0.148, loss: 0.018163, (40*Lgic): 0.00127292, Lwarp: 0.016890
+step:     1580, time: 0.144, loss: 0.023201, (40*Lgic): 0.00103480, Lwarp: 0.022166
+step:     1600, time: 0.154, loss: 0.018351, (40*Lgic): 0.00102915, Lwarp: 0.017322
+step:     1620, time: 0.156, loss: 0.022013, (40*Lgic): 0.00107309, Lwarp: 0.020940
+step:     1640, time: 0.142, loss: 0.025046, (40*Lgic): 0.00112656, Lwarp: 0.023920
+step:     1660, time: 0.153, loss: 0.025251, (40*Lgic): 0.00100368, Lwarp: 0.024248
+step:     1680, time: 0.151, loss: 0.048729, (40*Lgic): 0.00094229, Lwarp: 0.047787
+step:     1700, time: 0.149, loss: 0.029985, (40*Lgic): 0.00092257, Lwarp: 0.029063
+step:     1720, time: 0.152, loss: 0.022342, (40*Lgic): 0.00098167, Lwarp: 0.021361
+step:     1740, time: 0.148, loss: 0.021788, (40*Lgic): 0.00110969, Lwarp: 0.020678
+step:     1760, time: 0.148, loss: 0.018083, (40*Lgic): 0.00111549, Lwarp: 0.016967
+step:     1780, time: 0.153, loss: 0.032792, (40*Lgic): 0.00102802, Lwarp: 0.031764
+step:     1800, time: 0.150, loss: 0.017325, (40*Lgic): 0.00101465, Lwarp: 0.016310
+step:     1820, time: 0.144, loss: 0.024024, (40*Lgic): 0.00107514, Lwarp: 0.022949
+step:     1840, time: 0.151, loss: 0.026561, (40*Lgic): 0.00104541, Lwarp: 0.025516
+step:     1860, time: 0.151, loss: 0.019325, (40*Lgic): 0.00124609, Lwarp: 0.018079
+step:     1880, time: 0.151, loss: 0.022571, (40*Lgic): 0.00101482, Lwarp: 0.021556
+step:     1900, time: 0.149, loss: 0.021180, (40*Lgic): 0.00096272, Lwarp: 0.020217
+step:     1920, time: 0.151, loss: 0.018011, (40*Lgic): 0.00104103, Lwarp: 0.016969
+step:     1940, time: 0.154, loss: 0.022283, (40*Lgic): 0.00119131, Lwarp: 0.021092
+step:     1960, time: 0.146, loss: 0.022528, (40*Lgic): 0.00092003, Lwarp: 0.021608
+step:     1980, time: 0.150, loss: 0.019058, (40*Lgic): 0.00102274, Lwarp: 0.018035
+step:     2000, time: 0.151, loss: 0.017204, (40*Lgic): 0.00105621, Lwarp: 0.016147
+interest layer num: 2
+cascading layers [BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(128, 256, kernel_size=(
+4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(25
+6, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_s
+tats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=
+True, track_running_stats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 42 units from BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 42 units from Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 42 units from Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 1, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([256, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([256])
+(9): Conv2d torch.Size([512, 256, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([512])
+(12): Conv2d torch.Size([512, 512, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.136, loss: 0.029090, (40*Lgic): 0.00100840, Lwarp: 0.028082
+step:       40, time: 0.138, loss: 0.023350, (40*Lgic): 0.00096206, Lwarp: 0.022388
+step:       60, time: 0.143, loss: 0.018586, (40*Lgic): 0.00106893, Lwarp: 0.017517
+step:       80, time: 0.139, loss: 0.020260, (40*Lgic): 0.00102835, Lwarp: 0.019232
+step:      100, time: 0.137, loss: 0.023035, (40*Lgic): 0.00118629, Lwarp: 0.021849
+step:      120, time: 0.133, loss: 0.020486, (40*Lgic): 0.00088948, Lwarp: 0.019596
+step:      140, time: 0.145, loss: 0.021781, (40*Lgic): 0.00101344, Lwarp: 0.020767
+step:      160, time: 0.141, loss: 0.017612, (40*Lgic): 0.00104443, Lwarp: 0.016568
+step:      180, time: 0.157, loss: 0.022308, (40*Lgic): 0.00110135, Lwarp: 0.021207
+step:      200, time: 0.143, loss: 0.022445, (40*Lgic): 0.00103382, Lwarp: 0.021411
+step:      220, time: 0.141, loss: 0.026170, (40*Lgic): 0.00096392, Lwarp: 0.025206
+step:      240, time: 0.145, loss: 0.017030, (40*Lgic): 0.00101180, Lwarp: 0.016018
+step:      260, time: 0.143, loss: 0.028297, (40*Lgic): 0.00105223, Lwarp: 0.027245
+step:      280, time: 0.141, loss: 0.019421, (40*Lgic): 0.00098099, Lwarp: 0.018440
+step:      300, time: 0.139, loss: 0.017898, (40*Lgic): 0.00094532, Lwarp: 0.016952
+step:      320, time: 0.137, loss: 0.019128, (40*Lgic): 0.00087931, Lwarp: 0.018249
+step:      340, time: 0.153, loss: 0.018659, (40*Lgic): 0.00093218, Lwarp: 0.017727
+step:      360, time: 0.144, loss: 0.018883, (40*Lgic): 0.00096390, Lwarp: 0.017919
+step:      380, time: 0.136, loss: 0.024051, (40*Lgic): 0.00105205, Lwarp: 0.022999
+step:      400, time: 0.139, loss: 0.019237, (40*Lgic): 0.00090250, Lwarp: 0.018334
+step:      420, time: 0.155, loss: 0.024084, (40*Lgic): 0.00087174, Lwarp: 0.023212
+step:      440, time: 0.138, loss: 0.024360, (40*Lgic): 0.00112262, Lwarp: 0.023237
+step:      460, time: 0.139, loss: 0.019705, (40*Lgic): 0.00114621, Lwarp: 0.018559
+step:      480, time: 0.139, loss: 0.015984, (40*Lgic): 0.00105118, Lwarp: 0.014932
+step:      500, time: 0.142, loss: 0.025676, (40*Lgic): 0.00104370, Lwarp: 0.024632
+step:      520, time: 0.139, loss: 0.020695, (40*Lgic): 0.00114714, Lwarp: 0.019547
+step:      540, time: 0.135, loss: 0.019210, (40*Lgic): 0.00098839, Lwarp: 0.018221
+step:      560, time: 0.146, loss: 0.021884, (40*Lgic): 0.00101619, Lwarp: 0.020868
+step:      580, time: 0.141, loss: 0.019225, (40*Lgic): 0.00103371, Lwarp: 0.018191
+step:      600, time: 0.145, loss: 0.022537, (40*Lgic): 0.00092385, Lwarp: 0.021613
+step:      620, time: 0.144, loss: 0.039115, (40*Lgic): 0.00097738, Lwarp: 0.038138
+step:      640, time: 0.126, loss: 0.018997, (40*Lgic): 0.00097690, Lwarp: 0.018020
+step:      660, time: 0.141, loss: 0.027139, (40*Lgic): 0.00091658, Lwarp: 0.026222
+step:      680, time: 0.140, loss: 0.017219, (40*Lgic): 0.00111340, Lwarp: 0.016105
+step:      700, time: 0.145, loss: 0.029493, (40*Lgic): 0.00108135, Lwarp: 0.028412
+step:      720, time: 0.144, loss: 0.023220, (40*Lgic): 0.00104975, Lwarp: 0.022170
+step:      740, time: 0.140, loss: 0.025244, (40*Lgic): 0.00105260, Lwarp: 0.024191
+step:      760, time: 0.140, loss: 0.044773, (40*Lgic): 0.00110644, Lwarp: 0.043667
+step:      780, time: 0.139, loss: 0.020231, (40*Lgic): 0.00112671, Lwarp: 0.019105
+step:      800, time: 0.144, loss: 0.021187, (40*Lgic): 0.00092137, Lwarp: 0.020266
+step:      820, time: 0.143, loss: 0.020562, (40*Lgic): 0.00087910, Lwarp: 0.019683
+step:      840, time: 0.143, loss: 0.026864, (40*Lgic): 0.00088969, Lwarp: 0.025974
+step:      860, time: 0.148, loss: 0.017914, (40*Lgic): 0.00111311, Lwarp: 0.016801
+step:      880, time: 0.147, loss: 0.019835, (40*Lgic): 0.00107653, Lwarp: 0.018758
+step:      900, time: 0.165, loss: 0.023434, (40*Lgic): 0.00101735, Lwarp: 0.022417
+step:      920, time: 0.148, loss: 0.023207, (40*Lgic): 0.00093347, Lwarp: 0.022273
+step:      940, time: 0.147, loss: 0.035414, (40*Lgic): 0.00096153, Lwarp: 0.034452
+step:      960, time: 0.157, loss: 0.016763, (40*Lgic): 0.00086633, Lwarp: 0.015897
+step:      980, time: 0.147, loss: 0.048244, (40*Lgic): 0.00086682, Lwarp: 0.047377
+step:     1000, time: 0.135, loss: 0.024156, (40*Lgic): 0.00098837, Lwarp: 0.023167
+step:     1020, time: 0.151, loss: 0.022856, (40*Lgic): 0.00109148, Lwarp: 0.021764
+step:     1040, time: 0.155, loss: 0.022072, (40*Lgic): 0.00109447, Lwarp: 0.020978
+step:     1060, time: 0.136, loss: 0.016681, (40*Lgic): 0.00100604, Lwarp: 0.015675
+step:     1080, time: 0.144, loss: 0.020752, (40*Lgic): 0.00114839, Lwarp: 0.019603
+step:     1100, time: 0.141, loss: 0.071534, (40*Lgic): 0.00090183, Lwarp: 0.070632
+step:     1120, time: 0.141, loss: 0.022102, (40*Lgic): 0.00090262, Lwarp: 0.021200
+step:     1140, time: 0.144, loss: 0.016235, (40*Lgic): 0.00092570, Lwarp: 0.015309
+step:     1160, time: 0.142, loss: 0.015278, (40*Lgic): 0.00089668, Lwarp: 0.014382
+step:     1180, time: 0.140, loss: 0.040310, (40*Lgic): 0.00080874, Lwarp: 0.039501
+step:     1200, time: 0.138, loss: 0.019249, (40*Lgic): 0.00085509, Lwarp: 0.018394
+step:     1220, time: 0.146, loss: 0.024264, (40*Lgic): 0.00089077, Lwarp: 0.023374
+step:     1240, time: 0.139, loss: 0.018912, (40*Lgic): 0.00105566, Lwarp: 0.017856
+step:     1260, time: 0.150, loss: 0.014672, (40*Lgic): 0.00084085, Lwarp: 0.013831
+step:     1280, time: 0.134, loss: 0.024345, (40*Lgic): 0.00087821, Lwarp: 0.023467
+step:     1300, time: 0.144, loss: 0.017595, (40*Lgic): 0.00091410, Lwarp: 0.016680
+step:     1320, time: 0.141, loss: 0.018850, (40*Lgic): 0.00105859, Lwarp: 0.017791
+step:     1340, time: 0.143, loss: 0.016782, (40*Lgic): 0.00085954, Lwarp: 0.015922
+step:     1360, time: 0.140, loss: 0.015388, (40*Lgic): 0.00094279, Lwarp: 0.014445
+step:     1380, time: 0.139, loss: 0.017129, (40*Lgic): 0.00096998, Lwarp: 0.016159
+step:     1400, time: 0.167, loss: 0.018536, (40*Lgic): 0.00092781, Lwarp: 0.017608
+step:     1420, time: 0.153, loss: 0.016426, (40*Lgic): 0.00096068, Lwarp: 0.015465
+step:     1440, time: 0.144, loss: 0.021436, (40*Lgic): 0.00091601, Lwarp: 0.020520
+step:     1460, time: 0.142, loss: 0.018124, (40*Lgic): 0.00089581, Lwarp: 0.017228
+step:     1480, time: 0.147, loss: 0.020403, (40*Lgic): 0.00090717, Lwarp: 0.019496
+step:     1500, time: 0.148, loss: 0.022691, (40*Lgic): 0.00090357, Lwarp: 0.021787
+step:     1520, time: 0.144, loss: 0.020760, (40*Lgic): 0.00088040, Lwarp: 0.019879
+step:     1540, time: 0.142, loss: 0.022298, (40*Lgic): 0.00101960, Lwarp: 0.021278
+step:     1560, time: 0.138, loss: 0.024807, (40*Lgic): 0.00102224, Lwarp: 0.023785
+step:     1580, time: 0.139, loss: 0.017774, (40*Lgic): 0.00118598, Lwarp: 0.016588
+step:     1600, time: 0.135, loss: 0.041818, (40*Lgic): 0.00101684, Lwarp: 0.040801
+step:     1620, time: 0.141, loss: 0.020807, (40*Lgic): 0.00096643, Lwarp: 0.019840
+step:     1640, time: 0.137, loss: 0.016017, (40*Lgic): 0.00079024, Lwarp: 0.015226
+step:     1660, time: 0.136, loss: 0.015618, (40*Lgic): 0.00096567, Lwarp: 0.014653
+step:     1680, time: 0.143, loss: 0.018399, (40*Lgic): 0.00080819, Lwarp: 0.017590
+step:     1700, time: 0.137, loss: 0.017770, (40*Lgic): 0.00080997, Lwarp: 0.016960
+step:     1720, time: 0.145, loss: 0.021699, (40*Lgic): 0.00098906, Lwarp: 0.020710
+step:     1740, time: 0.150, loss: 0.017964, (40*Lgic): 0.00089290, Lwarp: 0.017071
+step:     1760, time: 0.142, loss: 0.021804, (40*Lgic): 0.00098958, Lwarp: 0.020815
+step:     1780, time: 0.145, loss: 0.021501, (40*Lgic): 0.00094818, Lwarp: 0.020553
+step:     1800, time: 0.144, loss: 0.017655, (40*Lgic): 0.00106266, Lwarp: 0.016592
+step:     1820, time: 0.142, loss: 0.019676, (40*Lgic): 0.00085745, Lwarp: 0.018818
+step:     1840, time: 0.157, loss: 0.019715, (40*Lgic): 0.00085346, Lwarp: 0.018861
+step:     1860, time: 0.144, loss: 0.020431, (40*Lgic): 0.00083894, Lwarp: 0.019592
+step:     1880, time: 0.123, loss: 0.020640, (40*Lgic): 0.00095414, Lwarp: 0.019686
+step:     1900, time: 0.136, loss: 0.024109, (40*Lgic): 0.00090228, Lwarp: 0.023207
+step:     1920, time: 0.150, loss: 0.014039, (40*Lgic): 0.00089833, Lwarp: 0.013141
+step:     1940, time: 0.142, loss: 0.016477, (40*Lgic): 0.00082269, Lwarp: 0.015654
+step:     1960, time: 0.147, loss: 0.021274, (40*Lgic): 0.00093313, Lwarp: 0.020341
+step:     1980, time: 0.145, loss: 0.016052, (40*Lgic): 0.00078337, Lwarp: 0.015268
+step:     2000, time: 0.139, loss: 0.019864, (40*Lgic): 0.00106487, Lwarp: 0.018799
+interest layer num: 4
+cascading layers [BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(256, 512, kernel_size=(
+4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(51
+2, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_s
+tats=True), Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 85 units from BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 85 units from Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 85 units from Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 1, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([512, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([512])
+(12): Conv2d torch.Size([512, 512, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.159, loss: 0.017007, (40*Lgic): 0.00102679, Lwarp: 0.015981
+step:       40, time: 0.166, loss: 0.024045, (40*Lgic): 0.00111661, Lwarp: 0.022929
+step:       60, time: 0.161, loss: 0.036280, (40*Lgic): 0.00082025, Lwarp: 0.035459
+step:       80, time: 0.165, loss: 0.022478, (40*Lgic): 0.00095448, Lwarp: 0.021524
+step:      100, time: 0.156, loss: 0.017421, (40*Lgic): 0.00088696, Lwarp: 0.016534
+step:      120, time: 0.166, loss: 0.020630, (40*Lgic): 0.00073338, Lwarp: 0.019897
+step:      140, time: 0.175, loss: 0.018786, (40*Lgic): 0.00101152, Lwarp: 0.017775
+step:      160, time: 0.167, loss: 0.021896, (40*Lgic): 0.00083302, Lwarp: 0.021063
+step:      180, time: 0.159, loss: 0.018932, (40*Lgic): 0.00100357, Lwarp: 0.017928
+step:      200, time: 0.162, loss: 0.017063, (40*Lgic): 0.00088437, Lwarp: 0.016178
+step:      220, time: 0.164, loss: 0.036594, (40*Lgic): 0.00092079, Lwarp: 0.035673
+step:      240, time: 0.168, loss: 0.019039, (40*Lgic): 0.00079145, Lwarp: 0.018247
+step:      260, time: 0.157, loss: 0.019061, (40*Lgic): 0.00094427, Lwarp: 0.018117
+step:      280, time: 0.163, loss: 0.020649, (40*Lgic): 0.00082772, Lwarp: 0.019822
+step:      300, time: 0.163, loss: 0.019148, (40*Lgic): 0.00089259, Lwarp: 0.018256
+step:      320, time: 0.166, loss: 0.020118, (40*Lgic): 0.00097122, Lwarp: 0.019147
+step:      340, time: 0.167, loss: 0.024865, (40*Lgic): 0.00092112, Lwarp: 0.023944
+step:      360, time: 0.161, loss: 0.037083, (40*Lgic): 0.00106289, Lwarp: 0.036021
+step:      380, time: 0.160, loss: 0.015960, (40*Lgic): 0.00089531, Lwarp: 0.015065
+step:      400, time: 0.161, loss: 0.021062, (40*Lgic): 0.00088657, Lwarp: 0.020176
+step:      420, time: 0.160, loss: 0.017270, (40*Lgic): 0.00090636, Lwarp: 0.016364
+step:      440, time: 0.167, loss: 0.022729, (40*Lgic): 0.00086480, Lwarp: 0.021865
+step:      460, time: 0.152, loss: 0.018337, (40*Lgic): 0.00090810, Lwarp: 0.017429
+step:      480, time: 0.157, loss: 0.018449, (40*Lgic): 0.00101795, Lwarp: 0.017431
+step:      500, time: 0.168, loss: 0.020733, (40*Lgic): 0.00088984, Lwarp: 0.019843
+step:      520, time: 0.154, loss: 0.021350, (40*Lgic): 0.00087951, Lwarp: 0.020470
+step:      540, time: 0.164, loss: 0.020269, (40*Lgic): 0.00090484, Lwarp: 0.019364
+step:      560, time: 0.160, loss: 0.020483, (40*Lgic): 0.00084553, Lwarp: 0.019637
+step:      580, time: 0.154, loss: 0.017447, (40*Lgic): 0.00083403, Lwarp: 0.016613
+step:      600, time: 0.166, loss: 0.015538, (40*Lgic): 0.00106408, Lwarp: 0.014474
+step:      620, time: 0.161, loss: 0.017254, (40*Lgic): 0.00092962, Lwarp: 0.016324
+step:      640, time: 0.160, loss: 0.029132, (40*Lgic): 0.00082219, Lwarp: 0.028309
+step:      660, time: 0.165, loss: 0.022297, (40*Lgic): 0.00089776, Lwarp: 0.021399
+step:      680, time: 0.161, loss: 0.018822, (40*Lgic): 0.00084433, Lwarp: 0.017978
+step:      700, time: 0.161, loss: 0.020871, (40*Lgic): 0.00079785, Lwarp: 0.020073
+step:      720, time: 0.157, loss: 0.016902, (40*Lgic): 0.00084077, Lwarp: 0.016061
+step:      740, time: 0.165, loss: 0.019972, (40*Lgic): 0.00085372, Lwarp: 0.019118
+step:      760, time: 0.162, loss: 0.017220, (40*Lgic): 0.00092249, Lwarp: 0.016298
+step:      780, time: 0.156, loss: 0.018114, (40*Lgic): 0.00089403, Lwarp: 0.017220
+step:      800, time: 0.157, loss: 0.017221, (40*Lgic): 0.00090847, Lwarp: 0.016312
+step:      820, time: 0.156, loss: 0.018658, (40*Lgic): 0.00090535, Lwarp: 0.017753
+step:      840, time: 0.178, loss: 0.015467, (40*Lgic): 0.00088089, Lwarp: 0.014586
+step:      860, time: 0.163, loss: 0.019468, (40*Lgic): 0.00075221, Lwarp: 0.018716
+step:      880, time: 0.161, loss: 0.020865, (40*Lgic): 0.00093595, Lwarp: 0.019929
+step:      900, time: 0.159, loss: 0.023143, (40*Lgic): 0.00083126, Lwarp: 0.022312
+step:      920, time: 0.170, loss: 0.035352, (40*Lgic): 0.00087435, Lwarp: 0.034478
+step:      940, time: 0.160, loss: 0.041046, (40*Lgic): 0.00082181, Lwarp: 0.040224
+step:      960, time: 0.161, loss: 0.020581, (40*Lgic): 0.00107199, Lwarp: 0.019509
+step:      980, time: 0.173, loss: 0.016014, (40*Lgic): 0.00090532, Lwarp: 0.015108
+step:     1000, time: 0.166, loss: 0.025277, (40*Lgic): 0.00087488, Lwarp: 0.024403
+step:     1020, time: 0.168, loss: 0.018712, (40*Lgic): 0.00075146, Lwarp: 0.017961
+step:     1040, time: 0.161, loss: 0.015686, (40*Lgic): 0.00079067, Lwarp: 0.014896
+step:     1060, time: 0.162, loss: 0.016112, (40*Lgic): 0.00086087, Lwarp: 0.015251
+step:     1080, time: 0.164, loss: 0.016140, (40*Lgic): 0.00085009, Lwarp: 0.015289
+step:     1100, time: 0.162, loss: 0.023203, (40*Lgic): 0.00090375, Lwarp: 0.022300
+step:     1120, time: 0.164, loss: 0.017782, (40*Lgic): 0.00078172, Lwarp: 0.017000
+step:     1140, time: 0.165, loss: 0.017993, (40*Lgic): 0.00086803, Lwarp: 0.017125
+step:     1160, time: 0.164, loss: 0.019327, (40*Lgic): 0.00087397, Lwarp: 0.018453
+step:     1180, time: 0.164, loss: 0.015106, (40*Lgic): 0.00080634, Lwarp: 0.014300
+step:     1200, time: 0.161, loss: 0.024201, (40*Lgic): 0.00086242, Lwarp: 0.023339
+step:     1220, time: 0.167, loss: 0.019709, (40*Lgic): 0.00087284, Lwarp: 0.018836
+step:     1240, time: 0.161, loss: 0.016439, (40*Lgic): 0.00090548, Lwarp: 0.015534
+step:     1260, time: 0.157, loss: 0.016874, (40*Lgic): 0.00080359, Lwarp: 0.016071
+step:     1280, time: 0.160, loss: 0.032642, (40*Lgic): 0.00086505, Lwarp: 0.031777
+step:     1300, time: 0.159, loss: 0.030126, (40*Lgic): 0.00083676, Lwarp: 0.029289
+step:     1320, time: 0.159, loss: 0.024084, (40*Lgic): 0.00095527, Lwarp: 0.023128
+step:     1340, time: 0.163, loss: 0.016570, (40*Lgic): 0.00071116, Lwarp: 0.015859
+step:     1360, time: 0.158, loss: 0.020593, (40*Lgic): 0.00094037, Lwarp: 0.019652
+step:     1380, time: 0.158, loss: 0.019464, (40*Lgic): 0.00081277, Lwarp: 0.018651
+step:     1400, time: 0.152, loss: 0.017183, (40*Lgic): 0.00087758, Lwarp: 0.016305
+step:     1420, time: 0.158, loss: 0.023771, (40*Lgic): 0.00085247, Lwarp: 0.022919
+step:     1440, time: 0.162, loss: 0.019205, (40*Lgic): 0.00090095, Lwarp: 0.018304
+step:     1460, time: 0.162, loss: 0.014986, (40*Lgic): 0.00079411, Lwarp: 0.014192
+step:     1480, time: 0.163, loss: 0.018454, (40*Lgic): 0.00080925, Lwarp: 0.017645
+step:     1500, time: 0.156, loss: 0.017458, (40*Lgic): 0.00080780, Lwarp: 0.016650
+step:     1520, time: 0.160, loss: 0.019095, (40*Lgic): 0.00083065, Lwarp: 0.018264
+step:     1540, time: 0.163, loss: 0.015084, (40*Lgic): 0.00076987, Lwarp: 0.014314
+step:     1560, time: 0.168, loss: 0.018419, (40*Lgic): 0.00084885, Lwarp: 0.017570
+step:     1580, time: 0.163, loss: 0.017223, (40*Lgic): 0.00069244, Lwarp: 0.016531
+step:     1600, time: 0.159, loss: 0.025097, (40*Lgic): 0.00081747, Lwarp: 0.024280
+step:     1620, time: 0.163, loss: 0.020378, (40*Lgic): 0.00094034, Lwarp: 0.019437
+step:     1640, time: 0.167, loss: 0.020728, (40*Lgic): 0.00095761, Lwarp: 0.019770
+step:     1660, time: 0.157, loss: 0.017572, (40*Lgic): 0.00100631, Lwarp: 0.016565
+step:     1680, time: 0.161, loss: 0.020283, (40*Lgic): 0.00077328, Lwarp: 0.019510
+step:     1700, time: 0.165, loss: 0.017844, (40*Lgic): 0.00093420, Lwarp: 0.016910
+step:     1720, time: 0.157, loss: 0.020229, (40*Lgic): 0.00103228, Lwarp: 0.019196
+step:     1740, time: 0.166, loss: 0.019343, (40*Lgic): 0.00080110, Lwarp: 0.018542
+step:     1760, time: 0.161, loss: 0.038176, (40*Lgic): 0.00076720, Lwarp: 0.037408
+step:     1780, time: 0.161, loss: 0.022366, (40*Lgic): 0.00089270, Lwarp: 0.021474
+step:     1800, time: 0.161, loss: 0.014375, (40*Lgic): 0.00078507, Lwarp: 0.013590
+step:     1820, time: 0.159, loss: 0.014442, (40*Lgic): 0.00078532, Lwarp: 0.013656
+step:     1840, time: 0.157, loss: 0.016702, (40*Lgic): 0.00090312, Lwarp: 0.015799
+step:     1860, time: 0.155, loss: 0.018100, (40*Lgic): 0.00073896, Lwarp: 0.017361
+step:     1880, time: 0.155, loss: 0.016924, (40*Lgic): 0.00081800, Lwarp: 0.016106
+step:     1900, time: 0.162, loss: 0.028062, (40*Lgic): 0.00092239, Lwarp: 0.027140
+step:     1920, time: 0.159, loss: 0.015601, (40*Lgic): 0.00082857, Lwarp: 0.014773
+step:     1940, time: 0.168, loss: 0.017384, (40*Lgic): 0.00085132, Lwarp: 0.016533
+step:     1960, time: 0.175, loss: 0.017087, (40*Lgic): 0.00076525, Lwarp: 0.016322
+step:     1980, time: 0.157, loss: 0.027652, (40*Lgic): 0.00090785, Lwarp: 0.026744
+step:     2000, time: 0.165, loss: 0.016186, (40*Lgic): 0.00079076, Lwarp: 0.015395
+interest layer num: 6
+cascading layers [BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 512, kernel_size=(
+3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(51
+2, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 170 units from BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 170 units from Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 1, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([342, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([342])
+(12): Conv2d torch.Size([512, 342, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([512])
+(15): Conv2d torch.Size([512, 512, 3, 3])
+(16): ReLU None
+step:       20, time: 0.149, loss: 0.021353, (40*Lgic): 0.00101453, Lwarp: 0.020338
+step:       40, time: 0.152, loss: 0.015336, (40*Lgic): 0.00076359, Lwarp: 0.014572
+step:       60, time: 0.157, loss: 0.019164, (40*Lgic): 0.00064943, Lwarp: 0.018514
+step:       80, time: 0.148, loss: 0.032946, (40*Lgic): 0.00086153, Lwarp: 0.032085
+step:      100, time: 0.147, loss: 0.021898, (40*Lgic): 0.00082185, Lwarp: 0.021076
+step:      120, time: 0.189, loss: 0.014870, (40*Lgic): 0.00092040, Lwarp: 0.013950
+step:      140, time: 0.149, loss: 0.012924, (40*Lgic): 0.00081893, Lwarp: 0.012105
+step:      160, time: 0.145, loss: 0.028897, (40*Lgic): 0.00091252, Lwarp: 0.027984
+step:      180, time: 0.150, loss: 0.014555, (40*Lgic): 0.00063700, Lwarp: 0.013918
+step:      200, time: 0.153, loss: 0.020869, (40*Lgic): 0.00093612, Lwarp: 0.019933
+step:      220, time: 0.152, loss: 0.020132, (40*Lgic): 0.00091097, Lwarp: 0.019221
+step:      240, time: 0.151, loss: 0.017082, (40*Lgic): 0.00080327, Lwarp: 0.016279
+step:      260, time: 0.149, loss: 0.017387, (40*Lgic): 0.00080401, Lwarp: 0.016583
+step:      280, time: 0.150, loss: 0.018297, (40*Lgic): 0.00084769, Lwarp: 0.017449
+step:      300, time: 0.151, loss: 0.026001, (40*Lgic): 0.00087959, Lwarp: 0.025122
+step:      320, time: 0.142, loss: 0.018892, (40*Lgic): 0.00093048, Lwarp: 0.017961
+step:      340, time: 0.151, loss: 0.017788, (40*Lgic): 0.00073710, Lwarp: 0.017051
+step:      360, time: 0.151, loss: 0.018268, (40*Lgic): 0.00084057, Lwarp: 0.017428
+step:      380, time: 0.149, loss: 0.017153, (40*Lgic): 0.00082893, Lwarp: 0.016324
+step:      400, time: 0.151, loss: 0.037229, (40*Lgic): 0.00072983, Lwarp: 0.036499
+step:      420, time: 0.153, loss: 0.017984, (40*Lgic): 0.00080039, Lwarp: 0.017183
+step:      440, time: 0.158, loss: 0.015835, (40*Lgic): 0.00067651, Lwarp: 0.015158
+step:      460, time: 0.151, loss: 0.016184, (40*Lgic): 0.00076279, Lwarp: 0.015422
+step:      480, time: 0.161, loss: 0.023404, (40*Lgic): 0.00081343, Lwarp: 0.022590
+step:      500, time: 0.149, loss: 0.015497, (40*Lgic): 0.00080703, Lwarp: 0.014690
+step:      520, time: 0.145, loss: 0.015775, (40*Lgic): 0.00076979, Lwarp: 0.015005
+step:      540, time: 0.141, loss: 0.013924, (40*Lgic): 0.00078072, Lwarp: 0.013143
+step:      560, time: 0.164, loss: 0.019063, (40*Lgic): 0.00098850, Lwarp: 0.018075
+step:      580, time: 0.156, loss: 0.016517, (40*Lgic): 0.00081274, Lwarp: 0.015704
+step:      600, time: 0.151, loss: 0.018009, (40*Lgic): 0.00079613, Lwarp: 0.017212
+step:      620, time: 0.158, loss: 0.018881, (40*Lgic): 0.00076334, Lwarp: 0.018118
+step:      640, time: 0.150, loss: 0.016695, (40*Lgic): 0.00095247, Lwarp: 0.015742
+step:      660, time: 0.153, loss: 0.019902, (40*Lgic): 0.00079238, Lwarp: 0.019109
+step:      680, time: 0.153, loss: 0.024187, (40*Lgic): 0.00086914, Lwarp: 0.023318
+step:      700, time: 0.152, loss: 0.016842, (40*Lgic): 0.00077397, Lwarp: 0.016068
+step:      720, time: 0.159, loss: 0.015623, (40*Lgic): 0.00083677, Lwarp: 0.014787
+step:      740, time: 0.143, loss: 0.020596, (40*Lgic): 0.00073888, Lwarp: 0.019857
+step:      760, time: 0.150, loss: 0.019765, (40*Lgic): 0.00087117, Lwarp: 0.018894
+step:      780, time: 0.150, loss: 0.019795, (40*Lgic): 0.00090603, Lwarp: 0.018889
+step:      800, time: 0.150, loss: 0.017033, (40*Lgic): 0.00077540, Lwarp: 0.016258
+step:      820, time: 0.155, loss: 0.019359, (40*Lgic): 0.00079216, Lwarp: 0.018567
+step:      840, time: 0.151, loss: 0.028823, (40*Lgic): 0.00087676, Lwarp: 0.027946
+step:      860, time: 0.148, loss: 0.023336, (40*Lgic): 0.00085144, Lwarp: 0.022484
+step:      880, time: 0.146, loss: 0.016116, (40*Lgic): 0.00087444, Lwarp: 0.015242
+step:      900, time: 0.153, loss: 0.020412, (40*Lgic): 0.00074477, Lwarp: 0.019667
+step:      920, time: 0.148, loss: 0.017170, (40*Lgic): 0.00084689, Lwarp: 0.016323
+step:      940, time: 0.151, loss: 0.014681, (40*Lgic): 0.00078913, Lwarp: 0.013892
+step:      960, time: 0.148, loss: 0.025230, (40*Lgic): 0.00094159, Lwarp: 0.024289
+step:      980, time: 0.150, loss: 0.020627, (40*Lgic): 0.00085002, Lwarp: 0.019777
+step:     1000, time: 0.150, loss: 0.019644, (40*Lgic): 0.00100648, Lwarp: 0.018638
+step:     1020, time: 0.150, loss: 0.017910, (40*Lgic): 0.00080883, Lwarp: 0.017101
+step:     1040, time: 0.157, loss: 0.012951, (40*Lgic): 0.00074658, Lwarp: 0.012204
+step:     1060, time: 0.152, loss: 0.014175, (40*Lgic): 0.00074789, Lwarp: 0.013427
+step:     1080, time: 0.150, loss: 0.021763, (40*Lgic): 0.00075175, Lwarp: 0.021011
+step:     1100, time: 0.150, loss: 0.016457, (40*Lgic): 0.00081396, Lwarp: 0.015643
+step:     1120, time: 0.151, loss: 0.017599, (40*Lgic): 0.00069949, Lwarp: 0.016900
+step:     1140, time: 0.152, loss: 0.020163, (40*Lgic): 0.00083102, Lwarp: 0.019332
+step:     1160, time: 0.144, loss: 0.016660, (40*Lgic): 0.00084688, Lwarp: 0.015813
+step:     1180, time: 0.154, loss: 0.015773, (40*Lgic): 0.00071118, Lwarp: 0.015062
+step:     1200, time: 0.152, loss: 0.014841, (40*Lgic): 0.00079673, Lwarp: 0.014044
+step:     1220, time: 0.153, loss: 0.018563, (40*Lgic): 0.00080585, Lwarp: 0.017757
+step:     1240, time: 0.151, loss: 0.014843, (40*Lgic): 0.00076774, Lwarp: 0.014075
+step:     1260, time: 0.152, loss: 0.023119, (40*Lgic): 0.00080411, Lwarp: 0.022315
+step:     1280, time: 0.143, loss: 0.014596, (40*Lgic): 0.00086431, Lwarp: 0.013731
+step:     1300, time: 0.153, loss: 0.020568, (40*Lgic): 0.00078672, Lwarp: 0.019781
+step:     1320, time: 0.150, loss: 0.019484, (40*Lgic): 0.00087070, Lwarp: 0.018613
+step:     1340, time: 0.154, loss: 0.014737, (40*Lgic): 0.00083620, Lwarp: 0.013901
+step:     1360, time: 0.154, loss: 0.016834, (40*Lgic): 0.00076168, Lwarp: 0.016073
+step:     1380, time: 0.139, loss: 0.015321, (40*Lgic): 0.00084609, Lwarp: 0.014475
+step:     1400, time: 0.165, loss: 0.025997, (40*Lgic): 0.00077255, Lwarp: 0.025225
+step:     1420, time: 0.150, loss: 0.013151, (40*Lgic): 0.00078450, Lwarp: 0.012367
+step:     1440, time: 0.146, loss: 0.039003, (40*Lgic): 0.00075041, Lwarp: 0.038253
+step:     1460, time: 0.149, loss: 0.016166, (40*Lgic): 0.00075247, Lwarp: 0.015413
+step:     1480, time: 0.148, loss: 0.015733, (40*Lgic): 0.00075977, Lwarp: 0.014973
+step:     1500, time: 0.151, loss: 0.017463, (40*Lgic): 0.00080365, Lwarp: 0.016659
+step:     1520, time: 0.144, loss: 0.018475, (40*Lgic): 0.00072924, Lwarp: 0.017746
+step:     1540, time: 0.153, loss: 0.026834, (40*Lgic): 0.00083537, Lwarp: 0.025999
+step:     1560, time: 0.150, loss: 0.029377, (40*Lgic): 0.00090079, Lwarp: 0.028476
+step:     1580, time: 0.148, loss: 0.025206, (40*Lgic): 0.00078923, Lwarp: 0.024416
+step:     1600, time: 0.153, loss: 0.016059, (40*Lgic): 0.00073511, Lwarp: 0.015324
+step:     1620, time: 0.147, loss: 0.020171, (40*Lgic): 0.00087388, Lwarp: 0.019297
+step:     1640, time: 0.150, loss: 0.020797, (40*Lgic): 0.00082686, Lwarp: 0.019970
+step:     1660, time: 0.154, loss: 0.013895, (40*Lgic): 0.00083000, Lwarp: 0.013065
+step:     1680, time: 0.151, loss: 0.014859, (40*Lgic): 0.00070694, Lwarp: 0.014152
+step:     1700, time: 0.152, loss: 0.012312, (40*Lgic): 0.00070371, Lwarp: 0.011608
+step:     1720, time: 0.152, loss: 0.020841, (40*Lgic): 0.00084163, Lwarp: 0.019999
+step:     1740, time: 0.148, loss: 0.013606, (40*Lgic): 0.00075279, Lwarp: 0.012853
+step:     1760, time: 0.154, loss: 0.020848, (40*Lgic): 0.00079269, Lwarp: 0.020056
+step:     1780, time: 0.324, loss: 0.021407, (40*Lgic): 0.00079443, Lwarp: 0.020613
+step:     1800, time: 0.154, loss: 0.015084, (40*Lgic): 0.00081170, Lwarp: 0.014273
+step:     1820, time: 0.161, loss: 0.013940, (40*Lgic): 0.00075673, Lwarp: 0.013183
+step:     1840, time: 0.152, loss: 0.021492, (40*Lgic): 0.00064519, Lwarp: 0.020847
+step:     1860, time: 0.147, loss: 0.014686, (40*Lgic): 0.00074877, Lwarp: 0.013937
+step:     1880, time: 0.147, loss: 0.031447, (40*Lgic): 0.00074296, Lwarp: 0.030704
+step:     1900, time: 0.163, loss: 0.015581, (40*Lgic): 0.00066579, Lwarp: 0.014916
+step:     1920, time: 0.152, loss: 0.023530, (40*Lgic): 0.00070854, Lwarp: 0.022822
+step:     1940, time: 0.150, loss: 0.015123, (40*Lgic): 0.00076586, Lwarp: 0.014357
+step:     1960, time: 0.150, loss: 0.014969, (40*Lgic): 0.00062172, Lwarp: 0.014347
+step:     1980, time: 0.151, loss: 0.013466, (40*Lgic): 0.00081282, Lwarp: 0.012653
+step:     2000, time: 0.140, loss: 0.013972, (40*Lgic): 0.00068408, Lwarp: 0.013288
+interest layer num: 8
+cascading layers [BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 512, kernel_size=(
+3, 3), stride=(1, 1), padding=(1, 1))]
+Pruning 170 units from BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 170 units from Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([43, 1, 4, 4])
+(1): ReLU None
+(2): BatchNorm2d torch.Size([43])
+(3): Conv2d torch.Size([86, 43, 4, 4])
+(4): ReLU None
+(5): BatchNorm2d torch.Size([86])
+(6): Conv2d torch.Size([171, 86, 4, 4])
+(7): ReLU None
+(8): BatchNorm2d torch.Size([171])
+(9): Conv2d torch.Size([342, 171, 4, 4])
+(10): ReLU None
+(11): BatchNorm2d torch.Size([342])
+(12): Conv2d torch.Size([342, 342, 3, 3])
+(13): ReLU None
+(14): BatchNorm2d torch.Size([342])
+(15): Conv2d torch.Size([512, 342, 3, 3])
+(16): ReLU None
+step:       20, time: 0.146, loss: 0.029828, (40*Lgic): 0.00076297, Lwarp: 0.029065
+step:       40, time: 0.145, loss: 0.017185, (40*Lgic): 0.00067630, Lwarp: 0.016509
+step:       60, time: 0.153, loss: 0.030223, (40*Lgic): 0.00080073, Lwarp: 0.029422
+step:       80, time: 0.152, loss: 0.017686, (40*Lgic): 0.00061099, Lwarp: 0.017075
+step:      100, time: 0.147, loss: 0.028558, (40*Lgic): 0.00074528, Lwarp: 0.027812
+step:      120, time: 0.143, loss: 0.014505, (40*Lgic): 0.00068684, Lwarp: 0.013818
+step:      140, time: 0.145, loss: 0.014446, (40*Lgic): 0.00070739, Lwarp: 0.013739
+step:      160, time: 0.144, loss: 0.011712, (40*Lgic): 0.00066686, Lwarp: 0.011045
+step:      180, time: 0.148, loss: 0.018037, (40*Lgic): 0.00070289, Lwarp: 0.017334
+step:      200, time: 0.144, loss: 0.014561, (40*Lgic): 0.00080755, Lwarp: 0.013753
+step:      220, time: 0.148, loss: 0.016865, (40*Lgic): 0.00065120, Lwarp: 0.016214
+step:      240, time: 0.152, loss: 0.014264, (40*Lgic): 0.00084899, Lwarp: 0.013415
+step:      260, time: 0.144, loss: 0.012805, (40*Lgic): 0.00072183, Lwarp: 0.012083
+step:      280, time: 0.154, loss: 0.014725, (40*Lgic): 0.00068417, Lwarp: 0.014040
+step:      300, time: 0.152, loss: 0.014666, (40*Lgic): 0.00069753, Lwarp: 0.013969
+step:      320, time: 0.145, loss: 0.018167, (40*Lgic): 0.00075912, Lwarp: 0.017408
+step:      340, time: 0.142, loss: 0.016921, (40*Lgic): 0.00078351, Lwarp: 0.016138
+step:      360, time: 0.144, loss: 0.016637, (40*Lgic): 0.00077165, Lwarp: 0.015865
+step:      380, time: 0.145, loss: 0.015999, (40*Lgic): 0.00081128, Lwarp: 0.015188
+step:      400, time: 0.148, loss: 0.015645, (40*Lgic): 0.00076553, Lwarp: 0.014879
+step:      420, time: 0.150, loss: 0.011607, (40*Lgic): 0.00068720, Lwarp: 0.010920
+step:      440, time: 0.150, loss: 0.012209, (40*Lgic): 0.00079538, Lwarp: 0.011414
+step:      460, time: 0.146, loss: 0.019052, (40*Lgic): 0.00076891, Lwarp: 0.018283
+step:      480, time: 0.144, loss: 0.016022, (40*Lgic): 0.00071924, Lwarp: 0.015303
+step:      500, time: 0.146, loss: 0.013654, (40*Lgic): 0.00082490, Lwarp: 0.012829
+step:      520, time: 0.160, loss: 0.012797, (40*Lgic): 0.00073499, Lwarp: 0.012062
+step:      540, time: 0.157, loss: 0.012891, (40*Lgic): 0.00065313, Lwarp: 0.012238
+step:      560, time: 0.153, loss: 0.014220, (40*Lgic): 0.00076986, Lwarp: 0.013450
+step:      580, time: 0.149, loss: 0.021068, (40*Lgic): 0.00073210, Lwarp: 0.020336
+step:      600, time: 0.148, loss: 0.029659, (40*Lgic): 0.00069323, Lwarp: 0.028966
+step:      620, time: 0.148, loss: 0.014515, (40*Lgic): 0.00081894, Lwarp: 0.013696
+step:      640, time: 0.150, loss: 0.013523, (40*Lgic): 0.00068304, Lwarp: 0.012840
+step:      660, time: 0.150, loss: 0.017624, (40*Lgic): 0.00070419, Lwarp: 0.016920
+step:      680, time: 0.150, loss: 0.019205, (40*Lgic): 0.00064814, Lwarp: 0.018557
+step:      700, time: 0.148, loss: 0.012800, (40*Lgic): 0.00074112, Lwarp: 0.012059
+step:      720, time: 0.145, loss: 0.013229, (40*Lgic): 0.00079230, Lwarp: 0.012437
+step:      740, time: 0.150, loss: 0.018299, (40*Lgic): 0.00071457, Lwarp: 0.017585
+step:      760, time: 0.149, loss: 0.014374, (40*Lgic): 0.00070883, Lwarp: 0.013665
+step:      780, time: 0.161, loss: 0.015917, (40*Lgic): 0.00067164, Lwarp: 0.015246
+step:      800, time: 0.147, loss: 0.015532, (40*Lgic): 0.00077444, Lwarp: 0.014757
+step:      820, time: 0.147, loss: 0.015342, (40*Lgic): 0.00078315, Lwarp: 0.014559
+step:      840, time: 0.147, loss: 0.017538, (40*Lgic): 0.00081263, Lwarp: 0.016725
+step:      860, time: 0.148, loss: 0.020041, (40*Lgic): 0.00056548, Lwarp: 0.019475
+step:      880, time: 0.150, loss: 0.024332, (40*Lgic): 0.00063712, Lwarp: 0.023695
+step:      900, time: 0.157, loss: 0.016983, (40*Lgic): 0.00064531, Lwarp: 0.016338
+step:      920, time: 0.144, loss: 0.018568, (40*Lgic): 0.00093562, Lwarp: 0.017633
+step:      940, time: 0.149, loss: 0.021142, (40*Lgic): 0.00078177, Lwarp: 0.020361
+step:      960, time: 0.153, loss: 0.014990, (40*Lgic): 0.00075394, Lwarp: 0.014236
+step:      980, time: 0.153, loss: 0.020954, (40*Lgic): 0.00078057, Lwarp: 0.020174
+step:     1000, time: 0.145, loss: 0.015783, (40*Lgic): 0.00091000, Lwarp: 0.014873
+step:     1020, time: 0.151, loss: 0.021291, (40*Lgic): 0.00074472, Lwarp: 0.020546
+step:     1040, time: 0.147, loss: 0.014584, (40*Lgic): 0.00071876, Lwarp: 0.013866
+step:     1060, time: 0.162, loss: 0.020835, (40*Lgic): 0.00078296, Lwarp: 0.020052
+step:     1080, time: 0.145, loss: 0.015191, (40*Lgic): 0.00061899, Lwarp: 0.014572
+step:     1100, time: 0.174, loss: 0.065091, (40*Lgic): 0.00090741, Lwarp: 0.064184
+step:     1120, time: 0.153, loss: 0.012250, (40*Lgic): 0.00066550, Lwarp: 0.011585
+step:     1140, time: 0.144, loss: 0.016424, (40*Lgic): 0.00060215, Lwarp: 0.015821
+step:     1160, time: 0.142, loss: 0.012131, (40*Lgic): 0.00073134, Lwarp: 0.011400
+step:     1180, time: 0.146, loss: 0.022432, (40*Lgic): 0.00070021, Lwarp: 0.021732
+step:     1200, time: 0.146, loss: 0.014317, (40*Lgic): 0.00067372, Lwarp: 0.013643
+step:     1220, time: 0.149, loss: 0.014589, (40*Lgic): 0.00077614, Lwarp: 0.013813
+step:     1240, time: 0.145, loss: 0.013525, (40*Lgic): 0.00073456, Lwarp: 0.012791
+step:     1260, time: 0.152, loss: 0.012146, (40*Lgic): 0.00065033, Lwarp: 0.011496
+step:     1280, time: 0.151, loss: 0.014281, (40*Lgic): 0.00073451, Lwarp: 0.013547
+step:     1300, time: 0.142, loss: 0.024030, (40*Lgic): 0.00076293, Lwarp: 0.023267
+step:     1320, time: 0.148, loss: 0.015279, (40*Lgic): 0.00076857, Lwarp: 0.014510
+step:     1340, time: 0.151, loss: 0.014832, (40*Lgic): 0.00063069, Lwarp: 0.014201
+step:     1360, time: 0.149, loss: 0.019288, (40*Lgic): 0.00081429, Lwarp: 0.018474
+step:     1380, time: 0.147, loss: 0.018957, (40*Lgic): 0.00072821, Lwarp: 0.018229
+step:     1400, time: 0.144, loss: 0.014276, (40*Lgic): 0.00064727, Lwarp: 0.013629
+step:     1420, time: 0.144, loss: 0.014623, (40*Lgic): 0.00071314, Lwarp: 0.013910
+step:     1440, time: 0.146, loss: 0.011531, (40*Lgic): 0.00069989, Lwarp: 0.010831
+step:     1460, time: 0.148, loss: 0.011348, (40*Lgic): 0.00072687, Lwarp: 0.010621
+step:     1480, time: 0.147, loss: 0.016941, (40*Lgic): 0.00076089, Lwarp: 0.016180
+step:     1500, time: 0.146, loss: 0.012075, (40*Lgic): 0.00072310, Lwarp: 0.011352
+step:     1520, time: 0.148, loss: 0.015161, (40*Lgic): 0.00067024, Lwarp: 0.014491
+step:     1540, time: 0.161, loss: 0.014930, (40*Lgic): 0.00070310, Lwarp: 0.014227
+step:     1560, time: 0.146, loss: 0.014415, (40*Lgic): 0.00063960, Lwarp: 0.013775
+step:     1580, time: 0.150, loss: 0.014334, (40*Lgic): 0.00076646, Lwarp: 0.013567
+step:     1600, time: 0.158, loss: 0.017133, (40*Lgic): 0.00076099, Lwarp: 0.016372
+step:     1620, time: 0.144, loss: 0.013849, (40*Lgic): 0.00074325, Lwarp: 0.013106
+step:     1640, time: 0.153, loss: 0.021931, (40*Lgic): 0.00077379, Lwarp: 0.021157
+step:     1660, time: 0.149, loss: 0.027393, (40*Lgic): 0.00086888, Lwarp: 0.026524
+step:     1680, time: 0.143, loss: 0.018868, (40*Lgic): 0.00070972, Lwarp: 0.018159
+step:     1700, time: 0.129, loss: 0.017222, (40*Lgic): 0.00068782, Lwarp: 0.016534
+step:     1720, time: 0.135, loss: 0.014889, (40*Lgic): 0.00068387, Lwarp: 0.014206
+step:     1740, time: 0.147, loss: 0.014103, (40*Lgic): 0.00063595, Lwarp: 0.013467
+step:     1760, time: 0.147, loss: 0.013510, (40*Lgic): 0.00073173, Lwarp: 0.012779
+step:     1780, time: 0.152, loss: 0.011730, (40*Lgic): 0.00063944, Lwarp: 0.011090
+step:     1800, time: 0.150, loss: 0.012192, (40*Lgic): 0.00069478, Lwarp: 0.011497
+step:     1820, time: 0.144, loss: 0.016050, (40*Lgic): 0.00061736, Lwarp: 0.015432
+step:     1840, time: 0.148, loss: 0.018088, (40*Lgic): 0.00070454, Lwarp: 0.017384
+step:     1860, time: 0.150, loss: 0.013234, (40*Lgic): 0.00091466, Lwarp: 0.012319
+step:     1880, time: 0.145, loss: 0.011649, (40*Lgic): 0.00057254, Lwarp: 0.011077
+step:     1900, time: 0.154, loss: 0.015738, (40*Lgic): 0.00069690, Lwarp: 0.015041
+step:     1920, time: 0.143, loss: 0.014254, (40*Lgic): 0.00085301, Lwarp: 0.013401
+step:     1940, time: 0.145, loss: 0.014326, (40*Lgic): 0.00068426, Lwarp: 0.013642
+step:     1960, time: 0.152, loss: 0.015996, (40*Lgic): 0.00074383, Lwarp: 0.015252
+step:     1980, time: 0.146, loss: 0.012631, (40*Lgic): 0.00076654, Lwarp: 0.011865
+step:     2000, time: 0.144, loss: 0.014834, (40*Lgic): 0.00072060, Lwarp: 0.014113
+interest layer num: 0
+cascading layers [BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(512, 256, kernel_size=(
+4, 4), stride=(2, 2), padding=(1, 1)), BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(25
+6, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_s
+tats=True), Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=Tr
+ue, track_running_stats=True)]
+Pruning 170 units from BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 170 units from Conv2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (in)
+Pruning 170 units from Conv2d(192, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([342, 192, 4, 4])
+(1): BatchNorm2d torch.Size([342])
+(2): ReLU None
+(3): Conv2d torch.Size([256, 342, 4, 4])
+(4): BatchNorm2d torch.Size([256])
+(5): ReLU None
+(6): Conv2d torch.Size([128, 256, 3, 3])
+(7): BatchNorm2d torch.Size([128])
+(8): ReLU None
+(9): Conv2d torch.Size([64, 128, 3, 3])
+(10): BatchNorm2d torch.Size([64])
+(11): ReLU None
+step:       20, time: 0.158, loss: 0.026266, (40*Lgic): 0.00130104, Lwarp: 0.024965
+step:       40, time: 0.143, loss: 0.023502, (40*Lgic): 0.00122661, Lwarp: 0.022275
+step:       60, time: 0.142, loss: 0.029549, (40*Lgic): 0.00138253, Lwarp: 0.028166
+step:       80, time: 0.147, loss: 0.027496, (40*Lgic): 0.00114355, Lwarp: 0.026352
+step:      100, time: 0.150, loss: 0.027038, (40*Lgic): 0.00108300, Lwarp: 0.025955
+step:      120, time: 0.145, loss: 0.023380, (40*Lgic): 0.00112184, Lwarp: 0.022258
+step:      140, time: 0.146, loss: 0.024900, (40*Lgic): 0.00111459, Lwarp: 0.023785
+step:      160, time: 0.141, loss: 0.020502, (40*Lgic): 0.00128705, Lwarp: 0.019215
+step:      180, time: 0.145, loss: 0.032172, (40*Lgic): 0.00103021, Lwarp: 0.031141
+step:      200, time: 0.145, loss: 0.032136, (40*Lgic): 0.00109401, Lwarp: 0.031042
+step:      220, time: 0.139, loss: 0.022588, (40*Lgic): 0.00114943, Lwarp: 0.021438
+step:      240, time: 0.141, loss: 0.016837, (40*Lgic): 0.00095350, Lwarp: 0.015884
+step:      260, time: 0.151, loss: 0.017091, (40*Lgic): 0.00100300, Lwarp: 0.016088
+step:      280, time: 0.146, loss: 0.023371, (40*Lgic): 0.00110507, Lwarp: 0.022266
+step:      300, time: 0.138, loss: 0.032982, (40*Lgic): 0.00098568, Lwarp: 0.031996
+step:      320, time: 0.148, loss: 0.018808, (40*Lgic): 0.00098475, Lwarp: 0.017823
+step:      340, time: 0.146, loss: 0.023833, (40*Lgic): 0.00108838, Lwarp: 0.022745
+step:      360, time: 0.153, loss: 0.019893, (40*Lgic): 0.00101470, Lwarp: 0.018878
+step:      380, time: 0.144, loss: 0.027320, (40*Lgic): 0.00104881, Lwarp: 0.026272
+step:      400, time: 0.145, loss: 0.019541, (40*Lgic): 0.00097900, Lwarp: 0.018562
+step:      420, time: 0.137, loss: 0.026427, (40*Lgic): 0.00111630, Lwarp: 0.025310
+step:      440, time: 0.155, loss: 0.034901, (40*Lgic): 0.00087056, Lwarp: 0.034031
+step:      460, time: 0.141, loss: 0.020485, (40*Lgic): 0.00098965, Lwarp: 0.019495
+step:      480, time: 0.147, loss: 0.023184, (40*Lgic): 0.00105635, Lwarp: 0.022128
+step:      500, time: 0.144, loss: 0.017806, (40*Lgic): 0.00082699, Lwarp: 0.016979
+step:      520, time: 0.142, loss: 0.030667, (40*Lgic): 0.00096180, Lwarp: 0.029705
+step:      540, time: 0.143, loss: 0.021251, (40*Lgic): 0.00093376, Lwarp: 0.020317
+step:      560, time: 0.151, loss: 0.031502, (40*Lgic): 0.00105059, Lwarp: 0.030451
+step:      580, time: 0.148, loss: 0.021791, (40*Lgic): 0.00094685, Lwarp: 0.020844
+step:      600, time: 0.145, loss: 0.017458, (40*Lgic): 0.00088453, Lwarp: 0.016573
+step:      620, time: 0.152, loss: 0.020039, (40*Lgic): 0.00097507, Lwarp: 0.019064
+step:      640, time: 0.145, loss: 0.019017, (40*Lgic): 0.00096125, Lwarp: 0.018056
+step:      660, time: 0.160, loss: 0.025464, (40*Lgic): 0.00100894, Lwarp: 0.024455
+step:      680, time: 0.152, loss: 0.021563, (40*Lgic): 0.00091283, Lwarp: 0.020650
+step:      700, time: 0.149, loss: 0.019304, (40*Lgic): 0.00098200, Lwarp: 0.018322
+step:      720, time: 0.144, loss: 0.022073, (40*Lgic): 0.00089180, Lwarp: 0.021181
+step:      740, time: 0.149, loss: 0.020892, (40*Lgic): 0.00106466, Lwarp: 0.019827
+step:      760, time: 0.144, loss: 0.018575, (40*Lgic): 0.00086238, Lwarp: 0.017712
+step:      780, time: 0.147, loss: 0.018035, (40*Lgic): 0.00089688, Lwarp: 0.017138
+step:      800, time: 0.180, loss: 0.019770, (40*Lgic): 0.00082749, Lwarp: 0.018943
+step:      820, time: 0.150, loss: 0.025367, (40*Lgic): 0.00110547, Lwarp: 0.024261
+step:      840, time: 0.152, loss: 0.021200, (40*Lgic): 0.00104745, Lwarp: 0.020152
+step:      860, time: 0.142, loss: 0.025028, (40*Lgic): 0.00109701, Lwarp: 0.023931
+step:      880, time: 0.153, loss: 0.016980, (40*Lgic): 0.00099694, Lwarp: 0.015983
+step:      900, time: 0.144, loss: 0.016690, (40*Lgic): 0.00096195, Lwarp: 0.015728
+step:      920, time: 0.142, loss: 0.015188, (40*Lgic): 0.00093086, Lwarp: 0.014257
+step:      940, time: 0.148, loss: 0.028597, (40*Lgic): 0.00104689, Lwarp: 0.027550
+step:      960, time: 0.145, loss: 0.032413, (40*Lgic): 0.00107288, Lwarp: 0.031340
+step:      980, time: 0.150, loss: 0.022695, (40*Lgic): 0.00104751, Lwarp: 0.021647
+step:     1000, time: 0.149, loss: 0.031245, (40*Lgic): 0.00096561, Lwarp: 0.030279
+step:     1020, time: 0.147, loss: 0.018104, (40*Lgic): 0.00105053, Lwarp: 0.017054
+step:     1040, time: 0.145, loss: 0.020544, (40*Lgic): 0.00090626, Lwarp: 0.019638
+step:     1060, time: 0.144, loss: 0.017755, (40*Lgic): 0.00086128, Lwarp: 0.016894
+step:     1080, time: 0.148, loss: 0.032458, (40*Lgic): 0.00099055, Lwarp: 0.031467
+step:     1100, time: 0.151, loss: 0.017761, (40*Lgic): 0.00087990, Lwarp: 0.016881
+step:     1120, time: 0.143, loss: 0.025113, (40*Lgic): 0.00095870, Lwarp: 0.024154
+step:     1140, time: 0.141, loss: 0.023895, (40*Lgic): 0.00092570, Lwarp: 0.022969
+step:     1160, time: 0.149, loss: 0.017589, (40*Lgic): 0.00092355, Lwarp: 0.016666
+step:     1180, time: 0.142, loss: 0.022690, (40*Lgic): 0.00101329, Lwarp: 0.021677
+step:     1200, time: 0.151, loss: 0.020901, (40*Lgic): 0.00092608, Lwarp: 0.019975
+step:     1220, time: 0.146, loss: 0.031913, (40*Lgic): 0.00095688, Lwarp: 0.030956
+step:     1240, time: 0.145, loss: 0.022253, (40*Lgic): 0.00085686, Lwarp: 0.021396
+step:     1260, time: 0.144, loss: 0.021652, (40*Lgic): 0.00089535, Lwarp: 0.020757
+step:     1280, time: 0.146, loss: 0.022077, (40*Lgic): 0.00102062, Lwarp: 0.021056
+step:     1300, time: 0.149, loss: 0.036764, (40*Lgic): 0.00086300, Lwarp: 0.035901
+step:     1320, time: 0.154, loss: 0.026156, (40*Lgic): 0.00098977, Lwarp: 0.025166
+step:     1340, time: 0.158, loss: 0.028366, (40*Lgic): 0.00093035, Lwarp: 0.027435
+step:     1360, time: 0.142, loss: 0.019823, (40*Lgic): 0.00089362, Lwarp: 0.018929
+step:     1380, time: 0.140, loss: 0.016105, (40*Lgic): 0.00088580, Lwarp: 0.015219
+step:     1400, time: 0.153, loss: 0.020277, (40*Lgic): 0.00088404, Lwarp: 0.019393
+step:     1420, time: 0.144, loss: 0.020020, (40*Lgic): 0.00080934, Lwarp: 0.019211
+step:     1440, time: 0.146, loss: 0.018412, (40*Lgic): 0.00085591, Lwarp: 0.017556
+step:     1460, time: 0.137, loss: 0.020894, (40*Lgic): 0.00086065, Lwarp: 0.020034
+step:     1480, time: 0.146, loss: 0.060894, (40*Lgic): 0.00091086, Lwarp: 0.059983
+step:     1500, time: 0.141, loss: 0.017840, (40*Lgic): 0.00084632, Lwarp: 0.016994
+step:     1520, time: 0.146, loss: 0.018527, (40*Lgic): 0.00097519, Lwarp: 0.017552
+step:     1540, time: 0.145, loss: 0.016311, (40*Lgic): 0.00108829, Lwarp: 0.015223
+step:     1560, time: 0.139, loss: 0.021445, (40*Lgic): 0.00101726, Lwarp: 0.020427
+step:     1580, time: 0.142, loss: 0.018207, (40*Lgic): 0.00076676, Lwarp: 0.017441
+step:     1600, time: 0.146, loss: 0.016671, (40*Lgic): 0.00078618, Lwarp: 0.015885
+step:     1620, time: 0.150, loss: 0.016910, (40*Lgic): 0.00101004, Lwarp: 0.015900
+step:     1640, time: 0.144, loss: 0.016629, (40*Lgic): 0.00089071, Lwarp: 0.015738
+step:     1660, time: 0.143, loss: 0.024685, (40*Lgic): 0.00087778, Lwarp: 0.023808
+step:     1680, time: 0.144, loss: 0.035633, (40*Lgic): 0.00085661, Lwarp: 0.034776
+step:     1700, time: 0.147, loss: 0.019474, (40*Lgic): 0.00101553, Lwarp: 0.018458
+step:     1720, time: 0.141, loss: 0.018622, (40*Lgic): 0.00083757, Lwarp: 0.017784
+step:     1740, time: 0.141, loss: 0.015311, (40*Lgic): 0.00080691, Lwarp: 0.014504
+step:     1760, time: 0.142, loss: 0.021191, (40*Lgic): 0.00077294, Lwarp: 0.020418
+step:     1780, time: 0.148, loss: 0.015956, (40*Lgic): 0.00096218, Lwarp: 0.014994
+step:     1800, time: 0.149, loss: 0.047640, (40*Lgic): 0.00083854, Lwarp: 0.046801
+step:     1820, time: 0.149, loss: 0.033973, (40*Lgic): 0.00089477, Lwarp: 0.033078
+step:     1840, time: 0.148, loss: 0.020254, (40*Lgic): 0.00099031, Lwarp: 0.019263
+step:     1860, time: 0.152, loss: 0.015348, (40*Lgic): 0.00082537, Lwarp: 0.014522
+step:     1880, time: 0.138, loss: 0.029779, (40*Lgic): 0.00085612, Lwarp: 0.028923
+step:     1900, time: 0.147, loss: 0.025514, (40*Lgic): 0.00090562, Lwarp: 0.024609
+step:     1920, time: 0.144, loss: 0.019923, (40*Lgic): 0.00091183, Lwarp: 0.019011
+step:     1940, time: 0.142, loss: 0.023482, (40*Lgic): 0.00083990, Lwarp: 0.022642
+step:     1960, time: 0.159, loss: 0.014572, (40*Lgic): 0.00093510, Lwarp: 0.013637
+step:     1980, time: 0.141, loss: 0.021140, (40*Lgic): 0.00088746, Lwarp: 0.020253
+step:     2000, time: 0.148, loss: 0.015429, (40*Lgic): 0.00086799, Lwarp: 0.014561
+interest layer num: 2
+cascading layers [BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(256, 128, kernel_size=(
+3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(12
+8, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_sta
+ts=True)]
+Pruning 85 units from BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 85 units from Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 85 units from Conv2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([342, 192, 4, 4])
+(1): BatchNorm2d torch.Size([342])
+(2): ReLU None
+(3): Conv2d torch.Size([171, 342, 4, 4])
+(4): BatchNorm2d torch.Size([171])
+(5): ReLU None
+(6): Conv2d torch.Size([128, 171, 3, 3])
+(7): BatchNorm2d torch.Size([128])
+(8): ReLU None
+(9): Conv2d torch.Size([64, 128, 3, 3])
+(10): BatchNorm2d torch.Size([64])
+(11): ReLU None
+step:       20, time: 0.147, loss: 0.050822, (40*Lgic): 0.00439954, Lwarp: 0.046422
+step:       40, time: 0.140, loss: 0.039827, (40*Lgic): 0.00321094, Lwarp: 0.036616
+step:       60, time: 0.136, loss: 0.030441, (40*Lgic): 0.00285194, Lwarp: 0.027589
+step:       80, time: 0.156, loss: 0.036158, (40*Lgic): 0.00246934, Lwarp: 0.033689
+step:      100, time: 0.151, loss: 0.034491, (40*Lgic): 0.00180706, Lwarp: 0.032684
+step:      120, time: 0.143, loss: 0.031645, (40*Lgic): 0.00180953, Lwarp: 0.029835
+step:      140, time: 0.138, loss: 0.028672, (40*Lgic): 0.00150732, Lwarp: 0.027165
+step:      160, time: 0.138, loss: 0.031705, (40*Lgic): 0.00166761, Lwarp: 0.030037
+step:      180, time: 0.141, loss: 0.032830, (40*Lgic): 0.00183021, Lwarp: 0.031000
+step:      200, time: 0.142, loss: 0.027631, (40*Lgic): 0.00151933, Lwarp: 0.026112
+step:      220, time: 0.147, loss: 0.058616, (40*Lgic): 0.00137709, Lwarp: 0.057239
+step:      240, time: 0.158, loss: 0.030532, (40*Lgic): 0.00142263, Lwarp: 0.029109
+step:      260, time: 0.148, loss: 0.028561, (40*Lgic): 0.00144074, Lwarp: 0.027121
+step:      280, time: 0.144, loss: 0.031589, (40*Lgic): 0.00153855, Lwarp: 0.030051
+step:      300, time: 0.141, loss: 0.025418, (40*Lgic): 0.00142320, Lwarp: 0.023995
+step:      320, time: 0.147, loss: 0.026381, (40*Lgic): 0.00137622, Lwarp: 0.025005
+step:      340, time: 0.155, loss: 0.023171, (40*Lgic): 0.00140232, Lwarp: 0.021769
+step:      360, time: 0.148, loss: 0.026563, (40*Lgic): 0.00124930, Lwarp: 0.025313
+step:      380, time: 0.153, loss: 0.028861, (40*Lgic): 0.00116574, Lwarp: 0.027695
+step:      400, time: 0.146, loss: 0.026581, (40*Lgic): 0.00129417, Lwarp: 0.025286
+step:      420, time: 0.145, loss: 0.030225, (40*Lgic): 0.00135647, Lwarp: 0.028868
+step:      440, time: 0.155, loss: 0.021828, (40*Lgic): 0.00110691, Lwarp: 0.020721
+step:      460, time: 0.144, loss: 0.022458, (40*Lgic): 0.00120051, Lwarp: 0.021258
+step:      480, time: 0.148, loss: 0.022420, (40*Lgic): 0.00131882, Lwarp: 0.021101
+step:      500, time: 0.148, loss: 0.025310, (40*Lgic): 0.00139046, Lwarp: 0.023920
+step:      520, time: 0.152, loss: 0.029075, (40*Lgic): 0.00131513, Lwarp: 0.027760
+step:      540, time: 0.140, loss: 0.024634, (40*Lgic): 0.00115705, Lwarp: 0.023477
+step:      560, time: 0.155, loss: 0.054826, (40*Lgic): 0.00122316, Lwarp: 0.053603
+step:      580, time: 0.141, loss: 0.044613, (40*Lgic): 0.00130736, Lwarp: 0.043305
+step:      600, time: 0.147, loss: 0.029502, (40*Lgic): 0.00111229, Lwarp: 0.028390
+step:      620, time: 0.144, loss: 0.038973, (40*Lgic): 0.00105363, Lwarp: 0.037919
+step:      640, time: 0.146, loss: 0.026458, (40*Lgic): 0.00112294, Lwarp: 0.025335
+step:      660, time: 0.141, loss: 0.028308, (40*Lgic): 0.00104751, Lwarp: 0.027261
+step:      680, time: 0.149, loss: 0.022478, (40*Lgic): 0.00118969, Lwarp: 0.021288
+step:      700, time: 0.140, loss: 0.027336, (40*Lgic): 0.00122355, Lwarp: 0.026112
+step:      720, time: 0.155, loss: 0.021823, (40*Lgic): 0.00117853, Lwarp: 0.020645
+step:      740, time: 0.141, loss: 0.024923, (40*Lgic): 0.00139118, Lwarp: 0.023532
+step:      760, time: 0.152, loss: 0.021532, (40*Lgic): 0.00139011, Lwarp: 0.020142
+step:      780, time: 0.141, loss: 0.034900, (40*Lgic): 0.00135528, Lwarp: 0.033544
+step:      800, time: 0.148, loss: 0.026906, (40*Lgic): 0.00113424, Lwarp: 0.025772
+step:      820, time: 0.141, loss: 0.027230, (40*Lgic): 0.00124808, Lwarp: 0.025982
+step:      840, time: 0.145, loss: 0.021610, (40*Lgic): 0.00098730, Lwarp: 0.020623
+step:      860, time: 0.152, loss: 0.025074, (40*Lgic): 0.00126153, Lwarp: 0.023813
+step:      880, time: 0.146, loss: 0.022749, (40*Lgic): 0.00108585, Lwarp: 0.021663
+step:      900, time: 0.148, loss: 0.024807, (40*Lgic): 0.00127887, Lwarp: 0.023528
+step:      920, time: 0.157, loss: 0.025959, (40*Lgic): 0.00127535, Lwarp: 0.024684
+step:      940, time: 0.149, loss: 0.035627, (40*Lgic): 0.00120502, Lwarp: 0.034422
+step:      960, time: 0.136, loss: 0.021945, (40*Lgic): 0.00120125, Lwarp: 0.020744
+step:      980, time: 0.162, loss: 0.032714, (40*Lgic): 0.00129476, Lwarp: 0.031419
+step:     1000, time: 0.148, loss: 0.023315, (40*Lgic): 0.00125593, Lwarp: 0.022059
+step:     1020, time: 0.158, loss: 0.020650, (40*Lgic): 0.00114138, Lwarp: 0.019509
+step:     1040, time: 0.150, loss: 0.024680, (40*Lgic): 0.00103560, Lwarp: 0.023644
+step:     1060, time: 0.144, loss: 0.016588, (40*Lgic): 0.00099802, Lwarp: 0.015590
+step:     1080, time: 0.147, loss: 0.022760, (40*Lgic): 0.00095806, Lwarp: 0.021802
+step:     1100, time: 0.149, loss: 0.021417, (40*Lgic): 0.00126984, Lwarp: 0.020147
+step:     1120, time: 0.144, loss: 0.023234, (40*Lgic): 0.00103263, Lwarp: 0.022201
+step:     1140, time: 0.147, loss: 0.025583, (40*Lgic): 0.00107712, Lwarp: 0.024506
+step:     1160, time: 0.143, loss: 0.025438, (40*Lgic): 0.00102841, Lwarp: 0.024410
+step:     1180, time: 0.138, loss: 0.025864, (40*Lgic): 0.00120120, Lwarp: 0.024663
+step:     1200, time: 0.141, loss: 0.025018, (40*Lgic): 0.00110598, Lwarp: 0.023912
+step:     1220, time: 0.145, loss: 0.026756, (40*Lgic): 0.00106018, Lwarp: 0.025696
+step:     1240, time: 0.149, loss: 0.018147, (40*Lgic): 0.00100283, Lwarp: 0.017144
+step:     1260, time: 0.142, loss: 0.031814, (40*Lgic): 0.00122922, Lwarp: 0.030585
+step:     1280, time: 0.147, loss: 0.022196, (40*Lgic): 0.00101961, Lwarp: 0.021177
+step:     1300, time: 0.147, loss: 0.023771, (40*Lgic): 0.00097174, Lwarp: 0.022800
+step:     1320, time: 0.142, loss: 0.024774, (40*Lgic): 0.00115434, Lwarp: 0.023619
+step:     1340, time: 0.148, loss: 0.020053, (40*Lgic): 0.00115960, Lwarp: 0.018893
+step:     1360, time: 0.124, loss: 0.021076, (40*Lgic): 0.00098794, Lwarp: 0.020088
+step:     1380, time: 0.143, loss: 0.019477, (40*Lgic): 0.00107815, Lwarp: 0.018399
+step:     1400, time: 0.145, loss: 0.020691, (40*Lgic): 0.00089027, Lwarp: 0.019801
+step:     1420, time: 0.154, loss: 0.038199, (40*Lgic): 0.00099904, Lwarp: 0.037200
+step:     1440, time: 0.148, loss: 0.021968, (40*Lgic): 0.00109005, Lwarp: 0.020877
+step:     1460, time: 0.149, loss: 0.023507, (40*Lgic): 0.00097638, Lwarp: 0.022530
+step:     1480, time: 0.145, loss: 0.023259, (40*Lgic): 0.00100491, Lwarp: 0.022254
+step:     1500, time: 0.146, loss: 0.022433, (40*Lgic): 0.00110418, Lwarp: 0.021329
+step:     1520, time: 0.146, loss: 0.021957, (40*Lgic): 0.00105553, Lwarp: 0.020902
+step:     1540, time: 0.146, loss: 0.039028, (40*Lgic): 0.00105973, Lwarp: 0.037968
+step:     1560, time: 0.143, loss: 0.022546, (40*Lgic): 0.00129283, Lwarp: 0.021253
+step:     1580, time: 0.144, loss: 0.021972, (40*Lgic): 0.00106032, Lwarp: 0.020911
+step:     1600, time: 0.147, loss: 0.045162, (40*Lgic): 0.00108046, Lwarp: 0.044081
+step:     1620, time: 0.153, loss: 0.020356, (40*Lgic): 0.00111973, Lwarp: 0.019236
+step:     1640, time: 0.146, loss: 0.029679, (40*Lgic): 0.00090215, Lwarp: 0.028777
+step:     1660, time: 0.149, loss: 0.024047, (40*Lgic): 0.00124381, Lwarp: 0.022803
+step:     1680, time: 0.143, loss: 0.020426, (40*Lgic): 0.00105523, Lwarp: 0.019371
+step:     1700, time: 0.148, loss: 0.024255, (40*Lgic): 0.00114091, Lwarp: 0.023114
+step:     1720, time: 0.142, loss: 0.029829, (40*Lgic): 0.00097500, Lwarp: 0.028854
+step:     1740, time: 0.149, loss: 0.021447, (40*Lgic): 0.00101281, Lwarp: 0.020434
+step:     1760, time: 0.142, loss: 0.020392, (40*Lgic): 0.00108114, Lwarp: 0.019311
+step:     1780, time: 0.145, loss: 0.023679, (40*Lgic): 0.00102244, Lwarp: 0.022656
+step:     1800, time: 0.140, loss: 0.022821, (40*Lgic): 0.00094729, Lwarp: 0.021874
+step:     1820, time: 0.147, loss: 0.018687, (40*Lgic): 0.00101209, Lwarp: 0.017675
+step:     1840, time: 0.148, loss: 0.022461, (40*Lgic): 0.00114874, Lwarp: 0.021313
+step:     1860, time: 0.138, loss: 0.024905, (40*Lgic): 0.00098689, Lwarp: 0.023918
+step:     1880, time: 0.146, loss: 0.040623, (40*Lgic): 0.00111921, Lwarp: 0.039504
+step:     1900, time: 0.141, loss: 0.022206, (40*Lgic): 0.00119404, Lwarp: 0.021012
+step:     1920, time: 0.148, loss: 0.023878, (40*Lgic): 0.00102802, Lwarp: 0.022850
+step:     1940, time: 0.157, loss: 0.026081, (40*Lgic): 0.00102683, Lwarp: 0.025054
+step:     1960, time: 0.145, loss: 0.028849, (40*Lgic): 0.00094301, Lwarp: 0.027906
+step:     1980, time: 0.149, loss: 0.021249, (40*Lgic): 0.00090538, Lwarp: 0.020344
+step:     2000, time: 0.151, loss: 0.024870, (40*Lgic): 0.00101197, Lwarp: 0.023858
+interest layer num: 4
+cascading layers [BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True), Conv2d(128, 64, kernel_size=(3
+, 3), stride=(1, 1), padding=(1, 1)), BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)]
+Pruning 42 units from BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True) (in)
+Pruning 42 units from Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (in)
+Pruning 42 units from Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) (out)
+(0): Conv2d torch.Size([342, 192, 4, 4])
+(1): BatchNorm2d torch.Size([342])
+(2): ReLU None
+(3): Conv2d torch.Size([171, 342, 4, 4])
+(4): BatchNorm2d torch.Size([171])
+(5): ReLU None
+(6): Conv2d torch.Size([86, 171, 3, 3])
+(7): BatchNorm2d torch.Size([86])
+(8): ReLU None
+(9): Conv2d torch.Size([64, 86, 3, 3])
+(10): BatchNorm2d torch.Size([64])
+(11): ReLU None
+step:       20, time: 0.155, loss: 0.162764, (40*Lgic): 0.00601989, Lwarp: 0.156744
+step:       40, time: 0.147, loss: 0.062138, (40*Lgic): 0.00459136, Lwarp: 0.057547
+step:       60, time: 0.139, loss: 0.048638, (40*Lgic): 0.00388850, Lwarp: 0.044749
+step:       80, time: 0.138, loss: 0.025481, (40*Lgic): 0.00269530, Lwarp: 0.022785
+step:      100, time: 0.147, loss: 0.030299, (40*Lgic): 0.00256388, Lwarp: 0.027735
+step:      120, time: 0.142, loss: 0.036199, (40*Lgic): 0.00180010, Lwarp: 0.034399
+step:      140, time: 0.149, loss: 0.029668, (40*Lgic): 0.00160422, Lwarp: 0.028064
+step:      160, time: 0.142, loss: 0.032362, (40*Lgic): 0.00156429, Lwarp: 0.030797
+step:      180, time: 0.142, loss: 0.023075, (40*Lgic): 0.00138058, Lwarp: 0.021694
+step:      200, time: 0.148, loss: 0.024954, (40*Lgic): 0.00140344, Lwarp: 0.023550
+step:      220, time: 0.149, loss: 0.032607, (40*Lgic): 0.00154568, Lwarp: 0.031061
+step:      240, time: 0.147, loss: 0.029622, (40*Lgic): 0.00136196, Lwarp: 0.028260
+step:      260, time: 0.145, loss: 0.022934, (40*Lgic): 0.00146724, Lwarp: 0.021467
+step:      280, time: 0.153, loss: 0.025900, (40*Lgic): 0.00152109, Lwarp: 0.024379
+step:      300, time: 0.143, loss: 0.022482, (40*Lgic): 0.00143031, Lwarp: 0.021052
+step:      320, time: 0.145, loss: 0.027941, (40*Lgic): 0.00129062, Lwarp: 0.026650
+step:      340, time: 0.142, loss: 0.029995, (40*Lgic): 0.00123605, Lwarp: 0.028759
+step:      360, time: 0.143, loss: 0.031725, (40*Lgic): 0.00149808, Lwarp: 0.030227
+step:      380, time: 0.139, loss: 0.049516, (40*Lgic): 0.00116569, Lwarp: 0.048350
+step:      400, time: 0.143, loss: 0.025154, (40*Lgic): 0.00142107, Lwarp: 0.023733
+step:      420, time: 0.149, loss: 0.023833, (40*Lgic): 0.00120904, Lwarp: 0.022624
+step:      440, time: 0.143, loss: 0.023969, (40*Lgic): 0.00149346, Lwarp: 0.022475
+step:      460, time: 0.153, loss: 0.025750, (40*Lgic): 0.00120810, Lwarp: 0.024542
+step:      480, time: 0.146, loss: 0.028156, (40*Lgic): 0.00127497, Lwarp: 0.026881
+step:      500, time: 0.143, loss: 0.029775, (40*Lgic): 0.00131402, Lwarp: 0.028461
+step:      520, time: 0.146, loss: 0.024191, (40*Lgic): 0.00132150, Lwarp: 0.022869
+step:      540, time: 0.148, loss: 0.033412, (40*Lgic): 0.00115721, Lwarp: 0.032255
+step:      560, time: 0.145, loss: 0.027441, (40*Lgic): 0.00116473, Lwarp: 0.026276
+step:      580, time: 0.144, loss: 0.036159, (40*Lgic): 0.00114114, Lwarp: 0.035018
+step:      600, time: 0.164, loss: 0.028510, (40*Lgic): 0.00136767, Lwarp: 0.027143
+step:      620, time: 0.138, loss: 0.022731, (40*Lgic): 0.00125388, Lwarp: 0.021477
+step:      640, time: 0.151, loss: 0.022207, (40*Lgic): 0.00119532, Lwarp: 0.021012
+step:      660, time: 0.149, loss: 0.022492, (40*Lgic): 0.00117122, Lwarp: 0.021321
+step:      680, time: 0.143, loss: 0.030999, (40*Lgic): 0.00108231, Lwarp: 0.029917
+step:      700, time: 0.144, loss: 0.021108, (40*Lgic): 0.00105964, Lwarp: 0.020048
+step:      720, time: 0.148, loss: 0.034542, (40*Lgic): 0.00133850, Lwarp: 0.033204
+step:      740, time: 0.147, loss: 0.017775, (40*Lgic): 0.00116846, Lwarp: 0.016606
+step:      760, time: 0.145, loss: 0.028081, (40*Lgic): 0.00112298, Lwarp: 0.026958
+step:      780, time: 0.146, loss: 0.021560, (40*Lgic): 0.00114188, Lwarp: 0.020418
+step:      800, time: 0.137, loss: 0.022893, (40*Lgic): 0.00117899, Lwarp: 0.021714
+step:      820, time: 0.147, loss: 0.025661, (40*Lgic): 0.00121753, Lwarp: 0.024444
+step:      840, time: 0.150, loss: 0.029388, (40*Lgic): 0.00113631, Lwarp: 0.028252
+step:      860, time: 0.149, loss: 0.024525, (40*Lgic): 0.00116884, Lwarp: 0.023356
+step:      880, time: 0.147, loss: 0.026751, (40*Lgic): 0.00115486, Lwarp: 0.025596
+step:      900, time: 0.150, loss: 0.024465, (40*Lgic): 0.00124634, Lwarp: 0.023218
+step:      920, time: 0.141, loss: 0.032339, (40*Lgic): 0.00098241, Lwarp: 0.031357
+step:      940, time: 0.144, loss: 0.020666, (40*Lgic): 0.00123230, Lwarp: 0.019434
+step:      960, time: 0.146, loss: 0.040141, (40*Lgic): 0.00096553, Lwarp: 0.039175
+step:      980, time: 0.139, loss: 0.021224, (40*Lgic): 0.00095747, Lwarp: 0.020267
+step:     1000, time: 0.142, loss: 0.023856, (40*Lgic): 0.00122588, Lwarp: 0.022630
+step:     1020, time: 0.153, loss: 0.022221, (40*Lgic): 0.00110624, Lwarp: 0.021115
+step:     1040, time: 0.150, loss: 0.030207, (40*Lgic): 0.00099665, Lwarp: 0.029211
+step:     1060, time: 0.143, loss: 0.020162, (40*Lgic): 0.00120681, Lwarp: 0.018955
+step:     1080, time: 0.156, loss: 0.020846, (40*Lgic): 0.00093218, Lwarp: 0.019914
+step:     1100, time: 0.150, loss: 0.035022, (40*Lgic): 0.00113292, Lwarp: 0.033889
+step:     1120, time: 0.147, loss: 0.039016, (40*Lgic): 0.00110557, Lwarp: 0.037910
+step:     1140, time: 0.149, loss: 0.024842, (40*Lgic): 0.00096074, Lwarp: 0.023882
+step:     1160, time: 0.150, loss: 0.064727, (40*Lgic): 0.00120359, Lwarp: 0.063524
+step:     1180, time: 0.149, loss: 0.020895, (40*Lgic): 0.00106577, Lwarp: 0.019829
+step:     1200, time: 0.142, loss: 0.027393, (40*Lgic): 0.00101515, Lwarp: 0.026378
+step:     1220, time: 0.145, loss: 0.021413, (40*Lgic): 0.00103752, Lwarp: 0.020376
+step:     1240, time: 0.141, loss: 0.022218, (40*Lgic): 0.00136188, Lwarp: 0.020856
+step:     1260, time: 0.144, loss: 0.043624, (40*Lgic): 0.00107324, Lwarp: 0.042550
+step:     1280, time: 0.149, loss: 0.032621, (40*Lgic): 0.00101476, Lwarp: 0.031607
+step:     1300, time: 0.141, loss: 0.020990, (40*Lgic): 0.00095548, Lwarp: 0.020034
+step:     1320, time: 0.150, loss: 0.042529, (40*Lgic): 0.00110365, Lwarp: 0.041425
+step:     1340, time: 0.141, loss: 0.024122, (40*Lgic): 0.00103269, Lwarp: 0.023090
+step:     1360, time: 0.157, loss: 0.021832, (40*Lgic): 0.00106391, Lwarp: 0.020768
+step:     1380, time: 0.148, loss: 0.041809, (40*Lgic): 0.00126203, Lwarp: 0.040547
+step:     1400, time: 0.149, loss: 0.039297, (40*Lgic): 0.00104602, Lwarp: 0.038251
+step:     1420, time: 0.150, loss: 0.046841, (40*Lgic): 0.00105736, Lwarp: 0.045783
+step:     1440, time: 0.146, loss: 0.022145, (40*Lgic): 0.00109805, Lwarp: 0.021047
+step:     1460, time: 0.144, loss: 0.023952, (40*Lgic): 0.00098684, Lwarp: 0.022965
+step:     1480, time: 0.145, loss: 0.019654, (40*Lgic): 0.00106326, Lwarp: 0.018591
+step:     1500, time: 0.146, loss: 0.021721, (40*Lgic): 0.00112529, Lwarp: 0.020596
+step:     1520, time: 0.145, loss: 0.019242, (40*Lgic): 0.00088095, Lwarp: 0.018361
+step:     1540, time: 0.140, loss: 0.020106, (40*Lgic): 0.00113968, Lwarp: 0.018967
+step:     1560, time: 0.138, loss: 0.019502, (40*Lgic): 0.00105460, Lwarp: 0.018448
+step:     1580, time: 0.144, loss: 0.020393, (40*Lgic): 0.00089797, Lwarp: 0.019495
+step:     1600, time: 0.138, loss: 0.028280, (40*Lgic): 0.00117026, Lwarp: 0.027110
+step:     1620, time: 0.153, loss: 0.021785, (40*Lgic): 0.00095111, Lwarp: 0.020834
+step:     1640, time: 0.150, loss: 0.026786, (40*Lgic): 0.00106343, Lwarp: 0.025722
+step:     1660, time: 0.145, loss: 0.061194, (40*Lgic): 0.00107897, Lwarp: 0.060115
+step:     1680, time: 0.156, loss: 0.031662, (40*Lgic): 0.00098250, Lwarp: 0.030680
+step:     1700, time: 0.144, loss: 0.020559, (40*Lgic): 0.00101202, Lwarp: 0.019547
+step:     1720, time: 0.142, loss: 0.023171, (40*Lgic): 0.00107842, Lwarp: 0.022092
+step:     1740, time: 0.145, loss: 0.023097, (40*Lgic): 0.00101623, Lwarp: 0.022080
+step:     1760, time: 0.142, loss: 0.029759, (40*Lgic): 0.00088775, Lwarp: 0.028871
+step:     1780, time: 0.145, loss: 0.022252, (40*Lgic): 0.00101330, Lwarp: 0.021239
+step:     1800, time: 0.143, loss: 0.023702, (40*Lgic): 0.00093827, Lwarp: 0.022764
+step:     1820, time: 0.138, loss: 0.017877, (40*Lgic): 0.00098802, Lwarp: 0.016889
+step:     1840, time: 0.146, loss: 0.018035, (40*Lgic): 0.00094708, Lwarp: 0.017088
+step:     1860, time: 0.143, loss: 0.021706, (40*Lgic): 0.00112236, Lwarp: 0.020584
+step:     1880, time: 0.148, loss: 0.031110, (40*Lgic): 0.00108738, Lwarp: 0.030022
+step:     1900, time: 0.144, loss: 0.020343, (40*Lgic): 0.00094735, Lwarp: 0.019396
+step:     1920, time: 0.145, loss: 0.021805, (40*Lgic): 0.00105560, Lwarp: 0.020749
+step:     1940, time: 0.149, loss: 0.023724, (40*Lgic): 0.00114699, Lwarp: 0.022577
+step:     1960, time: 0.146, loss: 0.020446, (40*Lgic): 0.00099731, Lwarp: 0.019449
+step:     1980, time: 0.145, loss: 0.044071, (40*Lgic): 0.00099797, Lwarp: 0.043073
+step:     2000, time: 0.142, loss: 0.024442, (40*Lgic): 0.00098419, Lwarp: 0.023457
+(0): Conv2d torch.Size([342, 192, 4, 4])
+(1): BatchNorm2d torch.Size([342])
+(2): ReLU None
+(3): Conv2d torch.Size([171, 342, 4, 4])
+(4): BatchNorm2d torch.Size([171])
+(5): ReLU None
+(6): Conv2d torch.Size([86, 171, 3, 3])
+(7): BatchNorm2d torch.Size([86])
+(8): ReLU None
+(9): Conv2d torch.Size([64, 86, 3, 3])
+(10): BatchNorm2d torch.Size([64])
+(11): ReLU None
+step:       20, time: 0.148, loss: 0.022184, (40*Lgic): 0.00105371, Lwarp: 0.021131
+step:       40, time: 0.155, loss: 0.021979, (40*Lgic): 0.00098462, Lwarp: 0.020994
+step:       60, time: 0.146, loss: 0.029183, (40*Lgic): 0.00092747, Lwarp: 0.028255
+step:       80, time: 0.150, loss: 0.042842, (40*Lgic): 0.00088575, Lwarp: 0.041957
+step:      100, time: 0.151, loss: 0.016459, (40*Lgic): 0.00103909, Lwarp: 0.015420
+step:      120, time: 0.150, loss: 0.021335, (40*Lgic): 0.00090854, Lwarp: 0.020426
+step:      140, time: 0.148, loss: 0.042246, (40*Lgic): 0.00094744, Lwarp: 0.041298
+step:      160, time: 0.144, loss: 0.020729, (40*Lgic): 0.00101547, Lwarp: 0.019714
+step:      180, time: 0.146, loss: 0.043038, (40*Lgic): 0.00088040, Lwarp: 0.042158
+step:      200, time: 0.141, loss: 0.017754, (40*Lgic): 0.00094654, Lwarp: 0.016808
+step:      220, time: 0.139, loss: 0.026062, (40*Lgic): 0.00089918, Lwarp: 0.025163
+step:      240, time: 0.147, loss: 0.018731, (40*Lgic): 0.00093371, Lwarp: 0.017797
+step:      260, time: 0.142, loss: 0.026627, (40*Lgic): 0.00081012, Lwarp: 0.025817
+step:      280, time: 0.148, loss: 0.020899, (40*Lgic): 0.00090020, Lwarp: 0.019999
+step:      300, time: 0.142, loss: 0.021446, (40*Lgic): 0.00094540, Lwarp: 0.020500
+step:      320, time: 0.142, loss: 0.022332, (40*Lgic): 0.00101717, Lwarp: 0.021314
+step:      340, time: 0.133, loss: 0.022766, (40*Lgic): 0.00097276, Lwarp: 0.021793
+step:      360, time: 0.147, loss: 0.025160, (40*Lgic): 0.00096977, Lwarp: 0.024190
+step:      380, time: 0.139, loss: 0.016179, (40*Lgic): 0.00101149, Lwarp: 0.015168
+step:      400, time: 0.136, loss: 0.023543, (40*Lgic): 0.00093071, Lwarp: 0.022613
+step:      420, time: 0.139, loss: 0.037343, (40*Lgic): 0.00100113, Lwarp: 0.036342
+step:      440, time: 0.145, loss: 0.019516, (40*Lgic): 0.00104905, Lwarp: 0.018467
+step:      460, time: 0.143, loss: 0.018879, (40*Lgic): 0.00101444, Lwarp: 0.017865
+step:      480, time: 0.144, loss: 0.029467, (40*Lgic): 0.00081292, Lwarp: 0.028654
+step:      500, time: 0.162, loss: 0.021373, (40*Lgic): 0.00091571, Lwarp: 0.020457
+step:      520, time: 0.144, loss: 0.015600, (40*Lgic): 0.00079109, Lwarp: 0.014809
+step:      540, time: 0.140, loss: 0.019001, (40*Lgic): 0.00082703, Lwarp: 0.018174
+step:      560, time: 0.144, loss: 0.021210, (40*Lgic): 0.00094511, Lwarp: 0.020264
+step:      580, time: 0.154, loss: 0.017583, (40*Lgic): 0.00092782, Lwarp: 0.016655
+step:      600, time: 0.148, loss: 0.017670, (40*Lgic): 0.00090268, Lwarp: 0.016767
+step:      620, time: 0.147, loss: 0.022343, (40*Lgic): 0.00095512, Lwarp: 0.021388
+step:      640, time: 0.140, loss: 0.039339, (40*Lgic): 0.00097267, Lwarp: 0.038366
+step:      660, time: 0.146, loss: 0.018810, (40*Lgic): 0.00107333, Lwarp: 0.017737
+step:      680, time: 0.144, loss: 0.021428, (40*Lgic): 0.00111124, Lwarp: 0.020317
+step:      700, time: 0.147, loss: 0.027846, (40*Lgic): 0.00087379, Lwarp: 0.026973
+step:      720, time: 0.143, loss: 0.028061, (40*Lgic): 0.00096678, Lwarp: 0.027095
+step:      740, time: 0.163, loss: 0.018669, (40*Lgic): 0.00100484, Lwarp: 0.017665
+step:      760, time: 0.141, loss: 0.022712, (40*Lgic): 0.00075188, Lwarp: 0.021961
+step:      780, time: 0.140, loss: 0.021204, (40*Lgic): 0.00084481, Lwarp: 0.020359
+step:      800, time: 0.154, loss: 0.022888, (40*Lgic): 0.00086484, Lwarp: 0.022023
+step:      820, time: 0.139, loss: 0.018271, (40*Lgic): 0.00081515, Lwarp: 0.017456
+step:      840, time: 0.140, loss: 0.016071, (40*Lgic): 0.00084734, Lwarp: 0.015224
+step:      860, time: 0.141, loss: 0.019696, (40*Lgic): 0.00088488, Lwarp: 0.018811
+step:      880, time: 0.150, loss: 0.021203, (40*Lgic): 0.00115942, Lwarp: 0.020044
+step:      900, time: 0.142, loss: 0.019998, (40*Lgic): 0.00098205, Lwarp: 0.019016
+step:      920, time: 0.152, loss: 0.017343, (40*Lgic): 0.00085481, Lwarp: 0.016488
+step:      940, time: 0.146, loss: 0.020516, (40*Lgic): 0.00074818, Lwarp: 0.019768
+step:      960, time: 0.149, loss: 0.013343, (40*Lgic): 0.00083965, Lwarp: 0.012504
+step:      980, time: 0.141, loss: 0.023364, (40*Lgic): 0.00105236, Lwarp: 0.022311
+step:     1000, time: 0.132, loss: 0.050454, (40*Lgic): 0.00094050, Lwarp: 0.049514
+step:     1020, time: 0.152, loss: 0.017750, (40*Lgic): 0.00096158, Lwarp: 0.016788
+step:     1040, time: 0.178, loss: 0.021038, (40*Lgic): 0.00092715, Lwarp: 0.020111
+step:     1060, time: 0.156, loss: 0.015122, (40*Lgic): 0.00087289, Lwarp: 0.014249
+step:     1080, time: 0.139, loss: 0.014498, (40*Lgic): 0.00083186, Lwarp: 0.013666
+step:     1100, time: 0.150, loss: 0.025333, (40*Lgic): 0.00098914, Lwarp: 0.024344
+step:     1120, time: 0.145, loss: 0.032530, (40*Lgic): 0.00102168, Lwarp: 0.031509
+step:     1140, time: 0.147, loss: 0.043685, (40*Lgic): 0.00095215, Lwarp: 0.042733
+step:     1160, time: 0.145, loss: 0.051666, (40*Lgic): 0.00083232, Lwarp: 0.050833
+step:     1180, time: 0.154, loss: 0.021792, (40*Lgic): 0.00084430, Lwarp: 0.020948
+step:     1200, time: 0.147, loss: 0.014394, (40*Lgic): 0.00090538, Lwarp: 0.013489
+step:     1220, time: 0.141, loss: 0.021875, (40*Lgic): 0.00101297, Lwarp: 0.020862
+step:     1240, time: 0.149, loss: 0.026001, (40*Lgic): 0.00097198, Lwarp: 0.025029
+step:     1260, time: 0.139, loss: 0.025918, (40*Lgic): 0.00094800, Lwarp: 0.024970
+step:     1280, time: 0.146, loss: 0.023066, (40*Lgic): 0.00099362, Lwarp: 0.022072
+step:     1300, time: 0.145, loss: 0.020724, (40*Lgic): 0.00095388, Lwarp: 0.019770
+step:     1320, time: 0.143, loss: 0.033848, (40*Lgic): 0.00085165, Lwarp: 0.032996
+step:     1340, time: 0.148, loss: 0.024611, (40*Lgic): 0.00085676, Lwarp: 0.023754
+step:     1360, time: 0.147, loss: 0.016276, (40*Lgic): 0.00070746, Lwarp: 0.015569
+step:     1380, time: 0.147, loss: 0.017753, (40*Lgic): 0.00091635, Lwarp: 0.016837
+step:     1400, time: 0.147, loss: 0.017652, (40*Lgic): 0.00086688, Lwarp: 0.016785
+step:     1420, time: 0.148, loss: 0.020182, (40*Lgic): 0.00108809, Lwarp: 0.019094
+step:     1440, time: 0.148, loss: 0.031383, (40*Lgic): 0.00081862, Lwarp: 0.030565
+step:     1460, time: 0.142, loss: 0.015593, (40*Lgic): 0.00084214, Lwarp: 0.014751
+step:     1480, time: 0.144, loss: 0.031124, (40*Lgic): 0.00089810, Lwarp: 0.030225
+step:     1500, time: 0.151, loss: 0.051369, (40*Lgic): 0.00098885, Lwarp: 0.050380
+step:     1520, time: 0.146, loss: 0.025500, (40*Lgic): 0.00073136, Lwarp: 0.024769
+step:     1540, time: 0.143, loss: 0.017567, (40*Lgic): 0.00091982, Lwarp: 0.016647
+step:     1560, time: 0.145, loss: 0.021741, (40*Lgic): 0.00080482, Lwarp: 0.020936
+step:     1580, time: 0.149, loss: 0.020828, (40*Lgic): 0.00085509, Lwarp: 0.019973
+step:     1600, time: 0.147, loss: 0.024110, (40*Lgic): 0.00084028, Lwarp: 0.023270
+step:     1620, time: 0.142, loss: 0.017704, (40*Lgic): 0.00086356, Lwarp: 0.016840
+step:     1640, time: 0.150, loss: 0.018224, (40*Lgic): 0.00088935, Lwarp: 0.017334
+step:     1660, time: 0.176, loss: 0.017006, (40*Lgic): 0.00096911, Lwarp: 0.016037
+step:     1680, time: 0.143, loss: 0.021815, (40*Lgic): 0.00101221, Lwarp: 0.020803
+step:     1700, time: 0.145, loss: 0.016772, (40*Lgic): 0.00088610, Lwarp: 0.015886
+step:     1720, time: 0.150, loss: 0.022838, (40*Lgic): 0.00097286, Lwarp: 0.021865
+step:     1740, time: 0.141, loss: 0.017360, (40*Lgic): 0.00086080, Lwarp: 0.016500
+step:     1760, time: 0.143, loss: 0.016083, (40*Lgic): 0.00079171, Lwarp: 0.015291
+step:     1780, time: 0.148, loss: 0.017015, (40*Lgic): 0.00076767, Lwarp: 0.016248
+step:     1800, time: 0.150, loss: 0.016588, (40*Lgic): 0.00079544, Lwarp: 0.015793
+step:     1820, time: 0.142, loss: 0.013774, (40*Lgic): 0.00084599, Lwarp: 0.012928
+step:     1840, time: 0.145, loss: 0.015690, (40*Lgic): 0.00093252, Lwarp: 0.014757
+step:     1860, time: 0.141, loss: 0.015682, (40*Lgic): 0.00077552, Lwarp: 0.014906
+step:     1880, time: 0.153, loss: 0.016372, (40*Lgic): 0.00086833, Lwarp: 0.015504
+step:     1900, time: 0.147, loss: 0.026895, (40*Lgic): 0.00082027, Lwarp: 0.026075
+step:     1920, time: 0.141, loss: 0.016142, (40*Lgic): 0.00081936, Lwarp: 0.015323
+step:     1940, time: 0.147, loss: 0.021667, (40*Lgic): 0.00082468, Lwarp: 0.020843
+step:     1960, time: 0.147, loss: 0.017805, (40*Lgic): 0.00084321, Lwarp: 0.016961
+step:     1980, time: 0.148, loss: 0.027529, (40*Lgic): 0.00086810, Lwarp: 0.026661
+step:     2000, time: 0.151, loss: 0.015463, (40*Lgic): 0.00067500, Lwarp: 0.014788
+step:     2020, time: 0.154, loss: 0.018900, (40*Lgic): 0.00080024, Lwarp: 0.018100
+step:     2040, time: 0.136, loss: 0.033057, (40*Lgic): 0.00075508, Lwarp: 0.032302
+step:     2060, time: 0.136, loss: 0.019430, (40*Lgic): 0.00094248, Lwarp: 0.018487
+step:     2080, time: 0.139, loss: 0.016348, (40*Lgic): 0.00079667, Lwarp: 0.015552
+step:     2100, time: 0.144, loss: 0.023574, (40*Lgic): 0.00082425, Lwarp: 0.022749
+step:     2120, time: 0.145, loss: 0.018315, (40*Lgic): 0.00092208, Lwarp: 0.017393
+step:     2140, time: 0.142, loss: 0.035459, (40*Lgic): 0.00095317, Lwarp: 0.034505
+step:     2160, time: 0.133, loss: 0.019851, (40*Lgic): 0.00092478, Lwarp: 0.018926
+step:     2180, time: 0.149, loss: 0.014187, (40*Lgic): 0.00078196, Lwarp: 0.013405
+step:     2200, time: 0.144, loss: 0.018059, (40*Lgic): 0.00073809, Lwarp: 0.017321
+step:     2220, time: 0.142, loss: 0.015902, (40*Lgic): 0.00082730, Lwarp: 0.015075
+step:     2240, time: 0.153, loss: 0.023183, (40*Lgic): 0.00086197, Lwarp: 0.022321
+step:     2260, time: 0.144, loss: 0.019580, (40*Lgic): 0.00086451, Lwarp: 0.018716
+step:     2280, time: 0.137, loss: 0.019167, (40*Lgic): 0.00083075, Lwarp: 0.018337
+step:     2300, time: 0.141, loss: 0.015249, (40*Lgic): 0.00076678, Lwarp: 0.014482
+step:     2320, time: 0.141, loss: 0.037326, (40*Lgic): 0.00098278, Lwarp: 0.036343
+step:     2340, time: 0.146, loss: 0.014228, (40*Lgic): 0.00090295, Lwarp: 0.013325
+step:     2360, time: 0.150, loss: 0.019926, (40*Lgic): 0.00077529, Lwarp: 0.019151
+step:     2380, time: 0.147, loss: 0.017732, (40*Lgic): 0.00082385, Lwarp: 0.016908
+step:     2400, time: 0.152, loss: 0.027125, (40*Lgic): 0.00090896, Lwarp: 0.026216
+step:     2420, time: 0.143, loss: 0.017304, (40*Lgic): 0.00080458, Lwarp: 0.016500
+step:     2440, time: 0.157, loss: 0.014175, (40*Lgic): 0.00066561, Lwarp: 0.013510
+step:     2460, time: 0.139, loss: 0.017567, (40*Lgic): 0.00078715, Lwarp: 0.016780
+step:     2480, time: 0.152, loss: 0.020809, (40*Lgic): 0.00080875, Lwarp: 0.020000
+step:     2500, time: 0.144, loss: 0.018246, (40*Lgic): 0.00083544, Lwarp: 0.017411
+step:     2520, time: 0.139, loss: 0.016760, (40*Lgic): 0.00074968, Lwarp: 0.016010
+step:     2540, time: 0.143, loss: 0.017508, (40*Lgic): 0.00068985, Lwarp: 0.016818
+step:     2560, time: 0.147, loss: 0.019823, (40*Lgic): 0.00090703, Lwarp: 0.018916
+step:     2580, time: 0.150, loss: 0.014759, (40*Lgic): 0.00079477, Lwarp: 0.013964
+step:     2600, time: 0.142, loss: 0.021905, (40*Lgic): 0.00083948, Lwarp: 0.021066
+step:     2620, time: 0.143, loss: 0.018223, (40*Lgic): 0.00065794, Lwarp: 0.017565
+step:     2640, time: 0.149, loss: 0.017268, (40*Lgic): 0.00086929, Lwarp: 0.016399
+step:     2660, time: 0.147, loss: 0.023956, (40*Lgic): 0.00082731, Lwarp: 0.023129
+step:     2680, time: 0.147, loss: 0.014851, (40*Lgic): 0.00082363, Lwarp: 0.014028
+step:     2700, time: 0.142, loss: 0.014373, (40*Lgic): 0.00081176, Lwarp: 0.013561
+step:     2720, time: 0.152, loss: 0.036931, (40*Lgic): 0.00081578, Lwarp: 0.036115
+step:     2740, time: 0.140, loss: 0.014963, (40*Lgic): 0.00076800, Lwarp: 0.014195
+step:     2760, time: 0.148, loss: 0.020356, (40*Lgic): 0.00094275, Lwarp: 0.019413
+step:     2780, time: 0.150, loss: 0.022098, (40*Lgic): 0.00082101, Lwarp: 0.021277
+step:     2800, time: 0.139, loss: 0.016867, (40*Lgic): 0.00083796, Lwarp: 0.016029
+step:     2820, time: 0.141, loss: 0.016327, (40*Lgic): 0.00074778, Lwarp: 0.015579
+step:     2840, time: 0.145, loss: 0.018400, (40*Lgic): 0.00065564, Lwarp: 0.017744
+step:     2860, time: 0.147, loss: 0.019369, (40*Lgic): 0.00085200, Lwarp: 0.018517
+step:     2880, time: 0.141, loss: 0.017826, (40*Lgic): 0.00077709, Lwarp: 0.017048
+step:     2900, time: 0.137, loss: 0.015632, (40*Lgic): 0.00082756, Lwarp: 0.014804
+step:     2920, time: 0.146, loss: 0.013742, (40*Lgic): 0.00070422, Lwarp: 0.013038
+step:     2940, time: 0.144, loss: 0.018468, (40*Lgic): 0.00076606, Lwarp: 0.017702
+step:     2960, time: 0.136, loss: 0.013159, (40*Lgic): 0.00072310, Lwarp: 0.012436
+step:     2980, time: 0.147, loss: 0.016036, (40*Lgic): 0.00073572, Lwarp: 0.015301
+step:     3000, time: 0.149, loss: 0.015606, (40*Lgic): 0.00077304, Lwarp: 0.014833
+step:     3020, time: 0.152, loss: 0.019155, (40*Lgic): 0.00074194, Lwarp: 0.018413
+step:     3040, time: 0.142, loss: 0.017186, (40*Lgic): 0.00071659, Lwarp: 0.016470
+step:     3060, time: 0.147, loss: 0.016145, (40*Lgic): 0.00079487, Lwarp: 0.015350
+step:     3080, time: 0.150, loss: 0.017171, (40*Lgic): 0.00082225, Lwarp: 0.016349
+step:     3100, time: 0.142, loss: 0.012987, (40*Lgic): 0.00084498, Lwarp: 0.012142
+step:     3120, time: 0.147, loss: 0.016058, (40*Lgic): 0.00073452, Lwarp: 0.015323
+step:     3140, time: 0.151, loss: 0.016089, (40*Lgic): 0.00086589, Lwarp: 0.015223
+step:     3160, time: 0.142, loss: 0.026516, (40*Lgic): 0.00079026, Lwarp: 0.025725
+step:     3180, time: 0.137, loss: 0.018730, (40*Lgic): 0.00073764, Lwarp: 0.017992
+step:     3200, time: 0.138, loss: 0.013700, (40*Lgic): 0.00069869, Lwarp: 0.013002
+step:     3220, time: 0.141, loss: 0.019020, (40*Lgic): 0.00085987, Lwarp: 0.018160
+step:     3240, time: 0.144, loss: 0.029305, (40*Lgic): 0.00065273, Lwarp: 0.028652
+step:     3260, time: 0.146, loss: 0.034341, (40*Lgic): 0.00082274, Lwarp: 0.033519
+step:     3280, time: 0.137, loss: 0.016681, (40*Lgic): 0.00072022, Lwarp: 0.015960
+step:     3300, time: 0.145, loss: 0.013489, (40*Lgic): 0.00079865, Lwarp: 0.012691
+step:     3320, time: 0.144, loss: 0.020624, (40*Lgic): 0.00087597, Lwarp: 0.019748
+step:     3340, time: 0.145, loss: 0.014015, (40*Lgic): 0.00067396, Lwarp: 0.013342
+step:     3360, time: 0.143, loss: 0.015331, (40*Lgic): 0.00075057, Lwarp: 0.014581
+step:     3380, time: 0.142, loss: 0.015276, (40*Lgic): 0.00076465, Lwarp: 0.014512
+step:     3400, time: 0.154, loss: 0.017017, (40*Lgic): 0.00075829, Lwarp: 0.016259
+step:     3420, time: 0.143, loss: 0.017882, (40*Lgic): 0.00080564, Lwarp: 0.017077
+step:     3440, time: 0.143, loss: 0.020022, (40*Lgic): 0.00071228, Lwarp: 0.019309
+step:     3460, time: 0.140, loss: 0.015994, (40*Lgic): 0.00081862, Lwarp: 0.015176
+step:     3480, time: 0.146, loss: 0.020727, (40*Lgic): 0.00095558, Lwarp: 0.019771
+step:     3500, time: 0.150, loss: 0.015272, (40*Lgic): 0.00070635, Lwarp: 0.014566
+step:     3520, time: 0.146, loss: 0.015452, (40*Lgic): 0.00079290, Lwarp: 0.014659
+step:     3540, time: 0.142, loss: 0.018879, (40*Lgic): 0.00082675, Lwarp: 0.018052
+step:     3560, time: 0.149, loss: 0.033220, (40*Lgic): 0.00083811, Lwarp: 0.032382
+step:     3580, time: 0.142, loss: 0.017201, (40*Lgic): 0.00069827, Lwarp: 0.016503
+step:     3600, time: 0.144, loss: 0.025418, (40*Lgic): 0.00067086, Lwarp: 0.024747
+step:     3620, time: 0.144, loss: 0.013995, (40*Lgic): 0.00086142, Lwarp: 0.013134
+step:     3640, time: 0.139, loss: 0.014545, (40*Lgic): 0.00077492, Lwarp: 0.013770
+step:     3660, time: 0.154, loss: 0.014205, (40*Lgic): 0.00072943, Lwarp: 0.013475
+step:     3680, time: 0.140, loss: 0.014938, (40*Lgic): 0.00078762, Lwarp: 0.014150
+step:     3700, time: 0.142, loss: 0.017611, (40*Lgic): 0.00078759, Lwarp: 0.016823
+step:     3720, time: 0.139, loss: 0.015861, (40*Lgic): 0.00091510, Lwarp: 0.014946
+step:     3740, time: 0.141, loss: 0.028967, (40*Lgic): 0.00081200, Lwarp: 0.028155
+step:     3760, time: 0.142, loss: 0.012793, (40*Lgic): 0.00062402, Lwarp: 0.012169
+step:     3780, time: 0.143, loss: 0.016538, (40*Lgic): 0.00066651, Lwarp: 0.015871
+step:     3800, time: 0.138, loss: 0.016290, (40*Lgic): 0.00079552, Lwarp: 0.015494
+step:     3820, time: 0.150, loss: 0.017627, (40*Lgic): 0.00058876, Lwarp: 0.017038
+step:     3840, time: 0.142, loss: 0.013012, (40*Lgic): 0.00073766, Lwarp: 0.012275
+step:     3860, time: 0.142, loss: 0.015321, (40*Lgic): 0.00065376, Lwarp: 0.014667
+step:     3880, time: 0.144, loss: 0.011672, (40*Lgic): 0.00071782, Lwarp: 0.010954
+step:     3900, time: 0.142, loss: 0.022321, (40*Lgic): 0.00079393, Lwarp: 0.021527
+step:     3920, time: 0.150, loss: 0.016001, (40*Lgic): 0.00078404, Lwarp: 0.015217
+step:     3940, time: 0.151, loss: 0.015126, (40*Lgic): 0.00072628, Lwarp: 0.014400
+step:     3960, time: 0.142, loss: 0.013344, (40*Lgic): 0.00067415, Lwarp: 0.012670
+step:     3980, time: 0.140, loss: 0.022134, (40*Lgic): 0.00078763, Lwarp: 0.021347
+step:     4000, time: 0.136, loss: 0.020081, (40*Lgic): 0.00074940, Lwarp: 0.019332
+step:     4020, time: 0.144, loss: 0.018312, (40*Lgic): 0.00076724, Lwarp: 0.017544
+step:     4040, time: 0.143, loss: 0.019147, (40*Lgic): 0.00075676, Lwarp: 0.018390
+step:     4060, time: 0.156, loss: 0.037061, (40*Lgic): 0.00074276, Lwarp: 0.036318
+step:     4080, time: 0.145, loss: 0.019836, (40*Lgic): 0.00064609, Lwarp: 0.019190
+step:     4100, time: 0.145, loss: 0.035969, (40*Lgic): 0.00064457, Lwarp: 0.035325
+step:     4120, time: 0.148, loss: 0.016823, (40*Lgic): 0.00083574, Lwarp: 0.015987
+step:     4140, time: 0.146, loss: 0.014492, (40*Lgic): 0.00070256, Lwarp: 0.013789
+step:     4160, time: 0.143, loss: 0.016947, (40*Lgic): 0.00072445, Lwarp: 0.016223
+step:     4180, time: 0.140, loss: 0.017560, (40*Lgic): 0.00074903, Lwarp: 0.016811
+step:     4200, time: 0.155, loss: 0.012879, (40*Lgic): 0.00063205, Lwarp: 0.012247
+step:     4220, time: 0.146, loss: 0.019426, (40*Lgic): 0.00065973, Lwarp: 0.018767
+step:     4240, time: 0.144, loss: 0.017091, (40*Lgic): 0.00076448, Lwarp: 0.016326
+step:     4260, time: 0.148, loss: 0.013260, (40*Lgic): 0.00073606, Lwarp: 0.012524
+step:     4280, time: 0.140, loss: 0.024498, (40*Lgic): 0.00087675, Lwarp: 0.023621
+step:     4300, time: 0.151, loss: 0.016569, (40*Lgic): 0.00074647, Lwarp: 0.015822
+step:     4320, time: 0.139, loss: 0.014757, (40*Lgic): 0.00078323, Lwarp: 0.013974
+step:     4340, time: 0.141, loss: 0.013450, (40*Lgic): 0.00070077, Lwarp: 0.012749
+step:     4360, time: 0.146, loss: 0.030068, (40*Lgic): 0.00079047, Lwarp: 0.029277
+step:     4380, time: 0.142, loss: 0.024812, (40*Lgic): 0.00074719, Lwarp: 0.024065
+step:     4400, time: 0.143, loss: 0.019323, (40*Lgic): 0.00075741, Lwarp: 0.018566
+step:     4420, time: 0.153, loss: 0.025377, (40*Lgic): 0.00078519, Lwarp: 0.024592
+step:     4440, time: 0.142, loss: 0.014123, (40*Lgic): 0.00065698, Lwarp: 0.013466
+step:     4460, time: 0.144, loss: 0.015384, (40*Lgic): 0.00078346, Lwarp: 0.014601
+step:     4480, time: 0.140, loss: 0.014296, (40*Lgic): 0.00075449, Lwarp: 0.013542
+step:     4500, time: 0.143, loss: 0.014394, (40*Lgic): 0.00073025, Lwarp: 0.013664
+step:     4520, time: 0.143, loss: 0.030222, (40*Lgic): 0.00078450, Lwarp: 0.029438
+step:     4540, time: 0.142, loss: 0.013543, (40*Lgic): 0.00077544, Lwarp: 0.012768
+step:     4560, time: 0.151, loss: 0.016395, (40*Lgic): 0.00076847, Lwarp: 0.015627
+step:     4580, time: 0.145, loss: 0.015455, (40*Lgic): 0.00075605, Lwarp: 0.014699
+step:     4600, time: 0.152, loss: 0.015926, (40*Lgic): 0.00075645, Lwarp: 0.015170
+step:     4620, time: 0.145, loss: 0.016099, (40*Lgic): 0.00067350, Lwarp: 0.015426
+step:     4640, time: 0.143, loss: 0.014039, (40*Lgic): 0.00076522, Lwarp: 0.013273
+step:     4660, time: 0.136, loss: 0.013069, (40*Lgic): 0.00068332, Lwarp: 0.012386
+step:     4680, time: 0.149, loss: 0.016137, (40*Lgic): 0.00073822, Lwarp: 0.015399
+step:     4700, time: 0.148, loss: 0.017268, (40*Lgic): 0.00064769, Lwarp: 0.016620
+step:     4720, time: 0.152, loss: 0.012990, (40*Lgic): 0.00063820, Lwarp: 0.012352
+step:     4740, time: 0.144, loss: 0.016161, (40*Lgic): 0.00065596, Lwarp: 0.015505
+step:     4760, time: 0.146, loss: 0.013415, (40*Lgic): 0.00072352, Lwarp: 0.012692
+step:     4780, time: 0.149, loss: 0.015809, (40*Lgic): 0.00065731, Lwarp: 0.015152
+step:     4800, time: 0.145, loss: 0.010633, (40*Lgic): 0.00071322, Lwarp: 0.009920
+step:     4820, time: 0.150, loss: 0.016013, (40*Lgic): 0.00076426, Lwarp: 0.015249
+step:     4840, time: 0.144, loss: 0.013330, (40*Lgic): 0.00066765, Lwarp: 0.012663
+step:     4860, time: 0.146, loss: 0.014469, (40*Lgic): 0.00067503, Lwarp: 0.013794
+step:     4880, time: 0.144, loss: 0.012922, (40*Lgic): 0.00070889, Lwarp: 0.012213
+step:     4900, time: 0.142, loss: 0.014199, (40*Lgic): 0.00057248, Lwarp: 0.013626
+step:     4920, time: 0.147, loss: 0.018740, (40*Lgic): 0.00071490, Lwarp: 0.018025
+step:     4940, time: 0.143, loss: 0.016369, (40*Lgic): 0.00075786, Lwarp: 0.015611
+step:     4960, time: 0.146, loss: 0.013320, (40*Lgic): 0.00072969, Lwarp: 0.012590
+step:     4980, time: 0.151, loss: 0.013347, (40*Lgic): 0.00067923, Lwarp: 0.012667
+step:     5000, time: 0.157, loss: 0.018181, (40*Lgic): 0.00079383, Lwarp: 0.017388
+step:     5020, time: 0.148, loss: 0.015456, (40*Lgic): 0.00085083, Lwarp: 0.014605
+step:     5040, time: 0.152, loss: 0.012226, (40*Lgic): 0.00069020, Lwarp: 0.011536
+step:     5060, time: 0.147, loss: 0.016678, (40*Lgic): 0.00069239, Lwarp: 0.015986
+step:     5080, time: 0.149, loss: 0.013565, (40*Lgic): 0.00073779, Lwarp: 0.012827
+step:     5100, time: 0.149, loss: 0.015139, (40*Lgic): 0.00069074, Lwarp: 0.014448
+step:     5120, time: 0.141, loss: 0.013947, (40*Lgic): 0.00062089, Lwarp: 0.013326
+step:     5140, time: 0.150, loss: 0.013329, (40*Lgic): 0.00059003, Lwarp: 0.012739
+step:     5160, time: 0.155, loss: 0.013873, (40*Lgic): 0.00065789, Lwarp: 0.013215
+step:     5180, time: 0.151, loss: 0.016438, (40*Lgic): 0.00068137, Lwarp: 0.015757
+step:     5200, time: 0.151, loss: 0.015980, (40*Lgic): 0.00073690, Lwarp: 0.015243
+step:     5220, time: 0.140, loss: 0.012795, (40*Lgic): 0.00063904, Lwarp: 0.012156
+step:     5240, time: 0.151, loss: 0.015318, (40*Lgic): 0.00075153, Lwarp: 0.014567
+step:     5260, time: 0.144, loss: 0.016710, (40*Lgic): 0.00070059, Lwarp: 0.016009
+step:     5280, time: 0.139, loss: 0.016748, (40*Lgic): 0.00070036, Lwarp: 0.016048
+step:     5300, time: 0.153, loss: 0.015837, (40*Lgic): 0.00068246, Lwarp: 0.015154
+step:     5320, time: 0.146, loss: 0.020832, (40*Lgic): 0.00073475, Lwarp: 0.020098
+step:     5340, time: 0.150, loss: 0.014434, (40*Lgic): 0.00069052, Lwarp: 0.013743
+step:     5360, time: 0.141, loss: 0.015142, (40*Lgic): 0.00065198, Lwarp: 0.014490
+step:     5380, time: 0.150, loss: 0.015614, (40*Lgic): 0.00069896, Lwarp: 0.014915
+step:     5400, time: 0.142, loss: 0.014572, (40*Lgic): 0.00066930, Lwarp: 0.013903
+step:     5420, time: 0.142, loss: 0.014747, (40*Lgic): 0.00074187, Lwarp: 0.014005
+step:     5440, time: 0.144, loss: 0.014230, (40*Lgic): 0.00070196, Lwarp: 0.013528
+step:     5460, time: 0.153, loss: 0.061808, (40*Lgic): 0.00066510, Lwarp: 0.061142
+step:     5480, time: 0.152, loss: 0.016425, (40*Lgic): 0.00073107, Lwarp: 0.015693
+step:     5500, time: 0.143, loss: 0.024370, (40*Lgic): 0.00070393, Lwarp: 0.023666
+step:     5520, time: 0.144, loss: 0.014544, (40*Lgic): 0.00066218, Lwarp: 0.013882
+step:     5540, time: 0.157, loss: 0.024206, (40*Lgic): 0.00066666, Lwarp: 0.023540
+step:     5560, time: 0.148, loss: 0.028810, (40*Lgic): 0.00072577, Lwarp: 0.028084
+step:     5580, time: 0.141, loss: 0.014405, (40*Lgic): 0.00074080, Lwarp: 0.013664
+step:     5600, time: 0.147, loss: 0.012152, (40*Lgic): 0.00072282, Lwarp: 0.011429
+step:     5620, time: 0.154, loss: 0.010065, (40*Lgic): 0.00057004, Lwarp: 0.009495
+step:     5640, time: 0.145, loss: 0.015195, (40*Lgic): 0.00073887, Lwarp: 0.014456
+step:     5660, time: 0.144, loss: 0.016641, (40*Lgic): 0.00073971, Lwarp: 0.015901
+step:     5680, time: 0.140, loss: 0.013685, (40*Lgic): 0.00062800, Lwarp: 0.013057
+step:     5700, time: 0.144, loss: 0.036087, (40*Lgic): 0.00073179, Lwarp: 0.035355
+step:     5720, time: 0.146, loss: 0.027901, (40*Lgic): 0.00059513, Lwarp: 0.027306
+step:     5740, time: 0.149, loss: 0.024390, (40*Lgic): 0.00084567, Lwarp: 0.023545
+step:     5760, time: 0.150, loss: 0.013467, (40*Lgic): 0.00072901, Lwarp: 0.012738
+step:     5780, time: 0.150, loss: 0.013190, (40*Lgic): 0.00067256, Lwarp: 0.012518
+step:     5800, time: 0.142, loss: 0.040622, (40*Lgic): 0.00071200, Lwarp: 0.039910
+step:     5820, time: 0.148, loss: 0.011168, (40*Lgic): 0.00063297, Lwarp: 0.010535
+step:     5840, time: 0.147, loss: 0.016613, (40*Lgic): 0.00059125, Lwarp: 0.016022
+step:     5860, time: 0.137, loss: 0.023159, (40*Lgic): 0.00062970, Lwarp: 0.022529
+step:     5880, time: 0.152, loss: 0.017954, (40*Lgic): 0.00079002, Lwarp: 0.017164
+step:     5900, time: 0.150, loss: 0.014803, (40*Lgic): 0.00067496, Lwarp: 0.014128
+step:     5920, time: 0.151, loss: 0.016194, (40*Lgic): 0.00074930, Lwarp: 0.015445
+step:     5940, time: 0.144, loss: 0.011864, (40*Lgic): 0.00060088, Lwarp: 0.011264
+step:     5960, time: 0.147, loss: 0.017883, (40*Lgic): 0.00078148, Lwarp: 0.017101
+step:     5980, time: 0.169, loss: 0.039971, (40*Lgic): 0.00086342, Lwarp: 0.039108
+step:     6000, time: 0.158, loss: 0.012617, (40*Lgic): 0.00072396, Lwarp: 0.011893
+step:     6020, time: 0.141, loss: 0.023178, (40*Lgic): 0.00064214, Lwarp: 0.022535
+step:     6040, time: 0.140, loss: 0.031301, (40*Lgic): 0.00064966, Lwarp: 0.030651
+step:     6060, time: 0.155, loss: 0.012913, (40*Lgic): 0.00059494, Lwarp: 0.012318
+step:     6080, time: 0.138, loss: 0.018280, (40*Lgic): 0.00064109, Lwarp: 0.017639
+step:     6100, time: 0.142, loss: 0.015173, (40*Lgic): 0.00067136, Lwarp: 0.014502
+step:     6120, time: 0.137, loss: 0.019168, (40*Lgic): 0.00067661, Lwarp: 0.018491
+step:     6140, time: 0.149, loss: 0.023645, (40*Lgic): 0.00072962, Lwarp: 0.022915
+step:     6160, time: 0.154, loss: 0.016431, (40*Lgic): 0.00068140, Lwarp: 0.015750
+step:     6180, time: 0.163, loss: 0.019212, (40*Lgic): 0.00059783, Lwarp: 0.018614
+step:     6200, time: 0.155, loss: 0.035922, (40*Lgic): 0.00058790, Lwarp: 0.035335
+step:     6220, time: 0.150, loss: 0.016179, (40*Lgic): 0.00070725, Lwarp: 0.015471
+step:     6240, time: 0.139, loss: 0.017528, (40*Lgic): 0.00070063, Lwarp: 0.016827
+step:     6260, time: 0.144, loss: 0.012858, (40*Lgic): 0.00068094, Lwarp: 0.012177
+step:     6280, time: 0.145, loss: 0.020919, (40*Lgic): 0.00072344, Lwarp: 0.020195
+step:     6300, time: 0.150, loss: 0.016725, (40*Lgic): 0.00070623, Lwarp: 0.016018
+step:     6320, time: 0.147, loss: 0.015843, (40*Lgic): 0.00058376, Lwarp: 0.015259
+step:     6340, time: 0.140, loss: 0.014548, (40*Lgic): 0.00072542, Lwarp: 0.013822
+step:     6360, time: 0.148, loss: 0.010906, (40*Lgic): 0.00058775, Lwarp: 0.010318
+step:     6380, time: 0.148, loss: 0.021669, (40*Lgic): 0.00075921, Lwarp: 0.020910
+step:     6400, time: 0.139, loss: 0.012131, (40*Lgic): 0.00060569, Lwarp: 0.011525
+step:     6420, time: 0.139, loss: 0.016411, (40*Lgic): 0.00069509, Lwarp: 0.015716
+step:     6440, time: 0.141, loss: 0.017747, (40*Lgic): 0.00062987, Lwarp: 0.017117
+step:     6460, time: 0.148, loss: 0.013415, (40*Lgic): 0.00070318, Lwarp: 0.012712
+step:     6480, time: 0.144, loss: 0.013714, (40*Lgic): 0.00082507, Lwarp: 0.012889
+step:     6500, time: 0.137, loss: 0.020650, (40*Lgic): 0.00057757, Lwarp: 0.020072
+step:     6520, time: 0.144, loss: 0.014646, (40*Lgic): 0.00065787, Lwarp: 0.013989
+step:     6540, time: 0.151, loss: 0.021785, (40*Lgic): 0.00067919, Lwarp: 0.021105
+step:     6560, time: 0.138, loss: 0.011064, (40*Lgic): 0.00070341, Lwarp: 0.010361
+step:     6580, time: 0.140, loss: 0.015132, (40*Lgic): 0.00060502, Lwarp: 0.014527
+step:     6600, time: 0.142, loss: 0.011947, (40*Lgic): 0.00089571, Lwarp: 0.011052
+step:     6620, time: 0.146, loss: 0.015683, (40*Lgic): 0.00065000, Lwarp: 0.015033
+step:     6640, time: 0.144, loss: 0.011257, (40*Lgic): 0.00055185, Lwarp: 0.010705
+step:     6660, time: 0.167, loss: 0.013434, (40*Lgic): 0.00067498, Lwarp: 0.012759
+step:     6680, time: 0.147, loss: 0.013219, (40*Lgic): 0.00064507, Lwarp: 0.012574
+step:     6700, time: 0.145, loss: 0.013190, (40*Lgic): 0.00062427, Lwarp: 0.012566
+step:     6720, time: 0.151, loss: 0.014464, (40*Lgic): 0.00066591, Lwarp: 0.013798
+step:     6740, time: 0.150, loss: 0.015337, (40*Lgic): 0.00062537, Lwarp: 0.014712
+step:     6760, time: 0.142, loss: 0.016319, (40*Lgic): 0.00063736, Lwarp: 0.015682
+step:     6780, time: 0.152, loss: 0.021697, (40*Lgic): 0.00058105, Lwarp: 0.021116
+step:     6800, time: 0.150, loss: 0.011658, (40*Lgic): 0.00066380, Lwarp: 0.010994
+step:     6820, time: 0.143, loss: 0.011570, (40*Lgic): 0.00067100, Lwarp: 0.010899
+step:     6840, time: 0.149, loss: 0.017563, (40*Lgic): 0.00065986, Lwarp: 0.016903
+step:     6860, time: 0.145, loss: 0.015191, (40*Lgic): 0.00074194, Lwarp: 0.014449
+step:     6880, time: 0.141, loss: 0.014915, (40*Lgic): 0.00070120, Lwarp: 0.014214
+step:     6900, time: 0.143, loss: 0.013116, (40*Lgic): 0.00068264, Lwarp: 0.012434
+step:     6920, time: 0.138, loss: 0.019247, (40*Lgic): 0.00075172, Lwarp: 0.018495
+step:     6940, time: 0.141, loss: 0.012827, (40*Lgic): 0.00067819, Lwarp: 0.012149
+step:     6960, time: 0.151, loss: 0.049110, (40*Lgic): 0.00069804, Lwarp: 0.048412
+step:     6980, time: 0.147, loss: 0.012531, (40*Lgic): 0.00067218, Lwarp: 0.011859
+step:     7000, time: 0.139, loss: 0.014316, (40*Lgic): 0.00066077, Lwarp: 0.013656
+step:     7020, time: 0.145, loss: 0.013177, (40*Lgic): 0.00067705, Lwarp: 0.012500
+step:     7040, time: 0.148, loss: 0.015189, (40*Lgic): 0.00063338, Lwarp: 0.014556
+step:     7060, time: 0.149, loss: 0.017375, (40*Lgic): 0.00067071, Lwarp: 0.016705
+step:     7080, time: 0.140, loss: 0.015488, (40*Lgic): 0.00057555, Lwarp: 0.014913
+step:     7100, time: 0.149, loss: 0.017078, (40*Lgic): 0.00057142, Lwarp: 0.016506
+step:     7120, time: 0.159, loss: 0.021368, (40*Lgic): 0.00060145, Lwarp: 0.020767
+step:     7140, time: 0.148, loss: 0.018909, (40*Lgic): 0.00080176, Lwarp: 0.018108
+step:     7160, time: 0.151, loss: 0.013482, (40*Lgic): 0.00060496, Lwarp: 0.012877
+step:     7180, time: 0.150, loss: 0.014969, (40*Lgic): 0.00067469, Lwarp: 0.014294
+step:     7200, time: 0.155, loss: 0.012155, (40*Lgic): 0.00062424, Lwarp: 0.011531
+step:     7220, time: 0.161, loss: 0.015687, (40*Lgic): 0.00068884, Lwarp: 0.014998
+step:     7240, time: 0.153, loss: 0.013842, (40*Lgic): 0.00070073, Lwarp: 0.013141
+step:     7260, time: 0.146, loss: 0.013546, (40*Lgic): 0.00059601, Lwarp: 0.012950
+step:     7280, time: 0.146, loss: 0.016114, (40*Lgic): 0.00061915, Lwarp: 0.015495
+step:     7300, time: 0.146, loss: 0.044256, (40*Lgic): 0.00068923, Lwarp: 0.043567
+step:     7320, time: 0.140, loss: 0.012026, (40*Lgic): 0.00057379, Lwarp: 0.011452
+step:     7340, time: 0.143, loss: 0.013613, (40*Lgic): 0.00069440, Lwarp: 0.012918
+step:     7360, time: 0.156, loss: 0.020879, (40*Lgic): 0.00068275, Lwarp: 0.020196
+step:     7380, time: 0.152, loss: 0.015117, (40*Lgic): 0.00065334, Lwarp: 0.014463
+step:     7400, time: 0.143, loss: 0.018061, (40*Lgic): 0.00056873, Lwarp: 0.017492
+step:     7420, time: 0.144, loss: 0.033310, (40*Lgic): 0.00054946, Lwarp: 0.032760
+step:     7440, time: 0.153, loss: 0.017268, (40*Lgic): 0.00058929, Lwarp: 0.016679
+step:     7460, time: 0.142, loss: 0.026223, (40*Lgic): 0.00057022, Lwarp: 0.025653
+step:     7480, time: 0.152, loss: 0.012077, (40*Lgic): 0.00070160, Lwarp: 0.011375
+step:     7500, time: 0.148, loss: 0.015513, (40*Lgic): 0.00050095, Lwarp: 0.015012
+step:     7520, time: 0.144, loss: 0.014913, (40*Lgic): 0.00066165, Lwarp: 0.014251
+step:     7540, time: 0.140, loss: 0.012329, (40*Lgic): 0.00071311, Lwarp: 0.011615
+step:     7560, time: 0.145, loss: 0.016734, (40*Lgic): 0.00057606, Lwarp: 0.016158
+step:     7580, time: 0.142, loss: 0.010030, (40*Lgic): 0.00061618, Lwarp: 0.009414
+step:     7600, time: 0.156, loss: 0.011571, (40*Lgic): 0.00063784, Lwarp: 0.010933
+step:     7620, time: 0.137, loss: 0.015041, (40*Lgic): 0.00069049, Lwarp: 0.014351
+step:     7640, time: 0.148, loss: 0.011094, (40*Lgic): 0.00055141, Lwarp: 0.010542
+step:     7660, time: 0.149, loss: 0.012232, (40*Lgic): 0.00067866, Lwarp: 0.011553
+step:     7680, time: 0.144, loss: 0.014043, (40*Lgic): 0.00054585, Lwarp: 0.013497
+step:     7700, time: 0.144, loss: 0.016091, (40*Lgic): 0.00060623, Lwarp: 0.015485
+step:     7720, time: 0.155, loss: 0.021051, (40*Lgic): 0.00058072, Lwarp: 0.020470
+step:     7740, time: 0.147, loss: 0.013511, (40*Lgic): 0.00065127, Lwarp: 0.012860
+step:     7760, time: 0.140, loss: 0.011141, (40*Lgic): 0.00070096, Lwarp: 0.010440
+step:     7780, time: 0.141, loss: 0.018508, (40*Lgic): 0.00066202, Lwarp: 0.017846
+step:     7800, time: 0.136, loss: 0.012522, (40*Lgic): 0.00066098, Lwarp: 0.011861
+step:     7820, time: 0.174, loss: 0.012803, (40*Lgic): 0.00056990, Lwarp: 0.012233
+step:     7840, time: 0.145, loss: 0.015494, (40*Lgic): 0.00065345, Lwarp: 0.014840
+step:     7860, time: 0.155, loss: 0.017687, (40*Lgic): 0.00057151, Lwarp: 0.017116
+step:     7880, time: 0.142, loss: 0.016658, (40*Lgic): 0.00062999, Lwarp: 0.016028
+step:     7900, time: 0.144, loss: 0.011840, (40*Lgic): 0.00065867, Lwarp: 0.011181
+step:     7920, time: 0.144, loss: 0.015165, (40*Lgic): 0.00065364, Lwarp: 0.014511
+step:     7940, time: 0.135, loss: 0.022915, (40*Lgic): 0.00068787, Lwarp: 0.022227
+step:     7960, time: 0.140, loss: 0.019586, (40*Lgic): 0.00067568, Lwarp: 0.018910
+step:     7980, time: 0.149, loss: 0.013966, (40*Lgic): 0.00062117, Lwarp: 0.013344
+step:     8000, time: 0.153, loss: 0.018859, (40*Lgic): 0.00062430, Lwarp: 0.018235
+step:     8020, time: 0.142, loss: 0.016430, (40*Lgic): 0.00062831, Lwarp: 0.015802
+step:     8040, time: 0.139, loss: 0.015009, (40*Lgic): 0.00076600, Lwarp: 0.014243
+step:     8060, time: 0.140, loss: 0.012543, (40*Lgic): 0.00052053, Lwarp: 0.012022
+step:     8080, time: 0.146, loss: 0.013331, (40*Lgic): 0.00053787, Lwarp: 0.012793
+step:     8100, time: 0.141, loss: 0.012409, (40*Lgic): 0.00056763, Lwarp: 0.011841
+step:     8120, time: 0.146, loss: 0.013634, (40*Lgic): 0.00059702, Lwarp: 0.013037
+step:     8140, time: 0.143, loss: 0.013146, (40*Lgic): 0.00055220, Lwarp: 0.012593
+step:     8160, time: 0.150, loss: 0.012982, (40*Lgic): 0.00051472, Lwarp: 0.012467
+step:     8180, time: 0.141, loss: 0.012546, (40*Lgic): 0.00070160, Lwarp: 0.011845
+step:     8200, time: 0.142, loss: 0.014515, (40*Lgic): 0.00058329, Lwarp: 0.013932
+step:     8220, time: 0.144, loss: 0.012936, (40*Lgic): 0.00055551, Lwarp: 0.012381
+step:     8240, time: 0.142, loss: 0.020283, (40*Lgic): 0.00070112, Lwarp: 0.019582
+step:     8260, time: 0.141, loss: 0.024101, (40*Lgic): 0.00062262, Lwarp: 0.023479
+step:     8280, time: 0.147, loss: 0.037500, (40*Lgic): 0.00058061, Lwarp: 0.036919
+step:     8300, time: 0.155, loss: 0.016552, (40*Lgic): 0.00069691, Lwarp: 0.015855
+step:     8320, time: 0.129, loss: 0.014184, (40*Lgic): 0.00060884, Lwarp: 0.013575
+step:     8340, time: 0.141, loss: 0.013281, (40*Lgic): 0.00064016, Lwarp: 0.012641
+step:     8360, time: 0.142, loss: 0.020767, (40*Lgic): 0.00061759, Lwarp: 0.020150
+step:     8380, time: 0.147, loss: 0.015075, (40*Lgic): 0.00060309, Lwarp: 0.014472
+step:     8400, time: 0.143, loss: 0.014825, (40*Lgic): 0.00057804, Lwarp: 0.014247
+step:     8420, time: 0.146, loss: 0.016721, (40*Lgic): 0.00071916, Lwarp: 0.016002
+step:     8440, time: 0.143, loss: 0.015286, (40*Lgic): 0.00069467, Lwarp: 0.014591
+step:     8460, time: 0.155, loss: 0.026770, (40*Lgic): 0.00057431, Lwarp: 0.026196
+step:     8480, time: 0.149, loss: 0.055887, (40*Lgic): 0.00068746, Lwarp: 0.055199
+step:     8500, time: 0.147, loss: 0.014926, (40*Lgic): 0.00066564, Lwarp: 0.014260
+step:     8520, time: 0.148, loss: 0.013434, (40*Lgic): 0.00064806, Lwarp: 0.012786
+step:     8540, time: 0.147, loss: 0.011001, (40*Lgic): 0.00063869, Lwarp: 0.010363
+step:     8560, time: 0.152, loss: 0.015213, (40*Lgic): 0.00065384, Lwarp: 0.014559
+step:     8580, time: 0.142, loss: 0.012791, (40*Lgic): 0.00060699, Lwarp: 0.012184
+step:     8600, time: 0.149, loss: 0.010052, (40*Lgic): 0.00065575, Lwarp: 0.009396
+step:     8620, time: 0.150, loss: 0.013631, (40*Lgic): 0.00056666, Lwarp: 0.013064
+step:     8640, time: 0.149, loss: 0.011596, (40*Lgic): 0.00055634, Lwarp: 0.011040
+step:     8660, time: 0.140, loss: 0.021140, (40*Lgic): 0.00071219, Lwarp: 0.020428
+step:     8680, time: 0.137, loss: 0.027115, (40*Lgic): 0.00068148, Lwarp: 0.026434
+step:     8700, time: 0.145, loss: 0.011411, (40*Lgic): 0.00056261, Lwarp: 0.010849
+step:     8720, time: 0.152, loss: 0.014470, (40*Lgic): 0.00056619, Lwarp: 0.013904
+step:     8740, time: 0.145, loss: 0.016163, (40*Lgic): 0.00065008, Lwarp: 0.015513
+step:     8760, time: 0.151, loss: 0.013291, (40*Lgic): 0.00061987, Lwarp: 0.012671
+step:     8780, time: 0.143, loss: 0.020682, (40*Lgic): 0.00063984, Lwarp: 0.020042
+step:     8800, time: 0.139, loss: 0.014230, (40*Lgic): 0.00073912, Lwarp: 0.013491
+step:     8820, time: 0.147, loss: 0.014006, (40*Lgic): 0.00064789, Lwarp: 0.013358
+step:     8840, time: 0.140, loss: 0.012155, (40*Lgic): 0.00060004, Lwarp: 0.011555
+step:     8860, time: 0.160, loss: 0.015513, (40*Lgic): 0.00058015, Lwarp: 0.014933
+step:     8880, time: 0.147, loss: 0.014934, (40*Lgic): 0.00076459, Lwarp: 0.014170
+step:     8900, time: 0.143, loss: 0.012893, (40*Lgic): 0.00064527, Lwarp: 0.012248
+step:     8920, time: 0.139, loss: 0.011414, (40*Lgic): 0.00053886, Lwarp: 0.010875
+step:     8940, time: 0.142, loss: 0.011427, (40*Lgic): 0.00062176, Lwarp: 0.010805
+step:     8960, time: 0.150, loss: 0.018426, (40*Lgic): 0.00055804, Lwarp: 0.017868
+step:     8980, time: 0.153, loss: 0.012777, (40*Lgic): 0.00057622, Lwarp: 0.012201
+step:     9000, time: 0.141, loss: 0.011351, (40*Lgic): 0.00067609, Lwarp: 0.010675
+step:     9020, time: 0.141, loss: 0.025796, (40*Lgic): 0.00057279, Lwarp: 0.025223
+step:     9040, time: 0.139, loss: 0.012950, (40*Lgic): 0.00065261, Lwarp: 0.012298
+step:     9060, time: 0.165, loss: 0.013137, (40*Lgic): 0.00061903, Lwarp: 0.012518
+step:     9080, time: 0.145, loss: 0.013740, (40*Lgic): 0.00065053, Lwarp: 0.013090
+step:     9100, time: 0.148, loss: 0.013213, (40*Lgic): 0.00067948, Lwarp: 0.012533
+step:     9120, time: 0.151, loss: 0.013205, (40*Lgic): 0.00059962, Lwarp: 0.012605
+step:     9140, time: 0.142, loss: 0.012447, (40*Lgic): 0.00060119, Lwarp: 0.011846
+step:     9160, time: 0.137, loss: 0.012745, (40*Lgic): 0.00065119, Lwarp: 0.012094
+step:     9180, time: 0.158, loss: 0.013489, (40*Lgic): 0.00066336, Lwarp: 0.012826
+step:     9200, time: 0.144, loss: 0.025625, (40*Lgic): 0.00060908, Lwarp: 0.025016
+step:     9220, time: 0.146, loss: 0.011837, (40*Lgic): 0.00057762, Lwarp: 0.011259
+step:     9240, time: 0.145, loss: 0.010863, (40*Lgic): 0.00060529, Lwarp: 0.010257
+step:     9260, time: 0.139, loss: 0.013732, (40*Lgic): 0.00065726, Lwarp: 0.013075
+step:     9280, time: 0.152, loss: 0.017222, (40*Lgic): 0.00062201, Lwarp: 0.016600
+step:     9300, time: 0.138, loss: 0.011970, (40*Lgic): 0.00059381, Lwarp: 0.011376
+step:     9320, time: 0.145, loss: 0.015753, (40*Lgic): 0.00059887, Lwarp: 0.015154
+step:     9340, time: 0.141, loss: 0.011530, (40*Lgic): 0.00064772, Lwarp: 0.010883
+step:     9360, time: 0.150, loss: 0.011080, (40*Lgic): 0.00052787, Lwarp: 0.010553
+step:     9380, time: 0.146, loss: 0.050717, (40*Lgic): 0.00063815, Lwarp: 0.050079
+step:     9400, time: 0.156, loss: 0.017851, (40*Lgic): 0.00063854, Lwarp: 0.017213
+step:     9420, time: 0.151, loss: 0.014050, (40*Lgic): 0.00063191, Lwarp: 0.013418
+step:     9440, time: 0.147, loss: 0.013966, (40*Lgic): 0.00064286, Lwarp: 0.013324
+step:     9460, time: 0.136, loss: 0.011825, (40*Lgic): 0.00056703, Lwarp: 0.011258
+step:     9480, time: 0.152, loss: 0.037118, (40*Lgic): 0.00059627, Lwarp: 0.036522
+step:     9500, time: 0.158, loss: 0.014552, (40*Lgic): 0.00052272, Lwarp: 0.014029
+step:     9520, time: 0.166, loss: 0.012879, (40*Lgic): 0.00063331, Lwarp: 0.012245
+step:     9540, time: 0.148, loss: 0.012682, (40*Lgic): 0.00061153, Lwarp: 0.012070
+step:     9560, time: 0.320, loss: 0.013892, (40*Lgic): 0.00060741, Lwarp: 0.013285
+step:     9580, time: 0.139, loss: 0.012134, (40*Lgic): 0.00060076, Lwarp: 0.011533
+step:     9600, time: 0.143, loss: 0.015806, (40*Lgic): 0.00060160, Lwarp: 0.015204
+step:     9620, time: 0.142, loss: 0.012900, (40*Lgic): 0.00060106, Lwarp: 0.012299
+step:     9640, time: 0.148, loss: 0.018631, (40*Lgic): 0.00054505, Lwarp: 0.018086
+step:     9660, time: 0.143, loss: 0.015215, (40*Lgic): 0.00071927, Lwarp: 0.014495
+step:     9680, time: 0.171, loss: 0.013902, (40*Lgic): 0.00068749, Lwarp: 0.013215
+step:     9700, time: 0.141, loss: 0.011964, (40*Lgic): 0.00061448, Lwarp: 0.011349
+step:     9720, time: 0.143, loss: 0.009801, (40*Lgic): 0.00058145, Lwarp: 0.009220
+step:     9740, time: 0.154, loss: 0.013095, (40*Lgic): 0.00061596, Lwarp: 0.012479
+step:     9760, time: 0.147, loss: 0.010392, (40*Lgic): 0.00059249, Lwarp: 0.009799
+step:     9780, time: 0.148, loss: 0.015043, (40*Lgic): 0.00062568, Lwarp: 0.014417
+step:     9800, time: 0.150, loss: 0.014727, (40*Lgic): 0.00058497, Lwarp: 0.014142
+step:     9820, time: 0.141, loss: 0.012436, (40*Lgic): 0.00063858, Lwarp: 0.011798
+step:     9840, time: 0.143, loss: 0.011893, (40*Lgic): 0.00053689, Lwarp: 0.011356
+step:     9860, time: 0.146, loss: 0.014608, (40*Lgic): 0.00066887, Lwarp: 0.013939
+step:     9880, time: 0.148, loss: 0.017634, (40*Lgic): 0.00068724, Lwarp: 0.016947
+step:     9900, time: 0.151, loss: 0.014583, (40*Lgic): 0.00059365, Lwarp: 0.013989
+step:     9920, time: 0.145, loss: 0.012708, (40*Lgic): 0.00060375, Lwarp: 0.012105
+step:     9940, time: 0.145, loss: 0.012158, (40*Lgic): 0.00055945, Lwarp: 0.011599
+step:     9960, time: 0.144, loss: 0.010015, (40*Lgic): 0.00055058, Lwarp: 0.009464
+step:     9980, time: 0.144, loss: 0.010756, (40*Lgic): 0.00051238, Lwarp: 0.010244
+step:    10000, time: 0.150, loss: 0.011797, (40*Lgic): 0.00050476, Lwarp: 0.011292
+Finished training GMM, named: GMM!
+gerashabanets@cp-vton-plus-vm-vm:~/CS231N-Pruning$
+
