@@ -12,6 +12,7 @@ from abc import ABC, abstractmethod
 SUPPORTED_OUT_PRUNING_MODULES = [nn.Linear, _ConvNd]
 ACTIVATIONS = [ReLU, ReLU6, RReLU, LeakyReLU, Sigmoid, Softplus, Tanh]
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class _AttributionMetric(ABC):
     def __init__(self, model, data_generator, criterion, device, reduction="mean"):
@@ -54,15 +55,15 @@ class _AttributionMetric(ABC):
                 """
                 GMM
                 """
-                im = inputs['image'].cpu()
-                im_pose = inputs['pose_image'].cpu()
-                im_h = inputs['head'].cpu()
-                shape = inputs['shape'].cpu()
-                agnostic = inputs['agnostic'].cpu()
-                c = inputs['cloth'].cpu()
-                cm = inputs['cloth_mask'].cpu()
-                im_c = inputs['parse_cloth'].cpu()
-                im_g = inputs['grid_image'].cpu()
+                im = inputs['image'].to(device)
+                im_pose = inputs['pose_image'].to(device)
+                im_h = inputs['head'].to(device)
+                shape = inputs['shape'].to(device)
+                agnostic = inputs['agnostic'].to(device)
+                c = inputs['cloth'].to(device)
+                cm = inputs['cloth_mask'].to(device)
+                im_c = inputs['parse_cloth'].to(device)
+                im_g = inputs['grid_image'].to(device)
                 grid, theta = self.model(agnostic, cm)    # can be added c too for new training
                 warped_cloth = F.grid_sample(c, grid, padding_mode='border')
                 warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
