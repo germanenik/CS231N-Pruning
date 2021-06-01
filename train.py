@@ -109,8 +109,7 @@ def train_gmm(opt, train_loader, model, board):
                 print("interest layer num:", idx)
                 # Compute Weight Value attributions
                 attr = attribution.run(module)
-                #k = int(len(attr) / 20) #5%
-                k = 0
+                k = int(len(attr) / 20) #5%
                 pruning_indices = np.argpartition(attr, k)[:k]
 
                 cascading = layers_of_interest[idx+1:]
@@ -120,6 +119,7 @@ def train_gmm(opt, train_loader, model, board):
                 
                 pretty_print_dims(get_pruned_dimensions(submodel))
                 _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_brief) #14600 / 4 * 2 = 7000
+
 
         #carefully finetune prunced model
         pretty_print_dims(get_pruned_dimensions(submodel))
@@ -147,7 +147,8 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             im_c = inputs['parse_cloth'].to(device)
             im_g = inputs['grid_image'].to(device)
             grid, theta = model(agnostic, cm)    # can be added c too for new training
-            #breakpoint()
+            
+            #check_for_null(model)
             warped_cloth = F.grid_sample(c, grid, padding_mode='border')
             warped_mask = F.grid_sample(cm, grid, padding_mode='zeros')
             warped_grid = F.grid_sample(im_g, grid, padding_mode='zeros')
@@ -164,7 +165,8 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             Lgic = Lgic / (grid.shape[0] * grid.shape[1] * grid.shape[2])
 
             loss = Lwarp + 40 * Lgic    # total GMM loss
-
+            if torch.isnan(loss):
+                breakpoint()
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -182,6 +184,13 @@ def _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board,
             #     save_checkpoint(model, os.path.join(
             #         opt.checkpoint_dir, opt.name, 'step_%06d.pth' % (step+1)))
 
+def check_for_null(model):
+    submodels = [model.extractionA.model, model.extractionB.model, model.regression.conv]
+    for submodel in submodels:
+        batchlayers = [layer for layer in submodel.children() if isinstance(layer, nn.BatchNorm2d)]
+        for layer in batchlayers:
+            if torch.isnan(layer.running_mean).any() or torch.isnan(layer.running_var).any():
+                breakpoint()
 
 def get_GMM_input_size(train_loader):
     data_sample = train_loader.next_batch()
