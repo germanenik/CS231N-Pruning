@@ -110,7 +110,6 @@ def train_gmm(opt, train_loader, model, board):
                 # Compute Weight Value attributions
                 attr = attribution.run(module)
                 pruning_indices = [idx for idx, val in enumerate(attr) if val == 0]
-                breakpoint()
                 # # weightnorm
                 # k = int(len(attr) / 20) #5%
                 # pruning_indices = np.argpartition(attr, k)[:k]
