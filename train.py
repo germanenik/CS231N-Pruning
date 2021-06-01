@@ -11,7 +11,7 @@ from cp_dataset import CPDataset, CPDataLoader
 from networks import GicLoss, GMM, UnetGenerator, VGGLoss, load_checkpoint, save_checkpoint
 
 from torchpruner.torchpruner.pruner import Pruner 
-from torchpruner.torchpruner.attributions import (APoZAttributionMetric, ShapleyAttributionMetric, WeightNormAttributionMetric)
+from torchpruner.torchpruner.attributions import (SensitivityAttributionMetric, APoZAttributionMetric, ShapleyAttributionMetric, WeightNormAttributionMetric)
 
 from tensorboardX import SummaryWriter
 from visualization import board_add_image, board_add_images
@@ -107,11 +107,16 @@ def train_gmm(opt, train_loader, model, board):
                     break #do not prune the last one bc messes up dims
 
                 print("interest layer num:", idx)
-                # Compute Weight Value attributions
+
                 attr = attribution.run(module)
-                print(attr)
-                pruning_indices = torch.tensor([idx for idx, val in enumerate(attr) if val == 0], dtype=torch.int64)
-                print("indices to prune:", len(pruning_indices))
+                k = int(len(attr) * 0.16) #paper says 16
+                pruning_indices = np.argpartition(attr, k)[:k]
+                # print("indices to prune:", len(pruning_indices))
+
+                # attr = attribution.run(module)
+                # pruning_indices = torch.tensor([idx for idx, val in enumerate(attr) if val == 0], dtype=torch.int64)
+                # print("indices to prune:", len(pruning_indices))
+                
                 # # weightnorm
                 # k = int(len(attr) / 20) #5%
                 # pruning_indices = np.argpartition(attr, k)[:k]
