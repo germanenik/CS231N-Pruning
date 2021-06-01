@@ -91,7 +91,7 @@ def train_gmm(opt, train_loader, model, board):
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
     if opt.debug:
         criteria = (criterionL1, gicloss)
-        attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=device)
+        attribution = APoZAttributionMetric(model, train_loader.data_loader, criteria, device=device)
         pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=device, optimizer=finetuning_optimizer)
         
         submodels = [model.extractionA.model, model.extractionB.model, model.regression.conv]
@@ -109,8 +109,11 @@ def train_gmm(opt, train_loader, model, board):
                 print("interest layer num:", idx)
                 # Compute Weight Value attributions
                 attr = attribution.run(module)
-                k = int(len(attr) / 20) #5%
-                pruning_indices = np.argpartition(attr, k)[:k]
+                pruning_indices = [idx for idx, val in enumerate(attr) if val == 0]
+                breakpoint()
+                # # weightnorm
+                # k = int(len(attr) / 20) #5%
+                # pruning_indices = np.argpartition(attr, k)[:k]
 
                 cascading = layers_of_interest[idx+1:]
                 print("cascading layers", cascading)
