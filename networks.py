@@ -59,17 +59,17 @@ class FeatureExtraction(nn.Module):
     def __init__(self, input_nc, ngf=64, n_layers=3, norm_layer=nn.BatchNorm2d, use_dropout=False):
         super(FeatureExtraction, self).__init__()
         downconv = nn.Conv2d(input_nc, ngf, kernel_size=4, stride=2, padding=1)
-        model = [downconv, nn.ReLU(True), norm_layer(ngf, track_running_stats=True)]
+        model = [downconv, nn.ReLU(True), norm_layer(ngf, track_running_stats=False)]
         for i in range(n_layers):
             in_ngf = 2**i * ngf if 2**i * ngf < 512 else 512
             out_ngf = 2**(i+1) * ngf if 2**i * ngf < 512 else 512
             downconv = nn.Conv2d(
                 in_ngf, out_ngf, kernel_size=4, stride=2, padding=1)
             model += [downconv, nn.ReLU(True)]
-            model += [norm_layer(out_ngf, track_running_stats=True)]
+            model += [norm_layer(out_ngf, track_running_stats=False)]
         model += [nn.Conv2d(512, 512, kernel_size=3,
                             stride=1, padding=1), nn.ReLU(True)]
-        model += [norm_layer(512, track_running_stats=True)]
+        model += [norm_layer(512, track_running_stats=False)]
         model += [nn.Conv2d(512, 512, kernel_size=3,
                             stride=1, padding=1), nn.ReLU(True)]
 
@@ -112,16 +112,16 @@ class FeatureRegression(nn.Module):
         super(FeatureRegression, self).__init__()
         self.conv = nn.Sequential(
             nn.Conv2d(input_nc, 512, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(512, track_running_stats=True),
+            nn.BatchNorm2d(512, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(512, 256, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(256, track_running_stats=True),
+            nn.BatchNorm2d(256, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(256, 128, kernel_size=3, padding=1),
-            nn.BatchNorm2d(128, track_running_stats=True),
+            nn.BatchNorm2d(128, track_running_stats=False),
             nn.ReLU(inplace=True),
             nn.Conv2d(128, 64, kernel_size=3, padding=1),
-            nn.BatchNorm2d(64, track_running_stats=True),
+            nn.BatchNorm2d(64, track_running_stats=False),
             nn.ReLU(inplace=True),
         )
         self.linear = nn.Linear(64 * 4 * 3, output_dim)
@@ -359,9 +359,9 @@ class UnetSkipConnectionBlock(nn.Module):
         downconv = nn.Conv2d(input_nc, inner_nc, kernel_size=4,
                              stride=2, padding=1, bias=use_bias)
         downrelu = nn.LeakyReLU(0.2, True)
-        downnorm = norm_layer(inner_nc, track_running_stats=True)
+        downnorm = norm_layer(inner_nc, track_running_stats=False)
         uprelu = nn.ReLU(True)
-        upnorm = norm_layer(outer_nc, track_running_stats=True)
+        upnorm = norm_layer(outer_nc, track_running_stats=False)
 
         if outermost:
             upsample = nn.Upsample(scale_factor=2, mode='bilinear')
