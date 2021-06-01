@@ -109,7 +109,9 @@ def train_gmm(opt, train_loader, model, board):
                 print("interest layer num:", idx)
                 # Compute Weight Value attributions
                 attr = attribution.run(module)
-                pruning_indices = [idx for idx, val in enumerate(attr) if val == 0]
+                print(attr)
+                pruning_indices = torch.tensor([idx for idx, val in enumerate(attr) if val == 0], dtype=torch.int64)
+                print("indices to prune:", len(pruning_indices))
                 # # weightnorm
                 # k = int(len(attr) / 20) #5%
                 # pruning_indices = np.argpartition(attr, k)[:k]
