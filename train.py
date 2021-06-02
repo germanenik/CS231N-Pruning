@@ -91,7 +91,7 @@ def train_gmm(opt, train_loader, model, board):
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, optimizer, board)
     if opt.debug:
         criteria = (criterionL1, gicloss)
-        attribution = APoZAttributionMetric(model, train_loader.data_loader, criteria, device=device)
+        attribution = WeightNormAttributionMetric(model, train_loader.data_loader, criteria, device=device)
         pruner = Pruner(model, input_size=get_GMM_input_size(train_loader), device=device, optimizer=finetuning_optimizer)
         
         submodels = [model.extractionA.model, model.extractionB.model, model.regression.conv]
@@ -107,8 +107,8 @@ def train_gmm(opt, train_loader, model, board):
                     break #do not prune the last one bc messes up dims
 
                 attr = attribution.run(module)
-                k = int(len(attr) * 0.16) #paper says 16
-                pruning_indices = np.argpartition(attr, k)[:k] 
+                # k = int(len(attr) * 0.16) #paper says 16
+                # pruning_indices = np.argpartition(attr, k)[:k] 
                 # print("indices to prune:", len(pruning_indices))
 
                 # attr = attribution.run(module)
@@ -116,8 +116,8 @@ def train_gmm(opt, train_loader, model, board):
                 # print("indices to prune:", len(pruning_indices))
                 
                 # # weightnorm
-                # k = int(len(attr) / 20) #5%
-                # pruning_indices = np.argpartition(attr, k)[:k]
+                k = int(len(attr) / 3) #30%
+                pruning_indices = np.argpartition(attr, k)[:k]
 
                 cascading = layers_of_interest[idx+1:]
                 print("cascading layers", cascading)
