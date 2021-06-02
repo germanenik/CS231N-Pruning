@@ -131,7 +131,6 @@ def train_gmm(opt, train_loader, model, board):
 
 
         #carefully finetune prunced model
-        pretty_print_dims(get_pruned_dimensions(submodel))
         _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_careful) #35000
         torch.save(model, "architectures/pruned_GMM")
     # if opt.debug:
