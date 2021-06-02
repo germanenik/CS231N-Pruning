@@ -56,7 +56,7 @@ def get_opt():
                         default='tensorboard', help='save tensorboard infos')
     parser.add_argument('--checkpoint_dir', type=str,
                         default='checkpoints', help='save checkpoint infos')
-    parser.add_argument('--checkpoint', type=str, default='',
+    parser.add_argument('--checkpoint', type=str, default='checkpoints/GMM/gmm_final.pth',
                         help='model checkpoint for initialization')
     parser.add_argument("--display_count", type=int, default=20)
     parser.add_argument("--save_count", type=int, default=5000)
@@ -106,11 +106,9 @@ def train_gmm(opt, train_loader, model, board):
                 if num_conv == 0:
                     break #do not prune the last one bc messes up dims
 
-                print("interest layer num:", idx)
-
                 attr = attribution.run(module)
                 k = int(len(attr) * 0.16) #paper says 16
-                pruning_indices = np.argpartition(attr, k)[:k]
+                pruning_indices = np.argpartition(attr, k)[:k] 
                 # print("indices to prune:", len(pruning_indices))
 
                 # attr = attribution.run(module)
@@ -125,7 +123,6 @@ def train_gmm(opt, train_loader, model, board):
                 print("cascading layers", cascading)
                 pruner.prune_model(module, indices=pruning_indices, cascading_modules=cascading)
                 # train for a few epochs
-                
                 pretty_print_dims(get_pruned_dimensions(submodel))
                 _train_gmm(opt, train_loader, model, criterionL1, gicloss, finetuning_optimizer, board, opt.finetune_steps_brief) #14600 / 4 * 2 = 7000
 

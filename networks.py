@@ -539,5 +539,7 @@ def save_checkpoint(model, save_path):
 def load_checkpoint(model, checkpoint_path):
     if not os.path.exists(checkpoint_path):
         return
-    model.load_state_dict(torch.load(checkpoint_path))
+    state_dict = torch.load(checkpoint_path)
+    filtered_dict = {k : v for k, v in state_dict.items() if ("num_batches_tracked" not in k and "running_var" not in k and "running_mean" not in k)}
+    model.load_state_dict(filtered_dict)
     model.to(device)
