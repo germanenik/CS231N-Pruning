@@ -48,7 +48,7 @@ def max_model(device, version=1):
 
 class TestTorchPruner(TestCase):
     def setUp(self):
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
 
     def tearDown(self):
         pass

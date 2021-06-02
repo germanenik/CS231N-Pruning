@@ -12,7 +12,7 @@ from abc import ABC, abstractmethod
 SUPPORTED_OUT_PRUNING_MODULES = [nn.Linear, _ConvNd]
 ACTIVATIONS = [ReLU, ReLU6, RReLU, LeakyReLU, Sigmoid, Softplus, Tanh]
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 class _AttributionMetric(ABC):
     def __init__(self, model, data_generator, criterion, device, reduction="mean"):

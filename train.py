@@ -16,7 +16,7 @@ from torchpruner.torchpruner.attributions import (SensitivityAttributionMetric, 
 from tensorboardX import SummaryWriter
 from visualization import board_add_image, board_add_images
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 def str2bool(v):
     if isinstance(v, bool):

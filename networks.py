@@ -7,7 +7,7 @@ import os
 
 import numpy as np
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 def weights_init_normal(m):
     classname = m.__class__.__name__
