@@ -18,7 +18,7 @@ def simple_model(device):
 
 class TestTorchPruner(TestCase):
     def setUp(self):
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def tearDown(self):
         pass
